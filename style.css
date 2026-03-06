@@ -121,12 +121,6 @@ a:hover {
 .hero-text .affiliation {
   font-size: 1.1rem;
   color: var(--color-text-light);
-  margin-bottom: 4px;
-}
-
-.hero-text .advisor {
-  font-size: 0.95rem;
-  color: var(--color-text-light);
   margin-bottom: 20px;
 }
 
@@ -197,55 +191,6 @@ a:hover {
   color: var(--color-text-light);
   font-size: 0.9rem;
   margin-bottom: 16px;
-}
-
-/* === Highlights === */
-.highlights {
-  display: flex;
-  gap: 40px;
-  margin-top: 28px;
-}
-
-.highlight-item {
-  text-align: center;
-}
-
-.highlight-number {
-  display: block;
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--color-primary);
-  line-height: 1.2;
-}
-
-.highlight-label {
-  font-size: 0.85rem;
-  color: var(--color-text-light);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-/* === News === */
-.news-list {
-  list-style: none;
-}
-
-.news-list li {
-  padding: 8px 0;
-  border-bottom: 1px solid var(--color-border);
-  font-size: 0.95rem;
-}
-
-.news-list li:last-child {
-  border-bottom: none;
-}
-
-.news-date {
-  display: inline-block;
-  font-weight: 600;
-  color: var(--color-primary);
-  width: 80px;
-  font-size: 0.85rem;
 }
 
 /* === Publications === */
@@ -397,10 +342,6 @@ footer {
     height: 160px;
   }
 
-  .highlights {
-    justify-content: center;
-  }
-
   .timeline-item {
     flex-direction: column;
     gap: 4px;
@@ -436,7 +377,4 @@ footer {
     font-size: 1.5rem;
   }
 
-  .highlights {
-    gap: 24px;
-  }
 }
