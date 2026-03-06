@@ -62,17 +62,17 @@ hr {
 }
 
 /* Experience table */
-.experience {
+.experience, .news {
   border-collapse: collapse;
   width: 100%;
 }
 
-.experience td {
+.experience td, .news td {
   padding: 4px 0;
   vertical-align: top;
 }
 
-.experience .date {
+.experience .date, .news .date {
   width: 120px;
   color: #999;
   font-size: 0.9em;
@@ -98,7 +98,7 @@ footer {
     height: 130px;
   }
 
-  .experience .date {
+  .experience .date, .news .date {
     width: 90px;
   }
 }
