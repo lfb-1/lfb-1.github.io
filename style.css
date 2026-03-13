@@ -80,6 +80,22 @@ hr {
   padding-right: 16px;
 }
 
+/* Hidden news toggle */
+.hidden-news {
+  display: none;
+}
+
+.news-toggle {
+  font-size: 0.9em;
+  color: #999;
+  cursor: pointer;
+  margin-top: 4px;
+}
+
+.news-toggle:hover {
+  color: #b31b1b;
+}
+
 /* Footer */
 footer {
   font-size: 0.85em;

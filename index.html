@@ -52,12 +52,14 @@
 
   <h2>News</h2>
   <table class="news">
+    <tr><td class="date">2026.03</td><td>One paper accepted at IEEE TPAMI.</td></tr>
     <tr><td class="date">2026.02</td><td>3 papers accepted at CVPR 2026.</td></tr>
     <tr><td class="date">2026.02</td><td>3 papers accepted at MIDL 2026.</td></tr>
     <tr><td class="date">2025.08</td><td>One paper published in IEEE JBHI.</td></tr>
     <tr><td class="date">2025.07</td><td>One paper published in TMLR.</td></tr>
-    <tr><td class="date">2025.05</td><td>One paper published in IEEE TPAMI.</td></tr>
+    <tr class="hidden-news"><td class="date">2025.05</td><td>One paper published in IEEE TPAMI.</td></tr>
   </table>
+  <p class="news-toggle" onclick="document.querySelectorAll('.hidden-news').forEach(r=>r.style.display=r.style.display==='table-row'?'none':'table-row');this.textContent=this.textContent==='[show more]'?'[show less]':'[show more]'">[show more]</p>
 
   <h2>Experience</h2>
   <table class="experience">
