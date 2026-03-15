@@ -96,6 +96,30 @@ hr {
   color: #b31b1b;
 }
 
+/* CV button */
+.cv-btn {
+  background: rgba(179, 27, 27, 0.08);
+  border: 1px solid rgba(179, 27, 27, 0.25);
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9em;
+}
+
+.cv-btn:hover {
+  background: rgba(179, 27, 27, 0.15);
+}
+
+/* Research list */
+.research-list {
+  margin: 8px 0;
+  padding-left: 20px;
+}
+
+.research-list li {
+  margin: 6px 0;
+}
+
 /* Footer */
 footer {
   font-size: 0.85em;
