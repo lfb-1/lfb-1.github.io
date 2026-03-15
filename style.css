@@ -110,16 +110,6 @@ hr {
   background: rgba(179, 27, 27, 0.15);
 }
 
-/* Research list */
-.research-list {
-  margin: 8px 0;
-  padding-left: 20px;
-}
-
-.research-list li {
-  margin: 6px 0;
-}
-
 /* Footer */
 footer {
   font-size: 0.85em;
