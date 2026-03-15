@@ -96,6 +96,14 @@ hr {
   color: #b31b1b;
 }
 
+.news-tag {
+  font-size: 0.8em;
+  color: #b31b1b;
+  border: 1px solid rgba(179, 27, 27, 0.3);
+  padding: 0 4px;
+  border-radius: 3px;
+}
+
 /* CV button */
 .cv-btn {
   background: rgba(179, 27, 27, 0.08);
