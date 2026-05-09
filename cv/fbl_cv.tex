@@ -1,0 +1,371 @@
+%-------------------------
+% Resume in Latex
+% Author : Aras Gungore
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{hyphenat}
+\usepackage{fontawesome}
+\input{glyphtounicode}
+
+
+%---------- FONT OPTIONS ----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+
+\newcommand{\resumeItem}[1]{
+  \item\small{#1 \vspace{-2pt}}
+}
+
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+
+\newcommand{\resumeSubSubheading}[2]{
+    \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+
+\newcommand{\resumeEducationHeading}[6]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+      \textit{\small#5} & \textit{\small #6} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+
+\newcommand{\resumeProjectHeading}[2]{
+    \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+
+\newcommand{\resumeOrganizationHeading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textit{\small #2} \\
+      \textit{\small#3}
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumePubheading}[3]{
+  \vspace{-2pt} \item\small{
+    {\textbf{#1} \vspace{-2pt}}\\
+    {\textit{\small#2}}\\ 
+    \underline{\small#3}
+  }
+}
+
+\newcommand{\resumePhdheading}[5]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textit{\small #2}\\
+      \textit{\small#3} & \textit{\small #4} \\
+      \textit{\small #5} \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeArxivheading}[2]{
+  \vspace{-2pt} \item\small{
+    {\textbf{#1} \vspace{-2pt}}\\
+    {\textit{\small#2}}
+  }
+}
+
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%---------- HEADING ----------
+
+\begin{center}
+    \textbf{\Huge \scshape Fengbei Liu} \\ \vspace{3pt}
+    \small
+    \faMobile \hspace{.5pt} \href{tel:905314204536}{+1 (646)251 3617}
+    $|$
+    \faAt \hspace{.5pt} \href{mailto:liuthomas817@gmail.com}{liuthomas817@gmail.com}
+    $|$
+    \faLinkedinSquare \hspace{.5pt} \href{https://www.linkedin.com/in/fengbei-liu-2bb11b177/}{LinkedIn}
+    $|$
+    \faGithub \hspace{.5pt} \href{https://github.com/FBLADL?tab=repositories}{GitHub}
+    $|$
+    \faGlobe \hspace{.5pt} \href{https://scholar.google.com.au/citations?user=oY_qRxMAAAAJ&hl}{Google Scholar}
+    % $|$
+    % \faMapMarker \hspace{.5pt} \href{https://www.google.com/maps/place/Bogazici+University+North+Campus/@41.0863067,29.0441352,15z/data=!4m5!3m4!1s0x0:0x9d2497b07c8edb2f!8m2!3d41.0863067!4d29.0441352}{Istanbul, Turkey}
+\end{center}
+
+
+
+%----------- EDUCATION -----------
+
+\section{Education}
+  \vspace{3pt}
+  \resumeSubHeadingListStart
+
+    
+
+    \resumePhdheading{Cornell Tech, Cornell University}{New York City, NY, US}{Postdoctoral Researcher; }{Feb 2024 \textbf{--} Present}{Supervisor: Prof. Mert R. Sabuncu}
+    \resumePhdheading
+      {Australian Institute for Machine Learning (AIML)
+      }{Adelaide, Australia}
+      {Ph.D in Computer Vision and Medical Imaging;   }{Apr 2020 \textbf{--} Oct 2023}{Supervisor: Prof. Gustavo Carneiro, Prof. Mark Jenkinson}
+    \resumeSubheading{University of Adelaide}{Adelaide, Australia}{Honors in Computer Science; (First Class)}{Mar 2019 \textbf{--} Mar 2020}
+    \resumeSubheading{University of Adelaide}{Adelaide, Australia}{Bachelor in Computer Science; }{Jul 2015 \textbf{--} Jul 2018}
+  \resumeSubHeadingListEnd
+
+
+
+%----------- SKILLS -----------
+
+\section{Research Interests}
+  \vspace{2pt}
+  \resumeSubHeadingListStart
+    \small{\item{
+        \textbf{Keywords: Computer Vision, Medical Image Analysis, Weakly-supervised Learning} \\ \vspace{3pt}
+        % \textbf{Languages:}{ Mandarin (Native), English (Professional)}
+        
+        % \textbf{Frameworks}{: X, X, X} \\
+        % \textbf{Developer Tools}{: X, X, X} \\
+        % \textbf{Libraries}{: X, X, X} \\
+        % \textbf{Applications}{: X, X, X}
+    }}
+    My research interest is in computer vision and medical image anlaysis. I focus on developing weakly-supervised deep learning solutions and its application in medical imaging, including noisy label learning, semi-supervised learning, partial-label learning and active learning.
+  \resumeSubHeadingListEnd
+
+
+
+%----------- WORK EXPERIENCE -----------
+
+\section{Publications}
+
+  \vspace{3pt}
+  \subsection*{First-author Publications}
+  \resumeSubHeadingListStart
+    \resumePubheading{Bridging Generative and Discriminative Noisy-Label Learning via Direction-Agnostic EM Formulation}{\textbf{Fengbei Liu}, Chong Wang, Yuanhong Chen, Yuyuan Liu, Gustavo Carneiro}{IEEE TPAMI 2026}
+    \resumePubheading{RNED: Rotary Number Encoding and Decoding for Quantitative Medical VLM Analysis}{\textbf{Fengbei Liu}, Sunwoo Kwak, Nusrat Binta Nizam, Ilan Richter, Ashley Beecy, Jayant K Raikhelkar, Deborah Estrin, Mert R. Sabuncu}{CVPR 2026}
+    \resumePubheading{HyperCT: Low-Rank Hypernet for Unified Chest CT Analysis}{\textbf{Fengbei Liu}, Sunwoo Kwak, Hao Phung, Nusrat Binta Nizam, Ilan Richter, Nir Uriel, Hadar Averbuch-Elor, Deborah Estrin, Mert R. Sabuncu}{MIDL 2026}
+    \resumePubheading{BoMD: Bag of Multi-label Local Descriptors for Noisy Chest X-ray Classification}{Yuanhong Chen$^*$, \textbf{Fengbei Liu}$^*$, Hu Wang, Chong Wang, Yuyuan Liu, Yu Tian, Gustavo Carneiro}{ICCV 2023}
+    \resumePubheading{Self-supervised Multi-class Pre-training for Unsupervised Anomaly Detection and Segmentation in Medical Images}{Yu Tian$^*$, \textbf{Fengbei Liu}$^*$, Guansong Pang, Yuanhong Chen, Yuyuan Liu, Johan W. Verjans, Rajvinder Singh, Gustavo Carneiro}{Medical Image Analysis 2023}
+    \resumePubheading{NVUM: Non-volatile Unbiased Memory for Robust Medical Image Classification}{\textbf{Fengbei Liu}, Yuanhong Chen, Yu Tian, Yuyuan Liu, Chong Wang, Vasileios Belagiannis, Gustavo Carneiro}{MICCA 2022, Early Accept, featured in ComputerVisionNews}
+    \resumePubheading{ACPL: Anti-curriculum Psueod-labelling for Semi-supervised Medical Image Classification}{\textbf{Fengbei Liu}$^*$, Yu Tian$^*$, Yuanhong Chen, Yuyuan Liu, Vasileios Belagiannis, Gustavo Carneiro}{CVPR 2022}
+    \resumePubheading{Self-supervised Mean-teacher for Semi-supervised Chest X-ray Classification}{\textbf{Fengbei Liu}, Yu Tian, Filipe R. Cordeiro, Vasileios Belagiannis, Ian Reid, Gustavo Carneiro}{MICCAI-MLMI 2021}
+    \resumePubheading{Self-supervised Depth estimation to Regularise Semantic Segmentation in Knee Arthroscopy}{\textbf{Fengbei Liu}, Yaqub Jonmohamadi, Gabriel Maicas, Ajay K Pandey, Gustavo Carneiro}{MICCAI 2020}
+  \resumeSubHeadingListEnd
+
+  \subsection*{Co-author Publications}
+  \resumeSubHeadingListStart
+    \resumePubheading{BackSplit: The Importance of Sub-dividing the Background in Biomedical Lesion Segmentation}{Rachit Saluja, Asli Cihangir, Ruining Deng, Johannes C. Paetzold, \textbf{Fengbei Liu}, Mert R. Sabuncu}{CVPR 2026}
+    \resumePubheading{From Failure to Feedback: Group Revision Unlocks Hard Cases in Object-Level Grounding}{Yuyuan Liu, Yijing Ji, Anjie Le, Jiayuan Zhu, Jiazhen Pan, Can Peng, Jiajun Deng, \textbf{Fengbei Liu}, Junde Wu}{CVPR 2026}
+    \resumePubheading{Beyond Machine Interpretation: Learning from Expert Over-Reads Improves ECG Diagnosis}{Sunwoo Kwak, \textbf{Fengbei Liu}, Nusrat Binta Nizam, Ilan Richter, Nir Uriel, Peter M. Okin, Mert R. Sabuncu}{MIDL 2026}
+    \resumePubheading{X-Cardia: Phenotype-Guided Cross-Modal Alignment for Opportunistic Cardiac Screening on Routine Chest CT}{Nusrat Binta Nizam, \textbf{Fengbei Liu}, Sunwoo Kwak, Ilan Richter, Jayant K Raikhelkar, Ashley Beecy, Nir Uriel, Deborah Estrin, Mert R. Sabuncu}{MIDL 2026, Oral}
+    \resumePubheading{Progressive Mining and Dynamic Distillation of Hierarchical Prototypes for Disease Classification and Localisation}{Chong Wang, \textbf{Fengbei Liu}, Yuanhong Chen, Gustavo Carneiro}{IEEE Journal of Biomedical and Health Informatics 2025}
+    \resumePubheading{Cross- and Intra-image Prototypical Learning for Multi-label Disease Diagnosis and Interpretation}{Chong Wang, \textbf{Fengbei Liu}, Yuanhong Chen, Helen Frazer, Gustavo Carneiro}{IEEE Transactions on Medical Imaging 2025}
+    \resumePubheading{Mixture of Gaussian-distributed Prototypes with Generative Modelling for Interpretable and Trustworthy Image Recognition}{Chong Wang, Yuanhong Chen, \textbf{Fengbei Liu}, Yuyuan Liu, Davis J McCarthy, Helen Frazer, Gustavo Carneiro}{IEEE Transactions on Pattern Analysis and Machine Intelligence 2025}
+    \resumePubheading{Knockout: A Simple Way to Handle Missing Inputs}{Minh Nguyen, Batuhan K. Karaman, Heejong Kim, Alan Q. Wang, \textbf{Fengbei Liu}, Mert R. Sabuncu}{Transactions on Machine Learning Research 2025}
+    \resumePubheading{Translation Consistent Semi-supervised Segmentation for 3D Medical Images}{Yuyuan Liu, Yu Tian, Chong Wang, Yuanhong Chen, \textbf{Fengbei Liu}, Vasileios Belagiannis, Gustavo Carneiro}{IEEE Transactions on Medical Imaging 2024}
+    \resumePubheading{BRAIxDet: Learning to Detect Malignant Breast Lesion with Incomplete Annotations}{Yuanhong Chen, Yuyuan Liu, Chong Wang, Michael Elliott, Chun Fung Kwok, Yu Tian, \textbf{Fengbei Liu}, Helen Frazer, Davis J McCarthy, Gustavo Carneiro}{Medical Image Analysis 2024}
+    \resumePubheading{Unraveling Instance Associations: A Closer Look for Audio-Visual Segmentation}{Yuanhong Chen, Yuyuan Liu, Hu Wang, \textbf{Fengbei Liu}, Chong Wang, Helen Frazer, Gustavo Carneiro}{CVPR 2024}
+    \resumePubheading{Effective Segmentation of Post-Treatment Gliomas Using Simple Approaches: Artificial Sequence Generation and Ensemble Models}{Heejong Kim, L\'eo Milecki, Mina C. Moghadam, \textbf{Fengbei Liu}, Minh Nguyen, Eric Qiu, Abhishek Thanki, Mert R. Sabuncu}{MICCAI BraTS Challenge 2024, Oral Presentation}
+    \resumePubheading{An Interpretable and Accurate Deep-learning Diagnosis Framework Modelled with Fully and Semi-supervised Reciprocal Learning}{Chong Wang, Yuanhong Chen, \textbf{Fengbei Liu}, Michael Elliott, Chun Fung Kwok, Carlos Peña-Solorzano, Helen Frazer, Davis James McCarthy, Gustavo Carneiro}{IEEE Transactions on Medical Imaging 2023}
+    \resumePubheading{Learning Support and Trivial Prototypes for Interpretable Image Classification}{Chong Wang, Yuyuan Liu, Yuanhong Chen, \textbf{Fengbei Liu}, Yu Tian, Davis J McCarthy, Helen Frazer, Gustavo Carneiro}{ICCV 2023}
+    \resumePubheading{Unsupervised anomaly detection in medical images with a memory-augmented multi-level cross-attentional masked autoencoder}{Yu Tian, Guansong Pang, Yuyuan Liu, Chong Wang, Yuanhong Chen, \textbf{Fengbei Liu}, Rajvinder Singh, Johan W Verjans, Gustavo Carneiro}{MICCAI-MLMI 2023}
+    \resumePubheading{Knowledge Distillation to Ensemble Global and Interpretable Prototype-Based Mammogram Classification Models}{Chong Wang, Yuanhong Chen, Yuyuan Liu, Yu Tian, \textbf{Fengbei Liu} Davis J McCarthy, Michael Elliott, Helen Frazer, Gustavo Carneiro}{MICCAI, 2022, Early Accept}
+    \resumePubheading{Multi-view Local Co-occurrence and Global Consistency Learning Improve Mammogram Classification Generalisation}{Yuanhong Chen, Hu Wang, Chong Wang, Yu Tian, \textbf{Fengbei Liu}, Yuyuan Liu, Michael Elliott, Davis J McCarthy, Helen Frazer, Gustavo Carneiro}{MICCAI 2022, Early Accept}
+    \resumePubheading{Contrastive Transformer-based Multiple Instance Learning for Weakly Supervised Polyp Frame Detection}{Yu Tian, Guansong Pang, \textbf{Fengbei Liu}, Yuyuan Liu, Chong Wang, Yuanhong Chen, Johan W Verjans, Gustavo Carneiro}{MICCAI 2022, Early Accept}
+    \resumePubheading{Perturbed and Strict Mean Teachers for Semi-supervised Semantic Segmentation}{Yuyuan Liu, Yu Tian, Yuanhong Chen, \textbf{Fengbei Liu}, Belagiannis Vasileios, Gustavo Carneiro}{CVPR 2022}
+    \resumePubheading{Pixel-wise Energy-biased Abstention Learning for Anomaly Segmentation on Complex Urban Driving Scenes}{Yu Tian$^*$, Yuyuan Liu$^*$, Guansong Pang, \textbf{Fengbei Liu}, Yuanhong Chen, Gustavo Carneiro}{ECCV 2022, Oral}
+    \resumePubheading{Constrained Contrastive Distribution Learning for Unsupervised Anomaly Detection and Localisation in Medical Images}{Yu Tian, Guansong Pang, \textbf{Fengbei Liu}, Yuanhong Chen, Seon Ho Shin, Johan W Verjans, Rajvinder Singh, Gustavo Carneiro}{MICCAI 2021}
+    \resumePubheading{3D Semantic Mapping from Arthroscopy using Out-of-distribution Pose and Depth and In-distribution Segmentation Training}{Yaqub Jonmohamadi, Shahnewaz Ali, \textbf{Fengbei Liu}, Jonathan Roberts, Ross Crawford, Gustavo Carneiro, Ajay K Pandey}{MICCAI 2021}
+
+
+  \resumeSubHeadingListEnd
+
+  \subsection*{Preprint/Under-Review}
+  \resumeSubHeadingListStart
+    \resumeArxivheading{An Artificial Intelligence Model to Detect Abnormal Ejection Fraction from Non-Contrast Chest Computed Tomography: The CT-LVEF study}{Jayant Raikhelkar, Zilong Bai, Ashley Beecy, \textbf{Fengbei Liu}, et al.}{}
+    \resumeArxivheading{Agentic Large-Language-Model Systems in Medicine: A Systematic Review and Taxonomy}{Abdul Mohaimen Al Radi, Xu Cao, Fanyang Yu, \textbf{Fengbei Liu}, Yu Tian, et al.}{}
+    \resumeArxivheading{Asymmetric Co-teaching with Multi-view Consensus for Noisy Label Learning}{\textbf{Fengbei Liu}, Yuanhong Chen, Chong Wang, Yuyuan Liu, Gustavo Carneiro}{}
+
+  \resumeSubHeadingListEnd
+
+
+%----------- RESEARCH EXPERIENCE -----------
+\section{Professional Activities}
+  \vspace{2pt}
+  \subsection*{Conference}
+  \resumeSubHeadingListStart
+    \small{\item{
+        \textbf{Reviewer: }{ICCV 2021/2023, MICCAI 2021, CVPR 2022/2023/2024, ECCV 2022/2024, BMVC 2022, NeurIPS 2023/2024, ICLR 2024, ICML 2024} \\ \vspace{3pt}
+        % \textbf{Weakly-supervised Learning: }{Semi-supervised Learning, Noisy Label Learning, Imbalanced Learning, Multi-label Learning, Partial Label Learning} \\ \vspace{3pt}
+        % \textbf{Languages:}{ Mandarin (Native), English (Professional)}
+        
+        % \textbf{Frameworks}{: X, X, X} \\
+        % \textbf{Developer Tools}{: X, X, X} \\
+        % \textbf{Libraries}{: X, X, X} \\
+        % \textbf{Applications}{: X, X, X}
+    }}
+  \resumeSubHeadingListEnd
+  \subsection*{Journal}
+  \resumeSubHeadingListStart
+    \small{\item{
+        \textbf{Reviewer: }{IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)}
+    }}
+  \resumeSubHeadingListEnd
+
+
+% \section{Research Experiences}
+%   \vspace{3pt}
+%   \resumeSubHeadingListStart
+  
+%     \resumeSubheading
+%       {Australian Institute for Machine Learning (AIML), University of Adelaide}{Adelaide, Australia}
+%       {Research Assistant \& Ph.D Candidate}{Mar 2020 \textbf{--} Oct, 2023}
+%         \resumeItemListStart
+%             \resumeItem{Weakly-supervised learning for computer vision and medical image analysis}
+%             \resumeItem{Anomaly detection for medical image anlaysis}
+%             \resumeItem{Collaborate and published computer vision conferences (CVPR/ICCV/ECCV) and medical conferences/journel (MICCAI/TMI/MIA)}
+%         \resumeItemListEnd
+    
+    % \vspace{14pt}
+    
+    % \resumeSubheading
+    %   {Nanonetworking Research Group, Boğaziçi University}{Istanbul, Turkey}
+    %   {Undergraduate Researcher}{Oct 2021 \textbf{--} Jun 2022, Part-time}
+    %     \resumeItemListStart
+    %         \resumeItem{Worked on the project “Design and Implementation of Molecular Communication Systems Using Index Modulation” under the supervision of Prof. Dr. Ali Emre Pusane.}
+    %         \resumeItem{Simulated the Brownian motion of molecules in a SISO MCvD system and predicted simulation parameters such as receiver radius, diffusion coefficient, and transmitter-receiver distance using CNNs with Keras and TensorFlow.}
+    %         \resumeItem{Plotted the arrival of molecules per symbol duration in a SISO MCvD system using Binomial, Poisson, and Gaussian model approximations with MATLAB.}
+    %         \resumeItem{Ran Monte Carlo simulations of the Gaussian model to encode/decode randomized binary sequences in a SISO MCvD system using BCSK modulation technique and calculated the bit error rate (BER) on Z-channel.}
+    %     \resumeItemListEnd
+    
+  % \resumeSubHeadingListEnd
+
+
+
+%----------- AWARDS & ACHIEVEMENTS -----------
+
+\section{Awards \& Achievements}
+  \vspace{2pt}
+  \resumeSubHeadingListStart
+    \small{\item{
+        \textbf{Ph.D Scholarship: }{University of Adelaide, Apr 2020} \\ \vspace{3pt}
+
+        % \textbf{TÜBİTAK 2247-C Intern Researcher Scholarship:}{ Awarded to undergraduate students who take part in research projects carried out by the Scientific and Technological Research Council of Turkey (TÜBİTAK). (Dec 2021 \textbf{--} Jun 2022)} \\ \vspace{3pt}
+    
+        % \textbf{National University Admission Exam (YKS):}{ Ranked $75^{th}$ in Mathematics and Science among ca. 2.3 million candidates with a test score of 489.92/500. (Jul 2018)} \\ \vspace{3pt}
+        
+        % \textbf{KYK Outstanding Success Scholarship:}{ Awarded to undergraduate students who have been ranked in the top 100 on National University Admission Exam by Higher Education Credit and Hostels Institution (KYK). (Sep 2018 \textbf{--} Jun 2023)} \\ \vspace{3pt}
+        
+        % \textbf{Boğaziçi University Success Scholarship:}{ Awarded to undergraduate students who have been ranked in the top 100 on National University Admission Exam by Boğaziçi University. (Sep 2018 \textbf{--} Jun 2023)} \\ \vspace{3pt}
+        
+        % \textbf{Duolingo English Test (DET):}{ Overall Score: 135/160} \\ \vspace{3pt}
+        
+        % \textbf{Boğaziçi University English Proficiency Test (BUEPT):}{ Achieved the highest grade A on the BUEPT grading scheme with a total score in the range of 85-100.} \\ \vspace{3pt}
+        
+        % \textbf{Kocaeli Science High School Salutatorian Award:}{ Graduated as the second-highest ranked student in my class.}
+    }}
+  \resumeSubHeadingListEnd
+
+
+  \section{Skills}
+  \vspace{2pt}
+  \resumeSubHeadingListStart
+    \small{\item{
+        \textbf{Programming: }{Python \& Pytorch, Slurm, Docker \& Kubernetes} \\ \vspace{3pt}
+        \textbf{Language: }{Mandarin (native), English (professional)}
+        % \textbf{Weakly-supervised Learning: }{Semi-supervised Learning, Noisy Label Learning, Imbalanced Learning, Multi-label Learning, Partial Label Learning} \\ \vspace{3pt}
+        % \textbf{Languages:}{ Mandarin (Native), English (Professional)}
+        
+        % \textbf{Frameworks}{: X, X, X} \\
+        % \textbf{Developer Tools}{: X, X, X} \\
+        % \textbf{Libraries}{: X, X, X} \\
+        % \textbf{Applications}{: X, X, X}
+    }}
+  \resumeSubHeadingListEnd
+
+  \section*{References}
+  \vspace*{2pt}
+  \resumeSubHeadingListStart
+  \resumePubheading{Prof. Gustavo Carneiro}{Professor of AI and Machine Learning, University of Surrey}{g.carneiro@surrey.ac.uk}
+  \resumePubheading{Prof. Vasileios Belagiannis}{Professor, Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU)}{vasileios.belagiannis@fau.de}
+  \resumePubheading{Prof. Mert R. Sabuncu}{Professor, Cornell University, Cornell Tech and Weill Cornell Medicine}{msabuncu@cornell.edu}
+\resumeSubHeadingListEnd
+
+
+%-------------------------------------------
+\end{document}
