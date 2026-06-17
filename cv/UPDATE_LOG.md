@@ -4,6 +4,23 @@ This file tracks all updates made to Fengbei Liu's CV.
 
 ---
 
+## 2026-06-17: Added MAdam Preprint
+
+**Updated By:** Agent
+
+### Changes Made
+- ✅ Added preprint **MAdam: Metric-Aware Multi-Objective Adam** to Preprint/Under-Review
+  - Authors: Fengbei Liu, Rachit Saluja, Sunwoo Kwak, Ruibo Wang, Ruining Deng, Heejong Kim, Johannes C. Paetzold, Mert R. Sabuncu
+  - Venue: arXiv preprint
+  - Source: Author (Fengbei Liu)
+- Note: preprints are excluded from homepage news (generate_news.py parses only \resumePubheading), so index.html is unchanged.
+
+### Files Updated
+- ✅ fbl_cv.tex
+- ✅ fbl_cv.pdf
+
+---
+
 ## 2026-06-17: Added MICCAI 2026 Paper
 
 **Updated By:** Agent
