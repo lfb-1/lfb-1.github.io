@@ -4,6 +4,23 @@ This file tracks all updates made to Fengbei Liu's CV.
 
 ---
 
+## 2026-06-17: Added MICCAI 2026 Paper
+
+**Updated By:** Agent
+
+### Changes Made
+- ✅ Added co-author publication **ShapKO: Shapley-Adaptive Modality Knockout for Robust Multimodal Learning**
+  - Authors: Nusrat Binta Nizam, Fengbei Liu, Sunwoo Kwak, Minh Nguyen, Ruining Deng, Mert R. Sabuncu
+  - Venue: MICCAI 2026
+  - Source: Author (Fengbei Liu)
+
+### Files Updated
+- ✅ fbl_cv.tex
+- ✅ fbl_cv.pdf
+- ✅ ../index.html (news regenerated via generate_news.py)
+
+---
+
 ## 2026-01-19: Comprehensive Update from Online Sources
 
 **Updated By:** Agent
