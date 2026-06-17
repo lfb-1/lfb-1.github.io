@@ -4,6 +4,21 @@ This file tracks all updates made to Fengbei Liu's CV.
 
 ---
 
+## 2026-06-17: Exclude CT-LVEF Study from Homepage News
+
+**Updated By:** Agent
+
+### Changes Made
+- ✅ Added a NEWS_EXCLUDE mechanism to generate_news.py (substring match, case-insensitive)
+- ✅ Excluded "...The CT-LVEF study" from homepage news; paper remains listed in the CV publications
+- Source: Author (Fengbei Liu)
+
+### Files Updated
+- ✅ generate_news.py
+- ✅ ../index.html (news regenerated)
+
+---
+
 ## 2026-06-17: Institutional Email + CV Cache-Busting
 
 **Updated By:** Agent

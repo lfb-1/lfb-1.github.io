@@ -38,6 +38,17 @@ VISIBLE_COUNT = 5
 BULK_THRESHOLD = 3  # 3+ papers → grouped summary
 MY_NAME = 'Fengbei Liu'
 
+# Titles (substring match, case-insensitive) kept in the CV but omitted from homepage news
+NEWS_EXCLUDE = {
+    'CT-LVEF study',
+}
+
+
+def is_news_excluded(p):
+    """True if a paper should be kept in the CV but skipped in the homepage news."""
+    title = p['title'].lower()
+    return any(frag.lower() in title for frag in NEWS_EXCLUDE)
+
 
 def extract_brace_arg(content, start):
     """Extract content of a {}-delimited argument starting at position start."""
@@ -187,6 +198,9 @@ def generate_news_html(pubs):
     """
     from datetime import date
     recent_cutoff = str(date.today().year - 1)  # e.g. "2025"
+
+    # Drop papers explicitly excluded from news (still listed in the CV)
+    pubs = [p for p in pubs if not is_news_excluded(p)]
 
     # Split into recent vs old
     recent, old = [], []
