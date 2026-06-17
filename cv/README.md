@@ -46,7 +46,7 @@ Recommended update cadence:
 
 ## Contact Information
 
-- **Email:** liuthomas817@gmail.com
+- **Email:** fl453@cornell.edu
 - **Google Scholar:** https://scholar.google.com/citations?user=oY_qRxMAAAAJ&hl=en
 - **OpenReview:** https://openreview.net/profile?id=~Fengbei_Liu1
 - **ResearchGate:** https://www.researchgate.net/profile/Fengbei-Liu

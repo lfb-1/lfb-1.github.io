@@ -4,6 +4,24 @@ This file tracks all updates made to Fengbei Liu's CV.
 
 ---
 
+## 2026-06-17: Institutional Email + CV Cache-Busting
+
+**Updated By:** Agent
+
+### Changes Made
+- ✅ Replaced personal Gmail address with institutional fl453@cornell.edu in fbl_cv.tex (contact line) and cv/README.md
+- ✅ Added a content-hash cache-buster to the homepage CV link (fbl_cv.pdf?v=<hash>) so browsers always fetch the latest PDF; justfile build-cv now auto-bumps it on every build
+- Source: Author (Fengbei Liu)
+
+### Files Updated
+- ✅ fbl_cv.tex
+- ✅ fbl_cv.pdf
+- ✅ cv/README.md
+- ✅ ../index.html (CV link cache-buster)
+- ✅ ../../justfile (build-cv auto-bump) [Vault repo]
+
+---
+
 ## 2026-06-17: Updated Conference Reviewer Service
 
 **Updated By:** Agent
