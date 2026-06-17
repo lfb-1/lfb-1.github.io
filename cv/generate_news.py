@@ -21,7 +21,8 @@ VENUE_NORMALIZE = {
 
 VENUE_ALIASES = {'MICCA': 'MICCAI'}
 
-JOURNALS = {'IEEE TPAMI', 'IEEE TMI', 'IEEE JBHI', 'Medical Image Analysis', 'TMLR'}
+JOURNALS = {'IEEE TPAMI', 'IEEE TMI', 'IEEE JBHI', 'Medical Image Analysis', 'TMLR',
+            'European Heart Journal-Digital Health'}
 
 # Approximate month (MM) for acceptance/publication announcements
 VENUE_MONTH = {
@@ -30,6 +31,7 @@ VENUE_MONTH = {
     'NeurIPS': '09', 'ICLR': '01', 'ICML': '05', 'BMVC': '08',
     'IEEE TPAMI': '03', 'IEEE TMI': '03', 'IEEE JBHI': '08',
     'Medical Image Analysis': '03', 'TMLR': '07',
+    'European Heart Journal-Digital Health': '06',
 }
 
 VISIBLE_COUNT = 5
@@ -138,11 +140,22 @@ def oral_tag(n=1):
     return f' <span class="news-tag">[{label}Oral]</span>'
 
 
+def is_accepted(p):
+    """True if the paper is accepted/in-press rather than fully published."""
+    return any('accept' in q.lower() or 'in press' in q.lower() for q in p['qualifiers'])
+
+
+def venue_verb(is_journal, accepted):
+    """Pick the announcement verb. Journals: published vs accepted-in-press."""
+    if is_journal:
+        return 'accepted in' if accepted else 'published in'
+    return 'accepted at'
+
+
 def generate_venue_entry(venue, year, papers):
     """Generate news text for papers at a single venue."""
     is_journal = venue in JOURNALS
     venue_display = f'{venue} {year}' if not is_journal else venue
-    verb = 'published in' if is_journal else 'accepted at'
     month = VENUE_MONTH.get(venue, '01')
     n_oral = sum(1 for p in papers if p['oral'])
 
@@ -153,12 +166,14 @@ def generate_venue_entry(venue, year, papers):
             safe_title = escape(p['title'])
             title_html = f'<span class="papertitle">{safe_title}</span>'
             qual = oral_tag() if p['oral'] else ''
+            verb = venue_verb(is_journal, is_accepted(p))
             text = f'{title_html} {verb} {venue_display}.{qual}'
             rows.append((year, month, text))
         return rows
     else:
         # Grouped summary
         count = len(papers)
+        verb = venue_verb(is_journal, all(is_accepted(p) for p in papers))
         text = f'{count} papers {verb} {venue_display}.'
         qual = oral_tag(n_oral) if n_oral else ''
         return [(year, month, text + qual)]

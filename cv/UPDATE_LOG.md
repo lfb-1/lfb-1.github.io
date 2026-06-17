@@ -4,6 +4,27 @@ This file tracks all updates made to Fengbei Liu's CV.
 
 ---
 
+## 2026-06-17: Two Papers Published in European Heart Journal-Digital Health
+
+**Updated By:** Agent
+
+### Changes Made
+- ✅ Moved **CT-LVEF study** (An Artificial Intelligence Model to Detect Abnormal Ejection Fraction from Non-Contrast Chest CT) from Preprint/Under-Review to Co-author Publications
+  - Venue: European Heart Journal-Digital Health 2026
+- ✅ Added co-author publication **Cardio Amyloid-AI: Advanced Multimodal Screening for Transthyretin Cardiac Amyloidosis in Severe Aortic Stenosis Patients**
+  - Venue: European Heart Journal-Digital Health 2026
+- ✅ Long author lists abbreviated to first-authors-through-Fengbei + et al.
+- ✅ generate_news.py: registered European Heart Journal-Digital Health as a journal (also added generic "accepted in [journal]" phrasing for any future accepted-but-not-yet-published papers)
+- Source: Author (Fengbei Liu)
+
+### Files Updated
+- ✅ fbl_cv.tex
+- ✅ fbl_cv.pdf
+- ✅ generate_news.py
+- ✅ ../index.html (news regenerated)
+
+---
+
 ## 2026-06-17: Added MAdam Preprint
 
 **Updated By:** Agent
