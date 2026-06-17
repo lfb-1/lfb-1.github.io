@@ -4,6 +4,22 @@ This file tracks all updates made to Fengbei Liu's CV.
 
 ---
 
+## 2026-06-17: Updated Conference Reviewer Service
+
+**Updated By:** Agent
+
+### Changes Made
+- ✅ Added 2026 reviewing to the Conference reviewer line: CVPR 2026, MICCAI 2026, NeurIPS 2026
+  - Now: MICCAI 2021/2026, CVPR 2022/2023/2024/2026, NeurIPS 2023/2024/2026
+  - Source: Author (Fengbei Liu)
+- Note: homepage Service section lists conference names without years (CVPR/NeurIPS/MICCAI already present), so index.html is unchanged.
+
+### Files Updated
+- ✅ fbl_cv.tex
+- ✅ fbl_cv.pdf
+
+---
+
 ## 2026-06-17: Two Papers Published in European Heart Journal-Digital Health
 
 **Updated By:** Agent
