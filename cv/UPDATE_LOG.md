@@ -4,6 +4,22 @@ This file tracks all updates made to Fengbei Liu's CV.
 
 ---
 
+## 2026-07-10: Remove Phone Number from Contact Line
+
+**Updated By:** Agent
+
+### Changes Made
+- ✅ Removed the mobile phone entry (and its `$|$` separator) from the heading contact line in fbl_cv.tex; contact line now starts with the institutional email
+- ✅ Rebuilt the PDF and bumped the homepage cache-buster (fbl_cv.pdf?v=227c34f7); verified the number no longer appears in the compiled PDF text
+- Source: Author (Fengbei Liu)
+
+### Files Updated
+- ✅ fbl_cv.tex
+- ✅ fbl_cv.pdf, ../fbl_cv.pdf
+- ✅ ../index.html (cache-buster)
+
+---
+
 ## 2026-06-17: Exclude CT-LVEF Study from Homepage News
 
 **Updated By:** Agent
