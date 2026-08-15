@@ -4,6 +4,30 @@ This file tracks all updates made to Fengbei Liu's CV.
 
 ---
 
+## 2026-08-15: Synchronize Four Google Scholar Records
+
+**Updated By:** Agent
+
+### Changes Made
+- ✅ Retained **MAdam: Metric-Aware Multi-Objective Adam** under Preprint/Under-Review and added its arXiv identifier and year
+  - Source: https://arxiv.org/abs/2606.03904
+- ✅ Expanded the full author list and added the TechRxiv year for **Agentic Large-Language-Model Systems in Medicine: A Systematic Review and Taxonomy**
+  - Source: https://doi.org/10.36227/techrxiv.175736231.12300949/v1
+- ✅ Corrected the author metadata and added the arXiv identifier and year for **Asymmetric Co-teaching with Multi-view Consensus for Noisy Label Learning**
+  - Source: https://arxiv.org/abs/2301.01143
+- ✅ Added **Automatic Segmentation of Multiple Structures in Knee Arthroscopy Using Deep Learning** to Co-author Publications
+  - Venue: IEEE Access 8, 51853–51861, 2020
+  - Source: https://doi.org/10.1109/ACCESS.2020.2980025
+- ✅ Updated the Scholar/CV audit to include both published and preprint CV entries
+
+### Files Updated
+- ✅ fbl_cv.tex
+- ✅ fbl_cv.pdf
+- ✅ ../fbl_cv.pdf
+- ✅ ../data/sync_report.md
+
+---
+
 ## 2026-07-10: Remove Phone Number from Contact Line
 
 **Updated By:** Agent

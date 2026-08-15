@@ -1,0 +1,358 @@
+{
+  "schema_version": 1,
+  "scholar_user": "oY_qRxMAAAAJ",
+  "profile_url": "https://scholar.google.com/citations?user=oY_qRxMAAAAJ&hl=en&pagesize=100",
+  "publications": [
+    {
+      "scholar_id": "j3f4tGmQtD8C",
+      "title": "Bridging Generative and Discriminative Noisy-Label Learning via Direction-Agnostic EM Formulation",
+      "authors": "F Liu, C Wang, Y Chen, Y Liu, G Carneiro",
+      "venue": "IEEE TPAMI",
+      "year": 2026,
+      "citations": 3,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:j3f4tGmQtD8C"
+    },
+    {
+      "scholar_id": "M3NEmzRMIkIC",
+      "title": "MAdam: Metric-Aware Multi-Objective Adam",
+      "authors": "F Liu, R Saluja, S Kwak, R Wang, R Deng, H Kim, JC Paetzold, ...",
+      "venue": "arXiv preprint arXiv:2606.03904",
+      "year": 2026,
+      "citations": 1,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:M3NEmzRMIkIC"
+    },
+    {
+      "scholar_id": "_Qo2XoVZTnwC",
+      "title": "HyperCT: Low-Rank Hypernet for Unified Chest CT Analysis",
+      "authors": "F Liu, S Kwak, H Phung, NB Nizam, I Richter, N Uriel, H Averbuch-Elor, ...",
+      "venue": "MIDL 2026",
+      "year": 2026,
+      "citations": 0,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:_Qo2XoVZTnwC"
+    },
+    {
+      "scholar_id": "k_IJM867U9cC",
+      "title": "RNED: Rotary Number Encoding and Decoding for Medical VLMs",
+      "authors": "F Liu, S Kwak, N Nizam, I Richter, A Beecy, J Raikhelkar, D Estrin, ...",
+      "venue": "CVPR 2026, 13722-13731",
+      "year": 2026,
+      "citations": 0,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:k_IJM867U9cC"
+    },
+    {
+      "scholar_id": "JV2RwH3_ST0C",
+      "title": "An artificial intelligence model to detect abnormal ejection fraction from non-contrast chest computed tomography: the CT-LVEF study",
+      "authors": "J Raikhelkar, Z Bai, AN Beecy, I Richter, F Liu, NB Nizam, V Kishore, ...",
+      "venue": "European Heart Journal-Digital Health, ztag088",
+      "year": 2026,
+      "citations": 2,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:JV2RwH3_ST0C"
+    },
+    {
+      "scholar_id": "isC4tDSrTZIC",
+      "title": "From Failure to Feedback: Group Revision Unlocks Hard Cases in Object-Level Grounding",
+      "authors": "Y Liu, Y Ji, A Le, J Zhu, J Pan, C Peng, J Deng, F Liu, J Wu",
+      "venue": "CVPR 2026",
+      "year": 2026,
+      "citations": 1,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:isC4tDSrTZIC"
+    },
+    {
+      "scholar_id": "4JMBOYKVnBMC",
+      "title": "Beyond Machine Interpretation: Learning from Expert Over-Reads Improves ECG Diagnosis",
+      "authors": "S Kwak, F Liu, NB Nizam, I Richter, N Uriel, PM Okin, MR Sabuncu",
+      "venue": "MIDL 2026",
+      "year": 2026,
+      "citations": 0,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:4JMBOYKVnBMC"
+    },
+    {
+      "scholar_id": "bEWYMUwI8FkC",
+      "title": "Cardio amyloid-artificial intelligence: advanced multi-modal screening for transthyretin cardiac amyloidosis in severe aortic stenosis patients",
+      "authors": "NB Nizam, AN Beecy, JW Groenendyk, F Liu, NI Barrera, C Kelsey, ...",
+      "venue": "European Heart Journal-Digital Health 7 (6), ztag064",
+      "year": 2026,
+      "citations": 0,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:bEWYMUwI8FkC"
+    },
+    {
+      "scholar_id": "hMod-77fHWUC",
+      "title": "ShapKO: Shapley-Adaptive Modality Knockout for Robust Multimodal Learning",
+      "authors": "NB Nizam, F Liu, S Kwak, M Nguyen, R Deng, MR Sabuncu",
+      "venue": "MICCAI 2026",
+      "year": 2026,
+      "citations": 0,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:hMod-77fHWUC"
+    },
+    {
+      "scholar_id": "RHpTSmoSYBkC",
+      "title": "X-Cardia: Phenotype-Guided Cross-Modal Alignment for Opportunistic Cardiac Screening on Routine Chest CT",
+      "authors": "NB Nizam, F Liu, S Kwak, I Richter, JK Raikhelkar, A Beecy, N Uriel, ...",
+      "venue": "MIDL 2026 Oral",
+      "year": 2026,
+      "citations": 0,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:RHpTSmoSYBkC"
+    },
+    {
+      "scholar_id": "qUcmZB5y_30C",
+      "title": "Cross-and intra-image prototypical learning for multi-label disease diagnosis and interpretation",
+      "authors": "C Wang, F Liu, Y Chen, H Frazer, G Carneiro",
+      "venue": "IEEE TMI",
+      "year": 2025,
+      "citations": 29,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:qUcmZB5y_30C"
+    },
+    {
+      "scholar_id": "IWHjjKOFINEC",
+      "title": "Mixture of gaussian-distributed prototypes with generative modelling for interpretable and trustworthy image recognition",
+      "authors": "C Wang, Y Chen, F Liu, Y Liu, DJ McCarthy, H Frazer, G Carneiro",
+      "venue": "IEEE TPAMI",
+      "year": 2025,
+      "citations": 14,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:IWHjjKOFINEC"
+    },
+    {
+      "scholar_id": "hFOr9nPyWt4C",
+      "title": "Agentic Large-Language-Model Systems in Medicine: A Systematic Review and Taxonomy",
+      "authors": "AM Al Radi, X Cao, F Yu, Y Liu, F Liu, C Wang, Y Chen, J Chen, H Wang, ...",
+      "venue": "",
+      "year": 2025,
+      "citations": 8,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:hFOr9nPyWt4C"
+    },
+    {
+      "scholar_id": "-f6ydRqryjwC",
+      "title": "Progressive mining and dynamic distillation of hierarchical prototypes for disease classification and localisation",
+      "authors": "C Wang, F Liu, Y Chen, CF Kwok, M Elliott, C Pena-Solorzano, ...",
+      "venue": "IEEE JBHI",
+      "year": 2025,
+      "citations": 5,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:-f6ydRqryjwC"
+    },
+    {
+      "scholar_id": "TQgYirikUcIC",
+      "title": "BackSplit: The Importance of Sub-dividing the Background in Biomedical Lesion Segmentation",
+      "authors": "R Saluja, A Cihangir, R Deng, JC Paetzold, F Liu, MR Sabuncu",
+      "venue": "CVPR 2026",
+      "year": 2025,
+      "citations": 1,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:TQgYirikUcIC"
+    },
+    {
+      "scholar_id": "7PzlFSSx8tAC",
+      "title": "Unraveling instance associations: A closer look for audio-visual segmentation",
+      "authors": "Y Chen, Y Liu, H Wang, F Liu, C Wang, H Frazer, G Carneiro",
+      "venue": "CVPR, 26497-26507",
+      "year": 2024,
+      "citations": 64,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:7PzlFSSx8tAC"
+    },
+    {
+      "scholar_id": "LkGwnXOMwfcC",
+      "title": "Translation consistent semi-supervised segmentation for 3d medical images",
+      "authors": "Y Liu, Y Tian, C Wang, Y Chen, F Liu, V Belagiannis, G Carneiro",
+      "venue": "IEEE TMI",
+      "year": 2024,
+      "citations": 46,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:LkGwnXOMwfcC"
+    },
+    {
+      "scholar_id": "kNdYIx-mwKoC",
+      "title": "BRAIxDet: Learning to detect malignant breast lesion with incomplete annotations",
+      "authors": "Y Chen, Y Liu, C Wang, M Elliott, CF Kwok, C Pena-Solorzano, Y Tian, ...",
+      "venue": "Medical image analysis 96, 103192",
+      "year": 2024,
+      "citations": 21,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:kNdYIx-mwKoC"
+    },
+    {
+      "scholar_id": "QIV2ME_5wuYC",
+      "title": "Knockout: A simple way to handle missing inputs",
+      "authors": "M Nguyen, BK Karaman, H Kim, AQ Wang, F Liu, MR Sabuncu",
+      "venue": "TMLR",
+      "year": 2024,
+      "citations": 6,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:QIV2ME_5wuYC"
+    },
+    {
+      "scholar_id": "ZeXyd9-uunAC",
+      "title": "Effective Segmentation of Post-Treatment Gliomas Using Simple Approaches: Artificial Sequence Generation and Ensemble Models",
+      "authors": "H Kim, L Milecki, MC Moghadam, F Liu, M Nguyen, E Qiu, A Thanki, ...",
+      "venue": "MICCAI BraTS Challenge 2024 Oral Presentation",
+      "year": 2024,
+      "citations": 3,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:ZeXyd9-uunAC"
+    },
+    {
+      "scholar_id": "8k81kl-MbHgC",
+      "title": "Asymmetric co-teaching with multi-view consensus for noisy label learning",
+      "authors": "F Liu, Y Chen, C Wang, Y Tain, G Carneiro",
+      "venue": "arXiv preprint arXiv:2301.01143",
+      "year": 2023,
+      "citations": 5,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:8k81kl-MbHgC"
+    },
+    {
+      "scholar_id": "MXK_kJrjxJIC",
+      "title": "Learning Support and Trivial Prototypes for Interpretable Image Classification",
+      "authors": "C Wang, Y Liu, Y Chen, F Liu, Y Tian, DJ McCarthy, H Frazer, G Carneiro",
+      "venue": "ICCV 2023, arXiv preprint arXiv:2301.04011",
+      "year": 2023,
+      "citations": 80,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:MXK_kJrjxJIC"
+    },
+    {
+      "scholar_id": "YOwf2qJgpHMC",
+      "title": "Self-supervised pseudo multi-class pre-training for unsupervised anomaly detection and segmentation in medical images",
+      "authors": "Y Tian*, F Liu*, G Pang, Y Chen, Y Liu, JW Verjans, R Singh, G Carneiro",
+      "venue": "Medical Image Analysis 90, 102930",
+      "year": 2023,
+      "citations": 77,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:YOwf2qJgpHMC"
+    },
+    {
+      "scholar_id": "ufrVoPGSRksC",
+      "title": "Unsupervised anomaly detection in medical images with a memory-augmented multi-level cross-attentional masked autoencoder",
+      "authors": "Y Tian, G Pang, Y Liu, C Wang, Y Chen, F Liu, R Singh, JW Verjans, ...",
+      "venue": "MICCAI-MLMI 2023, 11-21",
+      "year": 2023,
+      "citations": 69,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:ufrVoPGSRksC"
+    },
+    {
+      "scholar_id": "_kc_bZDykSQC",
+      "title": "An interpretable and accurate deep-learning diagnosis framework modeled with fully and semi-supervised reciprocal learning",
+      "authors": "C Wang, Y Chen, F Liu, M Elliott, CF Kwok, C Pena-Solorzano, H Frazer, ...",
+      "venue": "IEEE TMI 43 (1), 392-404",
+      "year": 2023,
+      "citations": 60,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:_kc_bZDykSQC"
+    },
+    {
+      "scholar_id": "Se3iqnhoufwC",
+      "title": "NVUM: Non-Volatile Unbiased Memory for Robust Medical Image Classification",
+      "authors": "F Liu, Y Chen, Y Tian, Y Liu, C Wang, V Belagiannis, G Carneiro",
+      "venue": "MICCAI 2022, arXiv: 2103.04053",
+      "year": 2022,
+      "citations": 24,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:Se3iqnhoufwC"
+    },
+    {
+      "scholar_id": "_FxGoFyzp5QC",
+      "title": "Contrastive Transformer-based Multiple Instance Learning for Weakly Supervised Polyp Frame Detection",
+      "authors": "Y Tian, G Pang, F Liu, Y Liu, C Wang, Y Chen, JW Verjans, G Carneiro",
+      "venue": "MICCAI 2022",
+      "year": 2022,
+      "citations": 63,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:_FxGoFyzp5QC"
+    },
+    {
+      "scholar_id": "0EnyYjriUFMC",
+      "title": "Multi-view Local Co-occurrence and Global Consistency Learning Improve Mammogram Classification Generalisation",
+      "authors": "Y Chen, H Wang, C Wang, Y Tian, F Liu, Y Liu, M Elliott, DJ McCarthy, ...",
+      "venue": "MICCAI 2022, 3-13",
+      "year": 2022,
+      "citations": 44,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:0EnyYjriUFMC"
+    },
+    {
+      "scholar_id": "hqOjcs7Dif8C",
+      "title": "Knowledge Distillation to Ensemble Global and Interpretable Prototype-Based Mammogram Classification Models",
+      "authors": "C Wang, Y Chen, Y Liu, Y Tian, F Liu, DJ McCarthy, M Elliott, H Frazer, ...",
+      "venue": "MICCAI 2022, 14-24",
+      "year": 2022,
+      "citations": 35,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:hqOjcs7Dif8C"
+    },
+    {
+      "scholar_id": "Zph67rFs4hoC",
+      "title": "BoMD: Bag of Multi-label Descriptors for Noisy Chest X-ray Classification",
+      "authors": "Y Chen*, F Liu*, H Wang, C Wang, Y Tian, Y Liu, G Carneiro",
+      "venue": "ICCV 2023, arXiv preprint arXiv:2203.01937",
+      "year": 2022,
+      "citations": 25,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:Zph67rFs4hoC"
+    },
+    {
+      "scholar_id": "NMxIlDl6LWMC",
+      "title": "Translation consistent semi-supervised segmentation for 3d medical images",
+      "authors": "Y Liu, Y Tian, C Wang, Y Chen, F Liu, V Belagiannis, G Carneiro",
+      "venue": "arXiv preprint arXiv:2203.14523",
+      "year": 2022,
+      "citations": 11,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:NMxIlDl6LWMC"
+    },
+    {
+      "scholar_id": "YsMSGLbcyi4C",
+      "title": "ACPL: Anti-curriculum Pseudo-labelling for Semi-supervised Medical Image Classification",
+      "authors": "F Liu*, Y Tian*, Y Chen, Y Liu, V Belagiannis, G Carneiro",
+      "venue": "CVPR 2022",
+      "year": 2021,
+      "citations": 186,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:YsMSGLbcyi4C"
+    },
+    {
+      "scholar_id": "2osOgNQ5qMEC",
+      "title": "Self-supervised Mean Teacher for Semi-supervised Chest X-ray Classification",
+      "authors": "F Liu, Y Tian, FR Cordeiro, V Belagiannis, I Reid, G Carneiro",
+      "venue": "MICCAI-MLMI 2021",
+      "year": 2021,
+      "citations": 59,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:2osOgNQ5qMEC"
+    },
+    {
+      "scholar_id": "Y0pCki6q_DkC",
+      "title": "Perturbed and Strict Mean Teachers for Semi-supervised Semantic Segmentation",
+      "authors": "Y Liu, Y Tian, Y Chen, F Liu, V Belagiannis, G Carneiro",
+      "venue": "CVPR 2022",
+      "year": 2021,
+      "citations": 486,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:Y0pCki6q_DkC"
+    },
+    {
+      "scholar_id": "Tyk-4Ss8FVUC",
+      "title": "Pixel-wise Energy-biased Abstention Learning for Anomaly Segmentation on Complex Urban Driving Scenes",
+      "authors": "Y Tian, Y Liu, G Pang, F Liu, Y Chen, G Carneiro",
+      "venue": "ECCV-Oral 2022",
+      "year": 2021,
+      "citations": 170,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:Tyk-4Ss8FVUC"
+    },
+    {
+      "scholar_id": "d1gkVwhDpl0C",
+      "title": "Constrained contrastive distribution learning for unsupervised anomaly detection and localisation in medical images",
+      "authors": "Y Tian, G Pang, F Liu, Y Chen, SH Shin, JW Verjans, R Singh, G Carneiro",
+      "venue": "MICCAI 2021, 128-140",
+      "year": 2021,
+      "citations": 114,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:d1gkVwhDpl0C"
+    },
+    {
+      "scholar_id": "IjCSPb-OGe4C",
+      "title": "3D Semantic Mapping from Arthroscopy using Out-of-distribution Pose and Depth and In-distribution Segmentation Training",
+      "authors": "Y Jonmohamadi, S Ali, F Liu, J Roberts, R Crawford, G Carneiro, ...",
+      "venue": "MICCAI 2021",
+      "year": 2021,
+      "citations": 15,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:IjCSPb-OGe4C"
+    },
+    {
+      "scholar_id": "qjMakFHDy7sC",
+      "title": "Self-supervised depth estimation to regularise semantic segmentation in knee arthroscopy",
+      "authors": "F Liu, Y Jonmohamadi, G Maicas, AK Pandey, G Carneiro",
+      "venue": "MICCAI 2020, 594-603",
+      "year": 2020,
+      "citations": 25,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:qjMakFHDy7sC"
+    },
+    {
+      "scholar_id": "UeHWp8X0CEIC",
+      "title": "Automatic segmentation of multiple structures in knee arthroscopy using deep learning",
+      "authors": "Y Jonmohamadi, Y Takeda, F Liu, F Sasazawa, G Maicas, R Crawford, ...",
+      "venue": "IEEE access 8, 51853-51861",
+      "year": 2020,
+      "citations": 48,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:UeHWp8X0CEIC"
+    }
+  ]
+}

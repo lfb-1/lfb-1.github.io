@@ -6,8 +6,9 @@ This folder contains the most up-to-date CV for Fengbei Liu.
 
 - `fbl_cv.tex` - LaTeX source file
 - `fbl_cv.pdf` - Compiled PDF (last updated: 2026-01-19, 3:00 PM)
-- `WORKFLOW.md` - Generic workflow for updating the CV
+- `WORKFLOW.md` - Review-gated workflow for updating the CV
 - `UPDATE_LOG.md` - History of CV updates
+- `../SYNC.md` - Homepage, CV, and Google Scholar synchronization contract
 
 ## Quick Compile
 
@@ -37,12 +38,11 @@ After commit + push inside `Homepage/`, GitHub Pages rebuilds automatically.
 
 **Total Publications:** 48 papers
 
-## Update Schedule
+## Synchronization Schedule
 
-Recommended update cadence:
-- **Monthly:** Check Google Scholar, ResearchGate, and OpenReview for new publications
-- **Quarterly:** Comprehensive review of all preprints for publication status
-- **Before conferences:** Check for accepted papers at major venues (CVPR, ICCV, ECCV, MICCAI, NeurIPS, ICLR, ICML)
+The **Sync Google Scholar** GitHub Action runs monthly and opens a review pull request when the public Scholar profile changes. It refreshes the homepage publication list and writes `../data/sync_report.md`; it does not copy abbreviated Scholar metadata directly into the CV. Review Scholar/CV differences and rebuild both PDF copies before merging. See `../SYNC.md` for details.
+
+Additional checks remain useful before major conference deadlines and when a preprint changes publication status.
 
 ## Contact Information
 
