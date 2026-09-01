@@ -46,6 +46,44 @@ DISPLAY_COUNT = 6
 HOMEPAGE_EXCLUDE_TITLE_FRAGMENTS = ("CT-LVEF study",)
 START_MARKER = "<!-- PUBLICATIONS_AUTO:START -->"
 END_MARKER = "<!-- PUBLICATIONS_AUTO:END -->"
+JOURNAL_VENUE_NAMES = (
+    (
+        "IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)",
+        (
+            "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+            "IEEE TPAMI",
+            "TPAMI",
+        ),
+    ),
+    (
+        "IEEE Transactions on Image Processing (TIP)",
+        (
+            "IEEE Transactions on Image Processing",
+            "IEEE TIP",
+            "TIP",
+        ),
+    ),
+    (
+        "IEEE Transactions on Medical Imaging (TMI)",
+        ("IEEE Transactions on Medical Imaging", "IEEE TMI", "TMI"),
+    ),
+    (
+        "IEEE Journal of Biomedical and Health Informatics (JBHI)",
+        (
+            "IEEE Journal of Biomedical and Health Informatics",
+            "IEEE JBHI",
+            "JBHI",
+        ),
+    ),
+    (
+        "Transactions on Machine Learning Research (TMLR)",
+        ("Transactions on Machine Learning Research", "TMLR"),
+    ),
+    (
+        "Medical Image Analysis (MedIA)",
+        ("Medical Image Analysis", "MedIA"),
+    ),
+)
 
 
 @dataclass(frozen=True)
@@ -268,8 +306,21 @@ def write_snapshot(path: Path, records: list[Publication]) -> None:
     path.write_text(content, encoding="utf-8")
 
 
+def format_venue(venue: str) -> str:
+    """Expand known journal aliases while preserving volume and page details."""
+    for canonical, aliases in JOURNAL_VENUE_NAMES:
+        for alias in sorted((*aliases, canonical), key=len, reverse=True):
+            match = re.match(
+                rf"{re.escape(alias)}(?=$|[\s,])", venue, flags=re.IGNORECASE
+            )
+            if match:
+                return canonical + venue[match.end() :]
+    return venue
+
+
 def render_publication(record: Publication) -> str:
     year = str(record.year) if record.year else "—"
+    venue = format_venue(record.venue)
     return (
         '          <li class="publication">\n'
         f'            <span class="publication-year">{escape(year)}</span>\n'
@@ -277,7 +328,7 @@ def render_publication(record: Publication) -> str:
         f'<a class="publication-title" href="{escape(record.url, quote=True)}" '
         f'target="_blank" rel="noopener">{escape(record.title)}</a>'
         f'<span class="publication-authors">{escape(record.authors)}</span>'
-        f'<span class="publication-venue">{escape(record.venue)}</span></div>\n'
+        f'<span class="publication-venue">{escape(venue)}</span></div>\n'
         "          </li>"
     )
 

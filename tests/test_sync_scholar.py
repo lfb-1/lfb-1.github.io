@@ -84,6 +84,23 @@ class ScholarParserTests(unittest.TestCase):
         self.assertEqual(ordered[0].scholar_id, "abc123")
         self.assertEqual(ordered[1].scholar_id, "coauthor")
 
+    def test_format_venue_expands_journal_alias_and_preserves_details(self):
+        self.assertEqual(
+            sync_scholar.format_venue("IEEE TPAMI 48 (1), 1-10"),
+            (
+                "IEEE Transactions on Pattern Analysis and Machine Intelligence "
+                "(TPAMI) 48 (1), 1-10"
+            ),
+        )
+        self.assertEqual(
+            sync_scholar.format_venue("IEEE Transactions on Image Processing"),
+            "IEEE Transactions on Image Processing (TIP)",
+        )
+        self.assertEqual(
+            sync_scholar.format_venue("CVPR 2026"),
+            "CVPR 2026",
+        )
+
     def test_update_homepage_replaces_only_marked_block(self):
         records = sync_scholar.parse_profile(SAMPLE_HTML)
         initial = "before\n<!-- PUBLICATIONS_AUTO:START -->\nold\n<!-- PUBLICATIONS_AUTO:END -->\nafter\n"
