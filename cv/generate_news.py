@@ -137,6 +137,7 @@ def parse_publications(tex_content):
 
         results.append({
             'title': title,
+            'authors': strip_latex(authors_raw),
             'venue': venue_raw,
             'year': year,
             'first_author': first_author,

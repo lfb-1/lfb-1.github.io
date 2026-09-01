@@ -318,22 +318,27 @@ def format_venue(venue: str) -> str:
     return venue
 
 
-def render_publication(record: Publication) -> str:
+def render_publication(record: Publication, authors: str | None = None) -> str:
     year = str(record.year) if record.year else "—"
     venue = format_venue(record.venue)
+    display_authors = authors or record.authors
     return (
         '          <li class="publication">\n'
         f'            <span class="publication-year">{escape(year)}</span>\n'
         "            <div>"
         f'<a class="publication-title" href="{escape(record.url, quote=True)}" '
         f'target="_blank" rel="noopener">{escape(record.title)}</a>'
-        f'<span class="publication-authors">{escape(record.authors)}</span>'
+        f'<span class="publication-authors">{escape(display_authors)}</span>'
         f'<span class="publication-venue">{escape(venue)}</span></div>\n'
         "          </li>"
     )
 
 
-def update_homepage(path: Path, records: list[Publication]) -> None:
+def update_homepage(
+    path: Path,
+    records: list[Publication],
+    cv_records: list[dict[str, object]] | None = None,
+) -> None:
     content = path.read_text(encoding="utf-8")
     if START_MARKER not in content or END_MARKER not in content:
         raise RuntimeError(f"Publication markers are missing from {path}")
@@ -346,7 +351,18 @@ def update_homepage(path: Path, records: list[Publication]) -> None:
         )
     ]
     selected = sorted(eligible, key=publication_sort_key)[:DISPLAY_COUNT]
-    block = "\n".join(render_publication(record) for record in selected)
+    author_overrides: dict[str, str] = {}
+    if cv_records:
+        matches, _, _ = match_inventory(records, cv_records)
+        author_overrides = {
+            publication.scholar_id: str(cv_record.get("authors", "")).strip()
+            for publication, cv_record, _ in matches
+            if str(cv_record.get("authors", "")).strip()
+        }
+    block = "\n".join(
+        render_publication(record, author_overrides.get(record.scholar_id))
+        for record in selected
+    )
     pattern = re.compile(
         rf"({re.escape(START_MARKER)}\n).*?(\n\s*{re.escape(END_MARKER)})",
         flags=re.DOTALL,
@@ -599,7 +615,7 @@ def main() -> int:
 
     cv_records = load_cv_publications(ROOT / "cv" / "fbl_cv.tex")
     write_snapshot(snapshot_path, records)
-    update_homepage(ROOT / "index.html", records)
+    update_homepage(ROOT / "index.html", records, cv_records)
     write_sync_report(ROOT / "data" / "sync_report.md", records, cv_records)
     print(
         f"Synchronized {len(records)} Scholar records; "

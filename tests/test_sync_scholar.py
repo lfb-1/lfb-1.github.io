@@ -117,6 +117,26 @@ class ScholarParserTests(unittest.TestCase):
         self.assertTrue(updated.startswith("before\n"))
         self.assertTrue(updated.endswith("\nafter\n"))
 
+    def test_update_homepage_uses_full_cv_authors(self):
+        records = sync_scholar.parse_profile(SAMPLE_HTML)
+        cv_records = [
+            {
+                "title": "A Paper & Its Result",
+                "authors": "Fengbei Liu, Alice Author",
+                "venue": "CVPR",
+                "year": "2026",
+            }
+        ]
+        initial = "<!-- PUBLICATIONS_AUTO:START -->\nold\n<!-- PUBLICATIONS_AUTO:END -->"
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "index.html"
+            path.write_text(initial, encoding="utf-8")
+            sync_scholar.update_homepage(path, records, cv_records)
+            updated = path.read_text(encoding="utf-8")
+
+        self.assertIn("Fengbei Liu, Alice Author", updated)
+        self.assertNotIn(">F Liu, A Author</span>", updated)
+
     def test_homepage_preserves_deliberate_title_exclusions(self):
         excluded = sync_scholar.Publication(
             scholar_id="excluded",
@@ -185,6 +205,8 @@ class InventoryMatchTests(unittest.TestCase):
             {record["entry_type"] for record in records},
             {"publication", "preprint"},
         )
+        self.assertEqual(records[0]["authors"], "Fengbei Liu, A Author")
+        self.assertEqual(records[1]["authors"], "Fengbei Liu, B Author")
 
     def test_fuzzy_title_match_accepts_minor_scholar_title_difference(self):
         scholar = [
