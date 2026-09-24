@@ -318,9 +318,13 @@ def format_venue(venue: str) -> str:
     return venue
 
 
-def render_publication(record: Publication, authors: str | None = None) -> str:
+def render_publication(
+    record: Publication,
+    authors: str | None = None,
+    venue: str | None = None,
+) -> str:
     year = str(record.year) if record.year else "—"
-    venue = format_venue(record.venue)
+    display_venue = format_venue(venue or record.venue)
     display_authors = authors or record.authors
     return (
         '          <li class="publication">\n'
@@ -329,7 +333,7 @@ def render_publication(record: Publication, authors: str | None = None) -> str:
         f'<a class="publication-title" href="{escape(record.url, quote=True)}" '
         f'target="_blank" rel="noopener">{escape(record.title)}</a>'
         f'<span class="publication-authors">{escape(display_authors)}</span>'
-        f'<span class="publication-venue">{escape(venue)}</span></div>\n'
+        f'<span class="publication-venue">{escape(display_venue)}</span></div>\n'
         "          </li>"
     )
 
@@ -352,15 +356,29 @@ def update_homepage(
     ]
     selected = sorted(eligible, key=publication_sort_key)[:DISPLAY_COUNT]
     author_overrides: dict[str, str] = {}
+    venue_overrides: dict[str, str] = {}
     if cv_records:
         matches, _, _ = match_inventory(records, cv_records)
-        author_overrides = {
-            publication.scholar_id: str(cv_record.get("authors", "")).strip()
-            for publication, cv_record, _ in matches
-            if str(cv_record.get("authors", "")).strip()
-        }
+        for publication, cv_record, _ in matches:
+            authors = str(cv_record.get("authors", "")).strip()
+            if authors:
+                author_overrides[publication.scholar_id] = authors
+            if (
+                "preprint" in publication.venue.casefold()
+                and cv_record.get("entry_type") == "publication"
+            ):
+                venue = str(cv_record.get("venue", "")).strip()
+                year = str(cv_record.get("year", "")).strip()
+                if venue:
+                    venue_overrides[publication.scholar_id] = " ".join(
+                        part for part in (venue, year) if part
+                    )
     block = "\n".join(
-        render_publication(record, author_overrides.get(record.scholar_id))
+        render_publication(
+            record,
+            author_overrides.get(record.scholar_id),
+            venue_overrides.get(record.scholar_id),
+        )
         for record in selected
     )
     pattern = re.compile(

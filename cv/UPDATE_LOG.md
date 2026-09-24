@@ -4,6 +4,27 @@ This file tracks all updates made to Fengbei Liu's CV.
 
 ---
 
+## 2026-09-24: MAdam Accepted to NeurIPS 2026
+
+**Updated By:** Agent
+
+### Changes Made
+- ✅ Moved **MAdam: Metric-Aware Multi-Objective Adam** from Preprint/Under-Review to First-author Publications
+  - Venue: NeurIPS 2026
+  - Source: Author (Fengbei Liu)
+- ✅ Updated the homepage venue from the arXiv preprint record to NeurIPS 2026
+- ✅ Updated Scholar synchronization to preserve curated CV acceptance metadata while Scholar still lists a preprint
+
+### Files Updated
+- ✅ fbl_cv.tex
+- ✅ fbl_cv.pdf
+- ✅ ../fbl_cv.pdf
+- ✅ ../index.html
+- ✅ ../scripts/sync_scholar.py
+- ✅ ../tests/test_sync_scholar.py
+
+---
+
 ## 2026-08-15: Synchronize Four Google Scholar Records
 
 **Updated By:** Agent

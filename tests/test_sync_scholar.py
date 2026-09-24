@@ -137,6 +137,35 @@ class ScholarParserTests(unittest.TestCase):
         self.assertIn("Fengbei Liu, Alice Author", updated)
         self.assertNotIn(">F Liu, A Author</span>", updated)
 
+    def test_update_homepage_prefers_cv_acceptance_over_preprint_venue(self):
+        publication = sync_scholar.Publication(
+            scholar_id="madam",
+            title="MAdam: Metric-Aware Multi-Objective Adam",
+            authors="F Liu, A Author",
+            venue="arXiv preprint arXiv:2606.03904",
+            year=2026,
+            citations=1,
+            url="https://example.test/madam",
+        )
+        cv_records = [
+            {
+                "title": publication.title,
+                "authors": "Fengbei Liu, Alice Author",
+                "venue": "NeurIPS",
+                "year": "2026",
+                "entry_type": "publication",
+            }
+        ]
+        initial = "<!-- PUBLICATIONS_AUTO:START -->\nold\n<!-- PUBLICATIONS_AUTO:END -->"
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "index.html"
+            path.write_text(initial, encoding="utf-8")
+            sync_scholar.update_homepage(path, [publication], cv_records)
+            updated = path.read_text(encoding="utf-8")
+
+        self.assertIn("NeurIPS 2026", updated)
+        self.assertNotIn("arXiv preprint", updated)
+
     def test_homepage_preserves_deliberate_title_exclusions(self):
         excluded = sync_scholar.Publication(
             scholar_id="excluded",
