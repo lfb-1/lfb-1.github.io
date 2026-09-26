@@ -4,6 +4,24 @@ This file tracks all updates made to Fengbei Liu's CV.
 
 ---
 
+## 2026-09-24: Standardize Venue Names
+
+**Updated By:** Agent
+
+### Changes Made
+- ✅ Standardized journal labels using full titles with established abbreviations, including TPAMI, TIP, TMI, JBHI, MedIA, TMLR, and EHJ-DH
+- ✅ Standardized conference labels and corrected the `MICCAI` venue spelling
+- ✅ Updated homepage venue rendering and Scholar synchronization aliases
+
+### Files Updated
+- ✅ fbl_cv.tex
+- ✅ cv/generate_news.py
+- ✅ ../index.html
+- ✅ ../scripts/sync_scholar.py
+- ✅ ../tests/test_sync_scholar.py
+
+---
+
 ## 2026-09-24: Add MedCure to Publications
 
 **Updated By:** Agent

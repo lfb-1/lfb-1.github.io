@@ -10,28 +10,34 @@ import sys
 from collections import defaultdict
 from html import escape
 
-# Normalize long journal names to short forms
+# Normalize journal names to one canonical display form.
 VENUE_NORMALIZE = {
     'IEEE Transactions on Pattern Analysis and Machine Intelligence': 'IEEE TPAMI',
+    'IEEE Transactions on Image Processing': 'IEEE TIP',
     'IEEE Transactions on Medical Imaging': 'IEEE TMI',
     'IEEE Journal of Biomedical and Health Informatics': 'IEEE JBHI',
-    'Medical Image Analysis': 'Medical Image Analysis',
+    'Medical Image Analysis': 'Medical Image Analysis (MedIA)',
     'Transactions on Machine Learning Research': 'TMLR',
+    'European Heart Journal - Digital Health': 'European Heart Journal - Digital Health (EHJ-DH)',
+    'European Heart Journal-Digital Health': 'European Heart Journal - Digital Health (EHJ-DH)',
 }
 
 VENUE_ALIASES = {'MICCA': 'MICCAI'}
 
-JOURNALS = {'IEEE TPAMI', 'IEEE TMI', 'IEEE JBHI', 'Medical Image Analysis', 'TMLR',
-            'European Heart Journal-Digital Health'}
+JOURNALS = {
+    'IEEE TPAMI', 'IEEE TIP', 'IEEE TMI', 'IEEE JBHI',
+    'Medical Image Analysis (MedIA)', 'TMLR',
+    'European Heart Journal - Digital Health (EHJ-DH)',
+}
 
 # Approximate month (MM) for acceptance/publication announcements
 VENUE_MONTH = {
     'CVPR': '02', 'ICCV': '07', 'ECCV': '07',
     'MIDL': '02', 'MICCAI': '06', 'MICCAI-MLMI': '06',
     'NeurIPS': '09', 'ICLR': '01', 'ICML': '05', 'BMVC': '08',
-    'IEEE TPAMI': '03', 'IEEE TMI': '03', 'IEEE JBHI': '08',
-    'Medical Image Analysis': '03', 'TMLR': '07',
-    'European Heart Journal-Digital Health': '06',
+    'IEEE TPAMI': '03', 'IEEE TIP': '03', 'IEEE TMI': '03', 'IEEE JBHI': '08',
+    'Medical Image Analysis (MedIA)': '03', 'TMLR': '07',
+    'European Heart Journal - Digital Health (EHJ-DH)': '06',
 }
 
 VISIBLE_COUNT = 5

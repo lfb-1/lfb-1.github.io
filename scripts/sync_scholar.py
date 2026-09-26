@@ -83,6 +83,14 @@ JOURNAL_VENUE_NAMES = (
         "Medical Image Analysis (MedIA)",
         ("Medical Image Analysis", "MedIA"),
     ),
+    (
+        "European Heart Journal - Digital Health (EHJ-DH)",
+        (
+            "European Heart Journal - Digital Health",
+            "European Heart Journal-Digital Health",
+            "EHJ-DH",
+        ),
+    ),
 )
 
 

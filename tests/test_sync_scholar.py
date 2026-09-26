@@ -100,6 +100,12 @@ class ScholarParserTests(unittest.TestCase):
             sync_scholar.format_venue("CVPR 2026"),
             "CVPR 2026",
         )
+        self.assertEqual(
+            sync_scholar.format_venue(
+                "European Heart Journal-Digital Health 7 (6), ztag064"
+            ),
+            "European Heart Journal - Digital Health (EHJ-DH) 7 (6), ztag064",
+        )
 
     def test_update_homepage_replaces_only_marked_block(self):
         records = sync_scholar.parse_profile(SAMPLE_HTML)
