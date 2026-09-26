@@ -4,6 +4,27 @@ This file tracks all updates made to Fengbei Liu's CV.
 
 ---
 
+## 2026-09-24: Add MedCure to Publications
+
+**Updated By:** Agent
+
+### Changes Made
+- ✅ Added **MedCure: Medical Data Curation for Efficient Vision-Language Pretraining** to Co-author Publications
+  - Authors: Chong Wang, Fengbei Liu, Yuyuan Liu, Yuanhong Chen, Yu Tian, Leyuan Fang
+  - Venue: IEEE Transactions on Image Processing (TIP) 2026
+  - Source: [Google Scholar](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:YFjsv_pBGBYC)
+- ✅ Marked the Scholar/CV inventory as matched
+
+### Files Updated
+- ✅ fbl_cv.tex
+- ✅ fbl_cv.pdf
+- ✅ ../fbl_cv.pdf
+- ✅ ../index.html
+- ✅ ../data/scholar.json
+- ✅ ../data/sync_report.md
+
+---
+
 ## 2026-09-24: MAdam Accepted to NeurIPS 2026
 
 **Updated By:** Agent
