@@ -169,7 +169,7 @@ class ScholarParserTests(unittest.TestCase):
     def test_homepage_preserves_deliberate_title_exclusions(self):
         excluded = sync_scholar.Publication(
             scholar_id="excluded",
-            title="An example: the CT-LVEF study",
+            title="An example: the CT–LVEF study",
             authors="F Liu",
             venue="Journal",
             year=2027,

@@ -43,7 +43,7 @@ USER_AGENT = (
 MIN_EXPECTED_RECORDS = 10
 DISPLAY_COUNT = 6
 # Preserve deliberate homepage exclusions from the previous CV-to-news workflow.
-HOMEPAGE_EXCLUDE_TITLE_FRAGMENTS = ("CT-LVEF study",)
+HOMEPAGE_EXCLUDE_TITLE_FRAGMENTS = ("CT-LVEF study", "CT–LVEF study")
 START_MARKER = "<!-- PUBLICATIONS_AUTO:START -->"
 END_MARKER = "<!-- PUBLICATIONS_AUTO:END -->"
 JOURNAL_VENUE_NAMES = (

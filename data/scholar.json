@@ -9,16 +9,16 @@
       "authors": "F Liu, C Wang, Y Chen, Y Liu, G Carneiro",
       "venue": "IEEE TPAMI",
       "year": 2026,
-      "citations": 3,
+      "citations": 4,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:j3f4tGmQtD8C"
     },
     {
       "scholar_id": "M3NEmzRMIkIC",
       "title": "MAdam: Metric-Aware Multi-Objective Adam",
       "authors": "F Liu, R Saluja, S Kwak, R Wang, R Deng, H Kim, JC Paetzold, ...",
-      "venue": "arXiv preprint arXiv:2606.03904",
+      "venue": "NeurIPS 2026",
       "year": 2026,
-      "citations": 1,
+      "citations": 2,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:M3NEmzRMIkIC"
     },
     {
@@ -41,12 +41,21 @@
     },
     {
       "scholar_id": "JV2RwH3_ST0C",
-      "title": "An artificial intelligence model to detect abnormal ejection fraction from non-contrast chest computed tomography: the CT-LVEF study",
+      "title": "An artificial intelligence model to detect abnormal ejection fraction from non-contrast chest computed tomography: the CT–LVEF study",
       "authors": "J Raikhelkar, Z Bai, AN Beecy, I Richter, F Liu, NB Nizam, V Kishore, ...",
-      "venue": "European Heart Journal-Digital Health, ztag088",
+      "venue": "European Heart Journal-Digital Health 7 (6), ztag088",
       "year": 2026,
-      "citations": 2,
+      "citations": 3,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:JV2RwH3_ST0C"
+    },
+    {
+      "scholar_id": "bEWYMUwI8FkC",
+      "title": "Cardio amyloid-artificial intelligence: advanced multi-modal screening for transthyretin cardiac amyloidosis in severe aortic stenosis patients",
+      "authors": "NB Nizam, AN Beecy, JW Groenendyk, F Liu, NI Barrera, C Kelsey, ...",
+      "venue": "European Heart Journal-Digital Health 7 (6), ztag064",
+      "year": 2026,
+      "citations": 1,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:bEWYMUwI8FkC"
     },
     {
       "scholar_id": "isC4tDSrTZIC",
@@ -67,13 +76,13 @@
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:4JMBOYKVnBMC"
     },
     {
-      "scholar_id": "bEWYMUwI8FkC",
-      "title": "Cardio amyloid-artificial intelligence: advanced multi-modal screening for transthyretin cardiac amyloidosis in severe aortic stenosis patients",
-      "authors": "NB Nizam, AN Beecy, JW Groenendyk, F Liu, NI Barrera, C Kelsey, ...",
-      "venue": "European Heart Journal-Digital Health 7 (6), ztag064",
+      "scholar_id": "YFjsv_pBGBYC",
+      "title": "MedCure: Medical Data Curation for Efficient Vision-Language Pretraining",
+      "authors": "C Wang, F Liu, Y Liu, Y Chen, Y Tian, L Fang",
+      "venue": "IEEE Transactions on Image Processing",
       "year": 2026,
       "citations": 0,
-      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:bEWYMUwI8FkC"
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:YFjsv_pBGBYC"
     },
     {
       "scholar_id": "hMod-77fHWUC",
@@ -99,7 +108,7 @@
       "authors": "C Wang, F Liu, Y Chen, H Frazer, G Carneiro",
       "venue": "IEEE TMI",
       "year": 2025,
-      "citations": 29,
+      "citations": 35,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:qUcmZB5y_30C"
     },
     {
@@ -108,7 +117,7 @@
       "authors": "C Wang, Y Chen, F Liu, Y Liu, DJ McCarthy, H Frazer, G Carneiro",
       "venue": "IEEE TPAMI",
       "year": 2025,
-      "citations": 14,
+      "citations": 19,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:IWHjjKOFINEC"
     },
     {
@@ -117,7 +126,7 @@
       "authors": "AM Al Radi, X Cao, F Yu, Y Liu, F Liu, C Wang, Y Chen, J Chen, H Wang, ...",
       "venue": "",
       "year": 2025,
-      "citations": 8,
+      "citations": 11,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:hFOr9nPyWt4C"
     },
     {
@@ -135,7 +144,7 @@
       "authors": "R Saluja, A Cihangir, R Deng, JC Paetzold, F Liu, MR Sabuncu",
       "venue": "CVPR 2026",
       "year": 2025,
-      "citations": 1,
+      "citations": 2,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:TQgYirikUcIC"
     },
     {
@@ -144,7 +153,7 @@
       "authors": "Y Chen, Y Liu, H Wang, F Liu, C Wang, H Frazer, G Carneiro",
       "venue": "CVPR, 26497-26507",
       "year": 2024,
-      "citations": 64,
+      "citations": 67,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:7PzlFSSx8tAC"
     },
     {
@@ -153,7 +162,7 @@
       "authors": "Y Liu, Y Tian, C Wang, Y Chen, F Liu, V Belagiannis, G Carneiro",
       "venue": "IEEE TMI",
       "year": 2024,
-      "citations": 46,
+      "citations": 51,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:LkGwnXOMwfcC"
     },
     {
@@ -162,7 +171,7 @@
       "authors": "Y Chen, Y Liu, C Wang, M Elliott, CF Kwok, C Pena-Solorzano, Y Tian, ...",
       "venue": "Medical image analysis 96, 103192",
       "year": 2024,
-      "citations": 21,
+      "citations": 24,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:kNdYIx-mwKoC"
     },
     {
@@ -171,7 +180,7 @@
       "authors": "M Nguyen, BK Karaman, H Kim, AQ Wang, F Liu, MR Sabuncu",
       "venue": "TMLR",
       "year": 2024,
-      "citations": 6,
+      "citations": 7,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:QIV2ME_5wuYC"
     },
     {
@@ -198,7 +207,7 @@
       "authors": "C Wang, Y Liu, Y Chen, F Liu, Y Tian, DJ McCarthy, H Frazer, G Carneiro",
       "venue": "ICCV 2023, arXiv preprint arXiv:2301.04011",
       "year": 2023,
-      "citations": 80,
+      "citations": 84,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:MXK_kJrjxJIC"
     },
     {
@@ -207,7 +216,7 @@
       "authors": "Y Tian*, F Liu*, G Pang, Y Chen, Y Liu, JW Verjans, R Singh, G Carneiro",
       "venue": "Medical Image Analysis 90, 102930",
       "year": 2023,
-      "citations": 77,
+      "citations": 81,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:YOwf2qJgpHMC"
     },
     {
@@ -216,7 +225,7 @@
       "authors": "Y Tian, G Pang, Y Liu, C Wang, Y Chen, F Liu, R Singh, JW Verjans, ...",
       "venue": "MICCAI-MLMI 2023, 11-21",
       "year": 2023,
-      "citations": 69,
+      "citations": 70,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:ufrVoPGSRksC"
     },
     {
@@ -225,7 +234,7 @@
       "authors": "C Wang, Y Chen, F Liu, M Elliott, CF Kwok, C Pena-Solorzano, H Frazer, ...",
       "venue": "IEEE TMI 43 (1), 392-404",
       "year": 2023,
-      "citations": 60,
+      "citations": 62,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:_kc_bZDykSQC"
     },
     {
@@ -243,7 +252,7 @@
       "authors": "Y Tian, G Pang, F Liu, Y Liu, C Wang, Y Chen, JW Verjans, G Carneiro",
       "venue": "MICCAI 2022",
       "year": 2022,
-      "citations": 63,
+      "citations": 65,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:_FxGoFyzp5QC"
     },
     {
@@ -252,7 +261,7 @@
       "authors": "Y Chen, H Wang, C Wang, Y Tian, F Liu, Y Liu, M Elliott, DJ McCarthy, ...",
       "venue": "MICCAI 2022, 3-13",
       "year": 2022,
-      "citations": 44,
+      "citations": 45,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:0EnyYjriUFMC"
     },
     {
@@ -261,7 +270,7 @@
       "authors": "C Wang, Y Chen, Y Liu, Y Tian, F Liu, DJ McCarthy, M Elliott, H Frazer, ...",
       "venue": "MICCAI 2022, 14-24",
       "year": 2022,
-      "citations": 35,
+      "citations": 37,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:hqOjcs7Dif8C"
     },
     {
@@ -288,7 +297,7 @@
       "authors": "F Liu*, Y Tian*, Y Chen, Y Liu, V Belagiannis, G Carneiro",
       "venue": "CVPR 2022",
       "year": 2021,
-      "citations": 186,
+      "citations": 194,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:YsMSGLbcyi4C"
     },
     {
@@ -297,7 +306,7 @@
       "authors": "F Liu, Y Tian, FR Cordeiro, V Belagiannis, I Reid, G Carneiro",
       "venue": "MICCAI-MLMI 2021",
       "year": 2021,
-      "citations": 59,
+      "citations": 61,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:2osOgNQ5qMEC"
     },
     {
@@ -306,7 +315,7 @@
       "authors": "Y Liu, Y Tian, Y Chen, F Liu, V Belagiannis, G Carneiro",
       "venue": "CVPR 2022",
       "year": 2021,
-      "citations": 486,
+      "citations": 495,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:Y0pCki6q_DkC"
     },
     {
@@ -315,7 +324,7 @@
       "authors": "Y Tian, Y Liu, G Pang, F Liu, Y Chen, G Carneiro",
       "venue": "ECCV-Oral 2022",
       "year": 2021,
-      "citations": 170,
+      "citations": 175,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:Tyk-4Ss8FVUC"
     },
     {
@@ -324,7 +333,7 @@
       "authors": "Y Tian, G Pang, F Liu, Y Chen, SH Shin, JW Verjans, R Singh, G Carneiro",
       "venue": "MICCAI 2021, 128-140",
       "year": 2021,
-      "citations": 114,
+      "citations": 115,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:d1gkVwhDpl0C"
     },
     {
@@ -342,7 +351,7 @@
       "authors": "F Liu, Y Jonmohamadi, G Maicas, AK Pandey, G Carneiro",
       "venue": "MICCAI 2020, 594-603",
       "year": 2020,
-      "citations": 25,
+      "citations": 26,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:qjMakFHDy7sC"
     },
     {
