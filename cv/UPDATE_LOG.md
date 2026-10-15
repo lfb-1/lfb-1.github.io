@@ -4,28 +4,6 @@ This file tracks all updates made to Fengbei Liu's CV.
 
 ---
 
-## 2026-10-15: Longitudinal ECG Paper Accepted in JACC: Advances
-
-**Updated By:** Agent
-
-### Changes Made
-- ✅ Added **Deep Learning With Longitudinal Electrocardiograms Predicts Atrial Fibrillation Better Than a Single Electrocardiogram** to Co-author Publications and homepage recent publications
-  - Authors: Sunwoo Kwak, Fengbei Liu, Nusrat B. Nizam, Peter M. Okin, Mert R. Sabuncu
-  - Venue: JACC: Advances; accepted October 15, 2026 (not yet published)
-  - Sources: Journal acceptance email dated October 15, 2026; revised manuscript title page supplied September 1, 2026
-- ✅ Rebuilt both CV PDF copies and refreshed the homepage CV cache-buster
-- ✅ Refreshed the Scholar/CV audit from the existing Scholar snapshot; the newly accepted paper is an expected CV-only entry pending its addition to Google Scholar
-- ✅ Kept the homepage acceptance entry outside the Scholar-generated block so routine synchronization preserves it
-
-### Files Updated
-- ✅ fbl_cv.tex
-- ✅ fbl_cv.pdf
-- ✅ ../fbl_cv.pdf
-- ✅ ../index.html
-- ✅ ../data/sync_report.md
-
----
-
 ## 2026-09-24: Standardize Venue Names
 
 **Updated By:** Agent
