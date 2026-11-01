@@ -18,6 +18,7 @@ import argparse
 import difflib
 import importlib.util
 import json
+import os
 import re
 import sys
 import unicodedata
@@ -221,12 +222,25 @@ def parse_profile(html: str) -> list[Publication]:
     return parser.publications
 
 
+class ScholarAccessBlocked(RuntimeError):
+    """Scholar refused access; retrying or changing identity is not a remedy."""
+
+
 def fetch_profile(url: str = PROFILE_URL, timeout: int = 30) -> str:
     request = Request(url, headers={"User-Agent": USER_AGENT})
     try:
         with urlopen(request, timeout=timeout) as response:
             return response.read().decode("utf-8", errors="replace")
-    except (HTTPError, URLError, TimeoutError) as exc:
+    except HTTPError as exc:
+        if exc.code in (403, 429):
+            raise ScholarAccessBlocked(
+                f"Google Scholar blocked the request (HTTP {exc.code}). "
+                "No records were refreshed; the existing snapshot may be stale. "
+                "Do not repeatedly rerun or bypass the block. See SYNC.md for the "
+                "validated saved-HTML recovery procedure."
+            ) from exc
+        raise RuntimeError(f"Unable to fetch Google Scholar profile: {exc}") from exc
+    except (URLError, TimeoutError) as exc:
         raise RuntimeError(f"Unable to fetch Google Scholar profile: {exc}") from exc
 
 
@@ -650,9 +664,28 @@ def main() -> int:
     return 0
 
 
-if __name__ == "__main__":
+def cli() -> int:
     try:
-        raise SystemExit(main())
+        return main()
+    except ScholarAccessBlocked as exc:
+        print(f"ERROR: {exc}", file=sys.stderr)
+        summary = os.environ.get("GITHUB_STEP_SUMMARY")
+        if summary:
+            with open(summary, "a", encoding="utf-8") as output:
+                output.write(
+                    "## Scholar synchronization blocked — data NOT refreshed\n\n"
+                    "Google Scholar refused the live request. The existing snapshot, "
+                    "homepage and CV have been preserved; they must not be treated as "
+                    "freshly synchronized. No update PR was created by this run.\n\n"
+                    "See `SYNC.md` → **Recovering from a blocked fetch** for the "
+                    "saved-HTML import procedure. Repeated reruns are not a fix.\n"
+                )
+        return 78
     except RuntimeError as exc:
         print(f"ERROR: {exc}", file=sys.stderr)
-        raise SystemExit(1)
+        return 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(cli())
+

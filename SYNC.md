@@ -82,3 +82,35 @@ python scripts/sync_scholar.py --html /path/to/scholar.html
 ```
 
 The JSON snapshot and report are deterministic: when Scholar content has not changed, rerunning the script does not create timestamp-only diffs.
+
+
+## Recovering from a blocked fetch
+
+HTTP 403/429 means Google Scholar refused the request, not that the parser or
+unit tests failed. The sync exits **78 (failure)**, leaves tracked files alone,
+and adds an explicit blocked/stale Actions summary. Verification and PR creation
+are skipped. This is not a successful refresh and does not resolve Google's
+external access restriction. Other network/parse errors remain failures too.
+Do not repeatedly rerun, rotate identities/proxies, or attempt to bypass a CAPTCHA.
+
+A supported recovery needs a **fresh, complete HTML copy of this author's public
+profile** (`oY_qRxMAAAAJ`), obtained through normal permitted browser access:
+
+1. Open the profile URL in `scripts/sync_scholar.py`. If ordinary access is denied,
+   stop; do not bypass the restriction. If accessible, show all publication rows
+   and save the rendered page HTML (not a screenshot, consent page, or CAPTCHA).
+2. Keep the saved HTML outside the repository; it need not be published.
+3. On a review branch, run
+   `python scripts/sync_scholar.py --html /path/to/scholar.html`.
+   This makes **no network request** and applies the same profile, record-count,
+   duplicate-ID and metadata checks as a live fetch. Incomplete inputs fail
+   before modifying the snapshot, homepage or report. Review the record inventory
+   yourself too: count thresholds cannot prove completeness.
+4. Run `python -m unittest discover -s tests -p "test_*.py"` and inspect the
+   diffs of `data/scholar.json`, `index.html`, and `data/sync_report.md`. Open a
+   draft review PR; do not auto-merge or add back deliberately withdrawn entries.
+
+The CV and its PDFs are never rewritten by this importer. A saved-HTML refresh
+is a manual recovery, not proof that the next scheduled live fetch will work.
+Pull requests affecting the sync run only offline tests with read-only permissions;
+they never fetch Scholar or create another PR.
