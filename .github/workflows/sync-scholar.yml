@@ -5,17 +5,36 @@ on:
     # One low-frequency profile request per month.
     - cron: "23 8 1 * *"
   workflow_dispatch:
+  pull_request:
+    paths:
+      - "scripts/sync_scholar.py"
+      - "tests/test_sync_scholar.py"
+      - ".github/workflows/sync-scholar.yml"
+
 
 permissions:
-  contents: write
-  pull-requests: write
+  contents: read
 
 concurrency:
-  group: scholar-sync
+  group: scholar-sync-${{ github.event.pull_request.number || 'scheduled' }}
   cancel-in-progress: false
 
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: "3.12"
+      - run: python -m unittest discover -s tests -p "test_*.py"
+
   sync:
+    if: github.event_name != 'pull_request'
+    needs: test
+    permissions:
+      contents: write
+      pull-requests: write
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -25,9 +44,6 @@ jobs:
         uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
         with:
           python-version: "3.12"
-
-      - name: Run unit tests
-        run: python -m unittest discover -s tests -p "test_*.py"
 
       - name: Synchronize Scholar snapshot and homepage
         run: python scripts/sync_scholar.py
@@ -41,6 +57,7 @@ jobs:
       - name: Create review pull request
         uses: peter-evans/create-pull-request@22a9089034f40e5a961c8808d113e2c98fb63676 # v7
         with:
+          draft: true
           branch: automation/scholar-sync
           delete-branch: true
           commit-message: "scholar: sync profile data"
@@ -54,3 +71,4 @@ jobs:
             - updates `data/sync_report.md` with Scholar/CV differences.
 
             Before merging, review every Scholar-only and CV-only title. Scholar abbreviates authors and can merge publication versions, so the workflow does not rewrite the LaTeX CV automatically. If the CV needs changes, preserve full author names and venue qualifiers in `cv/fbl_cv.tex`, rebuild both PDF copies, and rerun `python scripts/sync_scholar.py`.
+
