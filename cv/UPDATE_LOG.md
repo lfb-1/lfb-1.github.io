@@ -4,6 +4,24 @@ This file tracks all updates made to Fengbei Liu's CV.
 
 ---
 
+## 2026-11-06: Update References
+
+**Updated By:** Agent
+
+### Changes Made
+- ✅ Added Prof. Deborah Estrin with her Cornell Tech endowed professorship and Associate Dean for Impact role, Cornell Bowers professorship, and email `destrin@cornell.edu`
+- ✅ Updated Prof. Mert R. Sabuncu's Cornell Tech, Cornell University, and Weill Cornell Medicine titles, including Associate Dean for Research and Vice Chair of AI & Engineering Research
+  - Source: Author (Fengbei Liu)
+- ✅ Rebuilt both CV PDF copies and refreshed the homepage PDF cache version
+
+### Files Updated
+- ✅ fbl_cv.tex
+- ✅ fbl_cv.pdf
+- ✅ ../fbl_cv.pdf
+- ✅ ../index.html
+
+---
+
 ## 2026-09-24: Standardize Venue Names
 
 **Updated By:** Agent
