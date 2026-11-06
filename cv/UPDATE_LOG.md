@@ -4,6 +4,23 @@ This file tracks all updates made to Fengbei Liu's CV.
 
 ---
 
+## 2026-11-06: Complete Research Interests Overview
+
+**Updated By:** Agent
+
+### Changes Made
+- ✅ Used the author's specified keywords: Computer Vision, Medical Imaging Analysis, Multimodal Learning
+- ✅ Expanded the research overview to describe visual representation learning, multimodal integration, data efficiency, and generalization across clinical settings
+  - Source: Author's requested research scope and level of detail
+
+### Files Updated
+- ✅ fbl_cv.tex
+- ✅ fbl_cv.pdf
+- ✅ ../fbl_cv.pdf
+- ✅ ../index.html
+
+---
+
 ## 2026-11-06: Rewrite Research Interests
 
 **Updated By:** Agent
