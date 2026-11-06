@@ -266,11 +266,11 @@ footer {
   font-size: 0.8rem;
 }
 
-footer span {
+footer span[aria-hidden="true"] {
   margin: 0 7px;
 }
 
-footer a {
+footer .email {
   color: var(--muted);
 }
 
@@ -321,11 +321,11 @@ footer a {
     padding: 9px 0;
   }
 
-  footer span {
+  footer span[aria-hidden="true"] {
     display: none;
   }
 
-  footer a {
+  footer .email {
     display: block;
   }
 }
