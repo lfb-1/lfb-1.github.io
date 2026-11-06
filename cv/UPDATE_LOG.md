@@ -4,6 +4,23 @@ This file tracks all updates made to Fengbei Liu's CV.
 
 ---
 
+## 2026-11-06: Rewrite Research Interests
+
+**Updated By:** Agent
+
+### Changes Made
+- ✅ Updated keywords to Computer Vision, Medical Image Analysis, Multimodal Learning
+- ✅ Replaced the PhD-era weakly supervised learning description with a one-sentence research summary
+  - Source: Author (Fengbei Liu)
+
+### Files Updated
+- ✅ fbl_cv.tex
+- ✅ fbl_cv.pdf
+- ✅ ../fbl_cv.pdf
+- ✅ ../index.html
+
+---
+
 ## 2026-11-06: Update References
 
 **Updated By:** Agent
