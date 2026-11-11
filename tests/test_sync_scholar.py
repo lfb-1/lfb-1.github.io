@@ -88,138 +88,6 @@ class ScholarParserTests(unittest.TestCase):
         self.assertEqual(ordered[0].scholar_id, "abc123")
         self.assertEqual(ordered[1].scholar_id, "coauthor")
 
-    def test_format_venue_expands_journal_alias_and_preserves_details(self):
-        self.assertEqual(
-            sync_scholar.format_venue("IEEE TPAMI 48 (1), 1-10"),
-            (
-                "IEEE Transactions on Pattern Analysis and Machine Intelligence "
-                "(TPAMI) 48 (1), 1-10"
-            ),
-        )
-        self.assertEqual(
-            sync_scholar.format_venue("IEEE Transactions on Image Processing"),
-            "IEEE Transactions on Image Processing (TIP)",
-        )
-        self.assertEqual(
-            sync_scholar.format_venue("CVPR 2026"),
-            "CVPR 2026",
-        )
-        self.assertEqual(
-            sync_scholar.format_venue(
-                "European Heart Journal-Digital Health 7 (6), ztag064"
-            ),
-            "European Heart Journal - Digital Health (EHJ-DH) 7 (6), ztag064",
-        )
-
-    def test_update_homepage_replaces_only_marked_block(self):
-        records = sync_scholar.parse_profile(SAMPLE_HTML)
-        initial = "before\n<!-- PUBLICATIONS_AUTO:START -->\nold\n<!-- PUBLICATIONS_AUTO:END -->\nafter\n"
-        with tempfile.TemporaryDirectory() as directory:
-            path = Path(directory) / "index.html"
-            path.write_text(initial, encoding="utf-8")
-
-            sync_scholar.update_homepage(path, records)
-            updated = path.read_text(encoding="utf-8")
-
-        self.assertIn("A Paper &amp; Its Result", updated)
-        self.assertIn("CVPR 2026", updated)
-        self.assertNotIn("\nold\n", updated)
-        self.assertTrue(updated.startswith("before\n"))
-        self.assertTrue(updated.endswith("\nafter\n"))
-
-    def test_update_homepage_does_not_duplicate_pinned_publications(self):
-        records = sync_scholar.parse_profile(SAMPLE_HTML)
-        for tag in ("a", "span"):
-            with (
-                self.subTest(tag=tag),
-                tempfile.TemporaryDirectory() as directory,
-            ):
-                pinned = (
-                    '<section id="news">Recent News</section>\n'
-                    f'<{tag} class="publication-title">'
-                    f'A Paper &amp; Its Result</{tag}>\n'
-                )
-                path = Path(directory) / "index.html"
-                path.write_text(
-                    pinned + sync_scholar.START_MARKER + "\nold\n"
-                    + sync_scholar.END_MARKER + "\n"
-                )
-                sync_scholar.update_homepage(path, records)
-                updated = path.read_text()
-                self.assertTrue(updated.startswith(pinned))
-                self.assertEqual(updated.count("A Paper &amp; Its Result"), 1)
-                self.assertIn("Second Paper", updated)
-
-    def test_update_homepage_uses_full_cv_authors(self):
-        records = sync_scholar.parse_profile(SAMPLE_HTML)
-        cv_records = [
-            {
-                "title": "A Paper & Its Result",
-                "authors": "Fengbei Liu, Alice Author",
-                "venue": "CVPR",
-                "year": "2026",
-            }
-        ]
-        initial = "<!-- PUBLICATIONS_AUTO:START -->\nold\n<!-- PUBLICATIONS_AUTO:END -->"
-        with tempfile.TemporaryDirectory() as directory:
-            path = Path(directory) / "index.html"
-            path.write_text(initial, encoding="utf-8")
-            sync_scholar.update_homepage(path, records, cv_records)
-            updated = path.read_text(encoding="utf-8")
-
-        self.assertIn("Fengbei Liu, Alice Author", updated)
-        self.assertNotIn(">F Liu, A Author</span>", updated)
-
-    def test_update_homepage_prefers_cv_acceptance_over_preprint_venue(self):
-        publication = sync_scholar.Publication(
-            scholar_id="madam",
-            title="MAdam: Metric-Aware Multi-Objective Adam",
-            authors="F Liu, A Author",
-            venue="arXiv preprint arXiv:2606.03904",
-            year=2026,
-            citations=1,
-            url="https://example.test/madam",
-        )
-        cv_records = [
-            {
-                "title": publication.title,
-                "authors": "Fengbei Liu, Alice Author",
-                "venue": "NeurIPS",
-                "year": "2026",
-                "entry_type": "publication",
-            }
-        ]
-        initial = "<!-- PUBLICATIONS_AUTO:START -->\nold\n<!-- PUBLICATIONS_AUTO:END -->"
-        with tempfile.TemporaryDirectory() as directory:
-            path = Path(directory) / "index.html"
-            path.write_text(initial, encoding="utf-8")
-            sync_scholar.update_homepage(path, [publication], cv_records)
-            updated = path.read_text(encoding="utf-8")
-
-        self.assertIn("NeurIPS 2026", updated)
-        self.assertNotIn("arXiv preprint", updated)
-
-    def test_homepage_preserves_deliberate_title_exclusions(self):
-        excluded = sync_scholar.Publication(
-            scholar_id="excluded",
-            title="An example: the CT–LVEF study",
-            authors="F Liu",
-            venue="Journal",
-            year=2027,
-            citations=100,
-            url="https://example.test/excluded",
-        )
-        records = [excluded] + sync_scholar.parse_profile(SAMPLE_HTML)
-        initial = "<!-- PUBLICATIONS_AUTO:START -->\nold\n<!-- PUBLICATIONS_AUTO:END -->"
-        with tempfile.TemporaryDirectory() as directory:
-            path = Path(directory) / "index.html"
-            path.write_text(initial, encoding="utf-8")
-            sync_scholar.update_homepage(path, records)
-            updated = path.read_text(encoding="utf-8")
-
-        self.assertNotIn("CT-LVEF", updated)
-        self.assertIn("A Paper &amp; Its Result", updated)
-
     def test_validate_profile_rejects_partial_response(self):
         records = sync_scholar.parse_profile(SAMPLE_HTML)
         with self.assertRaisesRegex(RuntimeError, "Refusing to replace"):
@@ -380,12 +248,10 @@ class FetchRecoveryTests(unittest.TestCase):
             with patch.object(sync_scholar, "fetch_profile", side_effect=sync_scholar.ScholarAccessBlocked("blocked")), \
                  patch.object(sync_scholar, "parse_args", return_value=Namespace(html=None, timeout=30)), \
                  patch.object(sync_scholar, "write_snapshot") as snapshot, \
-                 patch.object(sync_scholar, "update_homepage") as homepage, \
                  patch.object(sync_scholar, "write_sync_report") as report, \
                  patch.dict(os.environ, {"GITHUB_STEP_SUMMARY": str(summary)}):
                 self.assertEqual(sync_scholar.cli(), 78)
                 snapshot.assert_not_called()
-                homepage.assert_not_called()
                 report.assert_not_called()
             self.assertIn("data NOT refreshed", summary.read_text())
 
@@ -410,7 +276,7 @@ class FetchRecoveryTests(unittest.TestCase):
                 for path, content in files.items():
                     self.assertEqual(path.read_text(), content)
 
-    def test_valid_saved_html_runs_offline_and_preserves_exclusions(self):
+    def test_valid_saved_html_runs_offline_without_changing_hugo_sources(self):
         rows = []
         for i in range(10):
             title = "The CT–LVEF study" if i == 0 else f"Publication {i}"
@@ -423,21 +289,28 @@ class FetchRecoveryTests(unittest.TestCase):
             (root / "data").mkdir()
             saved = root / "input.html"
             saved.write_text("<table>" + "".join(rows) + "</table>")
-            (root / "index.html").write_text("before\n" + sync_scholar.START_MARKER +
-                "\nold\n" + sync_scholar.END_MARKER + "\nafter")
+            preserved = {
+                root / "config.yml": "params:\n  news: []\n",
+                root / "content/news.md": "---\ntitle: News\n---\n",
+                root / "layouts/partials/index_profile.html": "profile and news",
+                root / "cv/fbl_cv.tex": "curated CV",
+                root / "static/fbl_cv.pdf": "%PDF-public CV",
+            }
+            for path, text in preserved.items():
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_text(text)
             with patch.object(sync_scholar, "ROOT", root), \
                  patch.object(sync_scholar, "load_cv_publications", return_value=[]), \
                  patch.object(sync_scholar, "parse_args", return_value=Namespace(html=saved, timeout=30)), \
                  patch.object(sync_scholar, "urlopen") as network:
                 self.assertEqual(sync_scholar.main(), 0)
                 network.assert_not_called()
-            homepage = (root / "index.html").read_text()
-            self.assertNotIn("CT–LVEF", homepage)
-            self.assertTrue(homepage.startswith("before\n"))
-            self.assertTrue(homepage.endswith("\nafter"))
+            for path, text in preserved.items():
+                self.assertEqual(path.read_text(), text)
+            self.assertFalse((root / "index.html").exists())
             self.assertEqual(sync_scholar.load_previous_count(root / "data/scholar.json"), 10)
+            self.assertIn("The CT–LVEF study", (root / "data/sync_report.md").read_text())
 
 
 if __name__ == "__main__":
     unittest.main()
-

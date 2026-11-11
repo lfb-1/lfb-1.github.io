@@ -1,0 +1,5 @@
+<ul class="news-list">
+    {{- range . }}
+    <li><span class="news-date">{{ .date }}</span><span class="news-text">{{ .text | markdownify }}</span></li>
+    {{- end }}
+</ul>

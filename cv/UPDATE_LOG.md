@@ -4,6 +4,18 @@ This file tracks all updates made to Fengbei Liu's CV.
 
 ---
 
+## 2026-11-11: Migrate the Public CV to Hugo
+
+**Updated By:** Agent
+
+- Moved the public PDF to `../static/fbl_cv.pdf`; its bytes and `/fbl_cv.pdf` URL are unchanged.
+- Added `../scripts/publish_cv.py` to copy the compiled PDF and refresh all CV links in `../config.yml` using SHA-256.
+- Updated the Vault's `build-cv` recipe and the CV maintenance instructions for Hugo.
+- Moved curated homepage news into `../config.yml`; the new homepage omits the Publications section. Scholar sync maintains the inventory and comparison report without editing the site or CV.
+- CV content is unchanged. The confirmed JACC: Advances paper still has no inferred publication year or DOI.
+
+---
+
 ## 2026-11-11: Add Longitudinal ECG Paper and Recent News
 
 **Updated By:** Agent

@@ -18,3 +18,8 @@ __pycache__/
 
 # macOS
 .DS_Store
+
+# Hugo build artifacts
+/public/
+/resources/
+.hugo_build.lock

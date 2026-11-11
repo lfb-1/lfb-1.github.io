@@ -1,0 +1,122 @@
+baseURL: "https://lfb-1.github.io/"
+title: Fengbei Liu
+theme: PaperMod
+locale: en-us
+
+enableRobotsTXT: true
+disableKinds: [taxonomy, term, RSS]
+
+# Only site sources are mounted. Scholar snapshots in data/ and the CV build
+# directory are maintenance files, not website content. Thesis PDFs keep their
+# previous public URLs under /thesis/.
+module:
+  mounts:
+    - source: content
+      target: content
+    - source: layouts
+      target: layouts
+    - source: assets
+      target: assets
+    - source: static
+      target: static
+    - source: thesis
+      target: static/thesis
+      files: ["**.pdf"]
+
+menu:
+  main:
+    - name: News
+      url: news/
+      weight: 1
+    - name: Experience
+      url: experience/
+      weight: 2
+    - name: Service
+      url: service/
+      weight: 3
+    - name: CV
+      url: fbl_cv.pdf?v=d29a50e2
+      weight: 4
+
+params:
+  description: "Fengbei Liu — Postdoctoral Researcher at Cornell Tech, Cornell University. Computer vision and medical image analysis."
+  author: Fengbei Liu
+  DateFormat: January 2006
+  defaultTheme: light
+  disableThemeToggle: true
+  ShowShareButtons: false
+  ShowReadingTime: false
+  ShowPostNavLinks: false
+  ShowBreadCrumbs: false
+  ShowCodeCopyButtons: false
+  disableAnchoredHeadings: true
+  disableScrollToTop: true
+  ShowToc: false
+  ShowWordCount: false
+  comments: false
+  math: false
+  hideMeta: true
+  footer:
+    text: "Cornell Tech · 2 West Loop Road, New York, NY 10044"
+
+  # Run scripts/publish_cv.py after rebuilding the CV to refresh these links.
+  profileMode:
+    enabled: true
+    title: Fengbei Liu
+    subtitle: >-
+      Postdoctoral Researcher at [Cornell Tech](https://tech.cornell.edu/), Cornell University,
+      working with [Prof. Mert R. Sabuncu](https://sabuncu.engineering.cornell.edu/).
+      I obtained my Ph.D. from the [Australian Institute for Machine Learning](https://www.adelaide.edu.au/aiml/)
+      at the University of Adelaide, advised by
+      [Prof. Gustavo Carneiro](https://www.surrey.ac.uk/people/gustavo-carneiro) and
+      [Prof. Mark Jenkinson](https://www.ndcn.ox.ac.uk/team/mark-jenkinson).
+      My research lies at the intersection of **computer vision** and **medical image analysis**:
+      I develop weakly supervised and label-efficient deep learning methods, with a current focus
+      on medical radiology and cardiovascular imaging.
+    buttons:
+      - name: News
+        url: news/
+      - name: Experience
+        url: experience/
+      - name: Service
+        url: service/
+      - name: CV
+        url: fbl_cv.pdf?v=d29a50e2
+    # Shown below the profile; /news/ renders the complete configured list.
+    recentNewsCount: 3
+
+  socialIcons:
+    - name: CV
+      url: fbl_cv.pdf?v=d29a50e2
+    - name: Email
+      url: mailto:fl453@cornell.edu
+    - name: Google Scholar
+      url: https://scholar.google.com/citations?user=oY_qRxMAAAAJ&hl=en
+    - name: GitHub
+      url: https://github.com/lfb-1
+    - name: LinkedIn
+      url: https://www.linkedin.com/in/fengbei-liu-2bb11b177/
+
+  # Curated announcements, newest first. Dates are announcement dates.
+  news:
+    - date: "Nov 2026"
+      text: "Our paper on predicting atrial fibrillation from longitudinal ECGs is published in *JACC: Advances*."
+    - date: "Nov 2026"
+      text: "I will serve as an Area Chair for [MIDL 2027](https://2027.midl.io/)."
+    - date: "Sep 2026"
+      text: "[MAdam: Metric-Aware Multi-Objective Adam](https://arxiv.org/abs/2606.03904) was accepted to NeurIPS 2026."
+
+  assets:
+    disableScrollBarStyle: true
+    favicon: favicon.ico
+    favicon16x16: favicon-16x16.png
+    favicon32x32: favicon-32x32.png
+    apple_touch_icon: apple-touch-icon.png
+
+  label:
+    text: Fengbei Liu
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true

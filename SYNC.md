@@ -2,123 +2,91 @@
 
 ## Data flow
 
-Google Scholar is the upstream publication inventory:
+Google Scholar is the upstream publication inventory. The LaTeX CV remains curated because Scholar can abbreviate authors, merge versions, and omit venue details.
 
 ```text
 Google Scholar public profile
           │
           ▼
 scripts/sync_scholar.py
-          │
           ├── data/scholar.json       tracked snapshot
-          ├── index.html              recent publications
           └── data/sync_report.md     Scholar ↔ CV review
                                             │
                                             ▼
-                                   cv/fbl_cv.tex + PDFs
+                                   cv/fbl_cv.tex + PDF
+                                            │
+                                   scripts/publish_cv.py
+                                            ├── static/fbl_cv.pdf
+                                            └── config.yml CV link versions
+
+config.yml (profile + curated news) + content/ + layouts/ + assets/ + static/
+          │
+          ▼
+         Hugo → public/ → GitHub Pages
 ```
 
-The sync is intentionally review-gated. Google Scholar author lists may be abbreviated, publication and preprint versions may be merged or duplicated, and venue details can be incomplete. The script therefore uses Scholar to determine the publication inventory and to render the homepage, while preserving the LaTeX CV as the curated presentation layer.
+Scholar synchronization writes only the snapshot and comparison report. It does not edit Hugo configuration, news, templates, or the public CV. The homepage has no Publications section. The script reads the public Scholar profile; it cannot edit that profile.
 
-The workflow reads the public profile; it cannot edit the Google Scholar profile. Add or correct a publication in Google Scholar first, then let the workflow propagate the change into a review pull request.
+## Author-confirmed updates and news
 
-## Author-confirmed updates
+A publication confirmed by the author can be added to `cv/fbl_cv.tex` before Scholar indexes it. Keep the supplied full title and authors. Leave an unconfirmed publication year or DOI blank; do not fabricate a Scholar record or citation ID. Confirmed journal entries without a year remain in the CV inventory and are reported as CV-only when absent from the snapshot.
 
-A publication supplied and confirmed by the author can be added to the curated CV and pinned before `PUBLICATIONS_AUTO:START` while Scholar indexing catches up. Keep the supplied full title and authors. Leave an unconfirmed publication year or DOI blank; do not fabricate a Scholar record or citation ID. Confirmed journal entries without a year remain part of the CV inventory and are reported as CV-only when absent from the saved Scholar snapshot.
+`Recent News` is curated in `config.yml` under `params.news`, newest first. Both the homepage and `/news/` render this list. Dates are announcement dates supported by author updates or `cv/UPDATE_LOG.md`, not estimated publication or acceptance months. `cv/generate_news.py` remains the CV parser; its legacy approximate-date HTML output is not used by Hugo.
 
-The homepage sync excludes pinned titles from its generated block, so a later Scholar update does not duplicate them. The original Scholar snapshot keeps its own provenance. An offline report regenerated from that snapshot is not a live Scholar refresh.
-
-`Recent News` is curated in `index.html` outside the publication-sync block. Its dates are announcement dates, supported by author updates or `cv/UPDATE_LOG.md`; they are not estimated publication or conference-acceptance months. The legacy `cv/generate_news.py` is also used as a CV parser, but its approximate-date news output is not used for this section.
+The saved Scholar snapshot keeps its provenance. Regenerating a report from that snapshot is not a live Scholar refresh.
 
 ## Scheduled workflow
 
-`.github/workflows/sync-scholar.yml` runs monthly and can also be started manually from the Actions tab. It:
+`.github/workflows/sync-scholar.yml` runs monthly and can be started manually. It runs offline tests, fetches one profile page, rejects blocked or partial responses, refreshes the snapshot, compares it with the CV, and opens or updates a draft `automation/scholar-sync` pull request.
 
-1. runs parser unit tests;
-2. fetches one author-profile page;
-3. rejects blocked or unexpectedly partial responses;
-4. refreshes the tracked Scholar snapshot;
-5. regenerates the homepage publication list;
-6. compares Scholar titles with the CV;
-7. opens or updates `automation/scholar-sync` as a pull request.
-
-Repository settings must allow GitHub Actions to create pull requests. No API secret is required for the current low-frequency public-profile fetch. If Google blocks GitHub-hosted runners, the workflow fails without replacing the previous snapshot.
+Repository settings must allow GitHub Actions to create pull requests. No API secret is required. Pull requests affecting the sync run only offline tests with read-only permissions; they never fetch Scholar or create another PR.
 
 ## Reviewing a sync pull request
 
-Read `data/sync_report.md` and classify each difference:
+Review `data/sync_report.md`:
 
-- **Scholar-only:** add the publication to `cv/fbl_cv.tex` if it belongs in the CV, keeping full author names and precise venue qualifiers; otherwise correct or remove it in Google Scholar.
-- **CV-only:** add or restore the record in Google Scholar, or remove it from the CV if it should no longer be listed.
-- **Fuzzy title matches:** confirm that the Scholar and CV titles refer to the same work; the report records both titles and their similarity score.
-- **Duplicate versions:** inspect every version listed in the report, keep the appropriate version in the CV, and resolve the duplicate in Google Scholar when possible.
+- **Scholar-only:** add the work to the curated CV if appropriate, preserving full author names and precise venue qualifiers; otherwise correct the Scholar profile.
+- **CV-only:** reconcile the missing Scholar record or correct the CV after checking the source.
+- **Fuzzy title matches:** confirm that both titles refer to the same work.
+- **Duplicate versions:** inspect the reported versions and retain the appropriate CV entry.
 
-After any CV edit, rebuild and copy the PDF:
+After editing the CV:
 
 ```bash
-# From the vault root
+# From the vault root (build and publish the PDF)
 just build-cv
 
-# Or from this repository
-cd cv
-pdflatex -interaction=nonstopmode fbl_cv.tex
-cp fbl_cv.pdf ../fbl_cv.pdf
+# Or from Homepage/
+(cd cv && pdflatex -interaction=nonstopmode -halt-on-error fbl_cv.tex)
+python3 scripts/publish_cv.py
+
+# Verify before committing
+python3 -m unittest discover -s tests -p 'test_*.py'
+cmp cv/fbl_cv.pdf static/fbl_cv.pdf
+hugo --minify --panicOnWarning
 ```
 
-Then rerun the sync and verify that the report reflects the intended state:
+`publish_cv.py` preserves the public `/fbl_cv.pdf` URL and updates all versioned CV links in `config.yml` using the first eight SHA-256 characters. Include the PDF and configuration together in the commit. Rerun the Scholar comparison when publication metadata changes, and merge only after the differences are understood.
+
+## Local synchronization
 
 ```bash
-python scripts/sync_scholar.py
-python -m unittest discover -s tests -p "test_*.py"
-cmp cv/fbl_cv.pdf fbl_cv.pdf
+python3 scripts/sync_scholar.py
+# Or parse a saved complete profile without network access:
+python3 scripts/sync_scholar.py --html /path/to/scholar.html
 ```
 
-Merge only after the homepage diff, CV source/PDF, and Scholar/CV report are consistent.
-
-## Local use
-
-Run the live synchronization:
-
-```bash
-python scripts/sync_scholar.py
-```
-
-For parser debugging with a saved response:
-
-```bash
-python scripts/sync_scholar.py --html /path/to/scholar.html
-```
-
-The JSON snapshot and report are deterministic: when Scholar content has not changed, rerunning the script does not create timestamp-only diffs.
-
+Snapshot and report output is deterministic; unchanged Scholar content causes no timestamp-only diffs.
 
 ## Recovering from a blocked fetch
 
-HTTP 403/429 means Google Scholar refused the request, not that the parser or
-unit tests failed. The sync exits **78 (failure)**, leaves tracked files alone,
-and adds an explicit blocked/stale Actions summary. Verification and PR creation
-are skipped. This is not a successful refresh and does not resolve Google's
-external access restriction. Other network/parse errors remain failures too.
-Do not repeatedly rerun, rotate identities/proxies, or attempt to bypass a CAPTCHA.
+HTTP 403/429 means Scholar refused access. The script exits **78 (failure)**, preserves existing files, and adds a blocked/stale Actions summary. Verification and PR creation are skipped. This does not count as a refresh. Do not repeatedly rerun, rotate identities/proxies, or bypass a CAPTCHA.
 
-A supported recovery needs a **fresh, complete HTML copy of this author's public
-profile** (`oY_qRxMAAAAJ`), obtained through normal permitted browser access:
+A supported recovery uses a fresh, complete HTML copy of the author's public profile (`oY_qRxMAAAAJ`) obtained through normal permitted browser access:
 
-1. Open the profile URL in `scripts/sync_scholar.py`. If ordinary access is denied,
-   stop; do not bypass the restriction. If accessible, show all publication rows
-   and save the rendered page HTML (not a screenshot, consent page, or CAPTCHA).
-2. Keep the saved HTML outside the repository; it need not be published.
-3. On a review branch, run
-   `python scripts/sync_scholar.py --html /path/to/scholar.html`.
-   This makes **no network request** and applies the same profile, record-count,
-   duplicate-ID and metadata checks as a live fetch. Incomplete inputs fail
-   before modifying the snapshot, homepage or report. Review the record inventory
-   yourself too: count thresholds cannot prove completeness.
-4. Run `python -m unittest discover -s tests -p "test_*.py"` and inspect the
-   diffs of `data/scholar.json`, `index.html`, and `data/sync_report.md`. Open a
-   draft review PR; do not auto-merge or add back deliberately withdrawn entries.
+1. Open the profile URL from `scripts/sync_scholar.py`. Stop if ordinary access is denied. Otherwise show all publication rows and save the rendered HTML, excluding consent pages or CAPTCHAs.
+2. Keep that HTML outside the repository.
+3. On a review branch run `python3 scripts/sync_scholar.py --html /path/to/scholar.html`. The importer makes no network request and applies the same profile, record-count, duplicate-ID, and metadata checks. Invalid input fails before writing the snapshot or report. Check completeness manually as well.
+4. Run the tests and inspect `data/scholar.json` and `data/sync_report.md`. Hugo sources and CV files should be unchanged. Open a draft review PR without auto-merging or restoring withdrawn entries.
 
-The CV and its PDFs are never rewritten by this importer. A saved-HTML refresh
-is a manual recovery, not proof that the next scheduled live fetch will work.
-Pull requests affecting the sync run only offline tests with read-only permissions;
-they never fetch Scholar or create another PR.
+A saved-HTML import does not establish that the next scheduled live fetch will succeed.

@@ -5,7 +5,7 @@ This folder contains the most up-to-date CV for Fengbei Liu.
 ## Files
 
 - `fbl_cv.tex` - LaTeX source file
-- `fbl_cv.pdf` - Compiled PDF; kept identical to `../fbl_cv.pdf`
+- `fbl_cv.pdf` - Compiled PDF; kept identical to `../static/fbl_cv.pdf`
 - `WORKFLOW.md` - Review-gated workflow for updating the CV
 - `UPDATE_LOG.md` - History of CV updates
 - `../SYNC.md` - Homepage, CV, and Google Scholar synchronization contract
@@ -15,7 +15,8 @@ This folder contains the most up-to-date CV for Fengbei Liu.
 ```bash
 just build-cv          # from the vault root
 # or, manually:
-cd Homepage/cv && pdflatex -interaction=nonstopmode fbl_cv.tex && cp fbl_cv.pdf ../fbl_cv.pdf
+(cd Homepage/cv && pdflatex -interaction=nonstopmode -halt-on-error fbl_cv.tex)
+(cd Homepage && python3 scripts/publish_cv.py)
 ```
 
 After commit + push inside `Homepage/`, GitHub Pages rebuilds automatically.
@@ -26,11 +27,11 @@ After commit + push inside `Homepage/`, GitHub Pages rebuilds automatically.
 
 **Latest addition:** *Deep Learning With Longitudinal Electrocardiograms Predicts Atrial Fibrillation Better Than a Single Electrocardiogram*, by Sunwoo Kwak, Fengbei Liu, Nusrat Binta Nizam, Peter Okin, and Mert R. Sabuncu. The author confirmed publication in **JACC: Advances** on 2026-11-11. Publication year and DOI were not supplied or independently verified, so they remain blank.
 
-The homepage now has a curated **Recent News** section. Dates there reflect announcement dates; publication entries retain their own verified metadata. `../data/sync_report.md` compares the saved Scholar inventory with the curated CV, including the new author-confirmed paper.
+The homepage's curated **Recent News** section is configured in `config.yml`; `/news/` renders the complete list. Dates reflect announcement dates. The homepage has no Publications section; the CV and Google Scholar provide the full inventory. `../data/sync_report.md` compares the saved Scholar inventory with the curated CV, including the new author-confirmed paper.
 
 ## Synchronization Schedule
 
-The **Sync Google Scholar** GitHub Action runs monthly and opens a review pull request when the public Scholar profile changes. It refreshes the homepage publication list and writes `../data/sync_report.md`; it does not copy abbreviated Scholar metadata directly into the CV. Review Scholar/CV differences and rebuild both PDF copies before merging. See `../SYNC.md` for details.
+The **Sync Google Scholar** GitHub Action runs monthly and opens a review pull request when the public Scholar profile changes. It refreshes the saved inventory and writes `../data/sync_report.md`, preserving Hugo content and the CV. Review the differences and rebuild both PDF copies before merging. See `../SYNC.md` for details.
 
 Additional checks remain useful before major conference deadlines and when a preprint changes publication status.
 

@@ -1,0 +1,70 @@
+name: Deploy Hugo site to Pages
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# Validate PRs independently; serialize production deployments.
+concurrency:
+  group: pages-${{ github.event.pull_request.number || 'production' }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      HUGO_VERSION: "0.169.0"
+      HUGO_ENVIRONMENT: production
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: "3.12"
+      - name: Test publication maintenance and verify the public CV
+        run: |
+          python -m unittest discover -s tests -p "test_*.py"
+          cmp cv/fbl_cv.pdf static/fbl_cv.pdf
+      - name: Install Hugo Extended
+        run: |
+          curl --fail --location --retry 3 \
+            --output "$RUNNER_TEMP/hugo.deb" \
+            "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb"
+          sudo dpkg -i "$RUNNER_TEMP/hugo.deb"
+      - name: Build the site
+        run: hugo --minify --panicOnWarning
+      - name: Verify published files
+        run: |
+          test -s public/index.html
+          test -s public/news/index.html
+          test -s public/experience/index.html
+          test -s public/service/index.html
+          cmp cv/fbl_cv.pdf public/fbl_cv.pdf
+          test -s public/thesis/ElsnerTalk.pdf
+          test ! -e public/config.yml
+          test ! -e public/cv/fbl_cv.tex
+          test ! -e public/data/scholar.json
+      - name: Upload Pages artifact
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: public
+
+  deploy:
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

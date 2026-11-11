@@ -1,0 +1,48 @@
+{
+  "date": "2026-11-11",
+  "template": {
+    "repository": "https://github.com/pmichaillat/hugo-website",
+    "revision": "96e8a60674cccb70556f164823397df4d14b8a4a"
+  },
+  "hugo": "0.169.0 extended",
+  "unit_tests": 18,
+  "production_build": "passed without warnings",
+  "browser": {
+    "widths": [
+      1440,
+      768,
+      390
+    ],
+    "pages": [
+      "/",
+      "/news/",
+      "/experience/",
+      "/service/"
+    ],
+    "horizontal_overflow": false,
+    "news_below_profile": true,
+    "runtime_errors": []
+  },
+  "homepage_publications_section": false,
+  "scholar_sync_preserves_hugo_sources": true,
+  "public_cv_url": "https://lfb-1.github.io/fbl_cv.pdf",
+  "cv_unchanged_sha256": "d29a50e2bba94d73dfa7bf8fa7ccf9ee5c213174fff728cb0da4c5ece6801c98",
+  "thesis_url_preserved": "https://lfb-1.github.io/thesis/ElsnerTalk.pdf",
+  "maintenance_sources_excluded": true,
+  "public_files_sha256": {
+    "404.html": "87d392670e126e9fbe96d695ab54a030a3aaf64df512a2841dfd36160846c948",
+    "apple-touch-icon.png": "ad2a90a89b9dde60b1c1bcd401cb6b83d794ded0471c86de7003fefc56e1504d",
+    "assets/css/stylesheet.19b90c8fd0100b150c58d1d978e53f96b10f40bdd032ae892ca21ca75d3c7599.css": "19b90c8fd0100b150c58d1d978e53f96b10f40bdd032ae892ca21ca75d3c7599",
+    "experience/index.html": "4860de0cc05d981c81716ed3ac92821060817197101c2e65622c94c305ffd1be",
+    "favicon-16x16.png": "f41783b5b3f114e64d7697cca730c2370d3dbd05af8a03829a6f761ad4f53066",
+    "favicon-32x32.png": "efd557d39480d69028b298f501ab495e6eb19288c14365ad41fd67d57eb8e6b7",
+    "favicon.ico": "e79e4afafe962fa7a2fb52d26fe15e391e70da7b71595e92635642199bcc88cb",
+    "fbl_cv.pdf": "d29a50e2bba94d73dfa7bf8fa7ccf9ee5c213174fff728cb0da4c5ece6801c98",
+    "index.html": "8a85b69236fb1f9c058cfe28bc10750af4776dd97be81aba14616dad3f329b3e",
+    "news/index.html": "b65dc06ac74eeed0b20d43426862e5212f0c54ddca64bf0f2982e5f45d93744d",
+    "robots.txt": "212195aea55377a737020a16678ddbcf6b94fc56dd96309dabb40ba189e993d4",
+    "service/index.html": "941479c0c646ac112e1f23a6ca5b48ccfc3a9b74ef09e3eaf62cf51334fdf34a",
+    "sitemap.xml": "9e8cd719a4a9cb12f1c9f453ba1282f0bb9c831c3a0e53417019eb180345da20",
+    "thesis/ElsnerTalk.pdf": "77684a1f1a8f3ee48ad1e7a992a0635732328c21f4da70e454dc178b4a5ea2f9"
+  }
+}

@@ -4,8 +4,10 @@
 Google Scholar is the upstream publication inventory. This script:
 1. fetches and validates the public author profile,
 2. writes a deterministic JSON snapshot,
-3. renders the recent-publications block in index.html, and
-4. writes a review report comparing Scholar with the curated LaTeX CV.
+3. writes a review report comparing Scholar with the curated LaTeX CV.
+
+The Hugo homepage has no publication list. Synchronization never edits the site
+configuration, content, templates, or public PDF.
 
 The CV is deliberately not rewritten from abbreviated Scholar metadata. The
 scheduled workflow opens a pull request so Scholar/CV differences can be
@@ -24,7 +26,6 @@ import sys
 import unicodedata
 from collections.abc import Iterable
 from dataclasses import asdict, dataclass
-from html import escape, unescape
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.error import HTTPError, URLError
@@ -42,61 +43,6 @@ USER_AGENT = (
     "+https://github.com/lfb-1/lfb-1.github.io)"
 )
 MIN_EXPECTED_RECORDS = 10
-DISPLAY_COUNT = 6
-# Preserve deliberate homepage exclusions from the previous CV-to-news workflow.
-HOMEPAGE_EXCLUDE_TITLE_FRAGMENTS = ("CT-LVEF study", "CT–LVEF study")
-START_MARKER = "<!-- PUBLICATIONS_AUTO:START -->"
-END_MARKER = "<!-- PUBLICATIONS_AUTO:END -->"
-JOURNAL_VENUE_NAMES = (
-    (
-        "IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)",
-        (
-            "IEEE Transactions on Pattern Analysis and Machine Intelligence",
-            "IEEE TPAMI",
-            "TPAMI",
-        ),
-    ),
-    (
-        "IEEE Transactions on Image Processing (TIP)",
-        (
-            "IEEE Transactions on Image Processing",
-            "IEEE TIP",
-            "TIP",
-        ),
-    ),
-    (
-        "IEEE Transactions on Medical Imaging (TMI)",
-        ("IEEE Transactions on Medical Imaging", "IEEE TMI", "TMI"),
-    ),
-    (
-        "IEEE Journal of Biomedical and Health Informatics (JBHI)",
-        (
-            "IEEE Journal of Biomedical and Health Informatics",
-            "IEEE JBHI",
-            "JBHI",
-        ),
-    ),
-    (
-        "Transactions on Machine Learning Research (TMLR)",
-        ("Transactions on Machine Learning Research", "TMLR"),
-    ),
-    (
-        "Medical Image Analysis (MedIA)",
-        ("Medical Image Analysis", "MedIA"),
-    ),
-    (
-        "JACC: Advances",
-        ("JACC: Advances", "JACC Advances"),
-    ),
-    (
-        "European Heart Journal - Digital Health (EHJ-DH)",
-        (
-            "European Heart Journal - Digital Health",
-            "European Heart Journal-Digital Health",
-            "EHJ-DH",
-        ),
-    ),
-)
 
 
 @dataclass(frozen=True)
@@ -330,104 +276,6 @@ def write_snapshot(path: Path, records: list[Publication]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     content = json.dumps(snapshot_payload(records), indent=2, ensure_ascii=False) + "\n"
     path.write_text(content, encoding="utf-8")
-
-
-def format_venue(venue: str) -> str:
-    """Expand known journal aliases while preserving volume and page details."""
-    for canonical, aliases in JOURNAL_VENUE_NAMES:
-        for alias in sorted((*aliases, canonical), key=len, reverse=True):
-            match = re.match(
-                rf"{re.escape(alias)}(?=$|[\s,])", venue, flags=re.IGNORECASE
-            )
-            if match:
-                return canonical + venue[match.end() :]
-    return venue
-
-
-def render_publication(
-    record: Publication,
-    authors: str | None = None,
-    venue: str | None = None,
-) -> str:
-    year = str(record.year) if record.year else "—"
-    display_venue = format_venue(venue or record.venue)
-    display_authors = authors or record.authors
-    return (
-        '          <li class="publication">\n'
-        f'            <span class="publication-year">{escape(year)}</span>\n'
-        "            <div>"
-        f'<a class="publication-title" href="{escape(record.url, quote=True)}" '
-        f'target="_blank" rel="noopener">{escape(record.title)}</a>'
-        f'<span class="publication-authors">{escape(display_authors)}</span>'
-        f'<span class="publication-venue">{escape(display_venue)}</span></div>\n'
-        "          </li>"
-    )
-
-
-def update_homepage(
-    path: Path,
-    records: list[Publication],
-    cv_records: list[dict[str, object]] | None = None,
-) -> None:
-    content = path.read_text(encoding="utf-8")
-    if START_MARKER not in content or END_MARKER not in content:
-        raise RuntimeError(f"Publication markers are missing from {path}")
-    outside = (
-        content.split(START_MARKER, 1)[0] + content.split(END_MARKER, 1)[1]
-    )
-    pinned_titles = {
-        normalize_title(unescape(re.sub(r"<[^>]+>", "", title)))
-        for title in re.findall(
-            r'<(?:a|span) class="publication-title"[^>]*>'
-            r'(.*?)</(?:a|span)>',
-            outside,
-            flags=re.DOTALL,
-        )
-    }
-    eligible = [
-        record
-        for record in records
-        if normalize_title(record.title) not in pinned_titles
-        and not any(
-            fragment.casefold() in record.title.casefold()
-            for fragment in HOMEPAGE_EXCLUDE_TITLE_FRAGMENTS
-        )
-    ]
-    selected = sorted(eligible, key=publication_sort_key)[:DISPLAY_COUNT]
-    author_overrides: dict[str, str] = {}
-    venue_overrides: dict[str, str] = {}
-    if cv_records:
-        matches, _, _ = match_inventory(records, cv_records)
-        for publication, cv_record, _ in matches:
-            authors = str(cv_record.get("authors", "")).strip()
-            if authors:
-                author_overrides[publication.scholar_id] = authors
-            if (
-                "preprint" in publication.venue.casefold()
-                and cv_record.get("entry_type") == "publication"
-            ):
-                venue = str(cv_record.get("venue", "")).strip()
-                year = str(cv_record.get("year", "")).strip()
-                if venue:
-                    venue_overrides[publication.scholar_id] = " ".join(
-                        part for part in (venue, year) if part
-                    )
-    block = "\n".join(
-        render_publication(
-            record,
-            author_overrides.get(record.scholar_id),
-            venue_overrides.get(record.scholar_id),
-        )
-        for record in selected
-    )
-    pattern = re.compile(
-        rf"({re.escape(START_MARKER)}\n).*?(\n\s*{re.escape(END_MARKER)})",
-        flags=re.DOTALL,
-    )
-    updated, count = pattern.subn(rf"\1{block}\2", content)
-    if count != 1:
-        raise RuntimeError(f"Expected one publication block in {path}; found {count}")
-    path.write_text(updated, encoding="utf-8")
 
 
 def normalize_title(title: str) -> str:
@@ -674,11 +522,10 @@ def main() -> int:
 
     cv_records = load_cv_publications(ROOT / "cv" / "fbl_cv.tex")
     write_snapshot(snapshot_path, records)
-    update_homepage(ROOT / "index.html", records, cv_records)
     write_sync_report(ROOT / "data" / "sync_report.md", records, cv_records)
     print(
-        f"Synchronized {len(records)} Scholar records; "
-        f"rendered {DISPLAY_COUNT} recent publications."
+        f"Synchronized {len(records)} Scholar records and the CV review report; "
+        "Hugo site content was preserved."
     )
     return 0
 
@@ -707,4 +554,3 @@ def cli() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(cli())
-
