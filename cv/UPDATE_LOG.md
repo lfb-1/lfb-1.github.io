@@ -4,6 +4,46 @@ This file tracks all updates made to Fengbei Liu's CV.
 
 ---
 
+## 2026-11-11: Add Longitudinal ECG Paper and Recent News
+
+**Updated By:** Agent
+
+### Changes Made
+- Added **Deep Learning With Longitudinal Electrocardiograms Predicts Atrial Fibrillation Better Than a Single Electrocardiogram** to Co-author Publications and pinned it on the homepage.
+  - Authors: Sunwoo Kwak, Fengbei Liu, Nusrat Binta Nizam, Peter Okin, Mert R. Sabuncu.
+  - Venue and status: **JACC: Advances**, published, confirmed by the author.
+  - Publication year and DOI remain blank pending confirmation; no metadata was inferred from another paper.
+- Added a **Recent News** section with the new paper, MIDL 2027 Area Chair service, and MAdam's NeurIPS 2026 acceptance. News dates are announcement dates from author updates and this log.
+- Rebuilt both CV PDF copies and updated the homepage's PDF cache version.
+- Preserved prior CV edits, including conference service and removal of Research Interests.
+- Kept the saved Scholar snapshot unchanged; refreshed the CV comparison report and prevented generated publication rows from duplicating pinned entries.
+
+### Files Updated
+- `fbl_cv.tex`, `fbl_cv.pdf`, `../fbl_cv.pdf`
+- `../index.html`, `../style.css`
+- `generate_news.py`, `../scripts/sync_scholar.py`, `../tests/test_sync_scholar.py`
+- `../data/sync_report.md`, `../SYNC.md`, `WORKFLOW.md`, `README.md`, `../STATUS.md`
+
+---
+
+## 2026-11-09: Update Conference Service and Remove Research Interests
+
+**Updated By:** Agent
+
+### Changes Made
+- ✅ Added Area Chair: MIDL 2027 under Professional Activities → Conference
+- ✅ Removed the Research Interests section, including its keywords and research overview
+- ✅ Rebuilt both CV PDF copies and refreshed the homepage PDF cache version
+  - Source: Author (Fengbei Liu)
+
+### Files Updated
+- ✅ fbl_cv.tex
+- ✅ fbl_cv.pdf
+- ✅ ../fbl_cv.pdf
+- ✅ ../index.html
+
+---
+
 ## 2026-11-06: Complete Research Interests Overview
 
 **Updated By:** Agent

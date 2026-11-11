@@ -127,6 +127,29 @@ class ScholarParserTests(unittest.TestCase):
         self.assertTrue(updated.startswith("before\n"))
         self.assertTrue(updated.endswith("\nafter\n"))
 
+    def test_update_homepage_does_not_duplicate_pinned_publications(self):
+        records = sync_scholar.parse_profile(SAMPLE_HTML)
+        for tag in ("a", "span"):
+            with (
+                self.subTest(tag=tag),
+                tempfile.TemporaryDirectory() as directory,
+            ):
+                pinned = (
+                    '<section id="news">Recent News</section>\n'
+                    f'<{tag} class="publication-title">'
+                    f'A Paper &amp; Its Result</{tag}>\n'
+                )
+                path = Path(directory) / "index.html"
+                path.write_text(
+                    pinned + sync_scholar.START_MARKER + "\nold\n"
+                    + sync_scholar.END_MARKER + "\n"
+                )
+                sync_scholar.update_homepage(path, records)
+                updated = path.read_text()
+                self.assertTrue(updated.startswith(pinned))
+                self.assertEqual(updated.count("A Paper &amp; Its Result"), 1)
+                self.assertIn("Second Paper", updated)
+
     def test_update_homepage_uses_full_cv_authors(self):
         records = sync_scholar.parse_profile(SAMPLE_HTML)
         cv_records = [
@@ -246,6 +269,25 @@ class InventoryMatchTests(unittest.TestCase):
         )
         self.assertEqual(records[0]["authors"], "Fengbei Liu, A Author")
         self.assertEqual(records[1]["authors"], "Fengbei Liu, B Author")
+
+    def test_cv_inventory_keeps_published_journal_without_confirmed_year(self):
+        tex = r"""
+        \newcommand{\resumePubheading}[3]{#1 #2 #3}
+        \resumePubheading{Longitudinal ECGs}{Sunwoo Kwak, Fengbei Liu}
+        {JACC: Advances}
+        \resumePubheading{Prof. Referee}{University}{referee@example.org}
+        """
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "cv.tex"
+            path.write_text(tex)
+            records = sync_scholar.load_cv_publications(path)
+
+        self.assertEqual(len(records), 1)
+        self.assertEqual(records[0]["title"], "Longitudinal ECGs")
+        self.assertEqual(records[0]["venue"], "JACC: Advances")
+        self.assertEqual(records[0]["year"], "")
+        self.assertEqual(records[0]["entry_type"], "publication")
+        self.assertFalse(records[0]["first_author"])
 
     def test_fuzzy_title_match_accepts_minor_scholar_title_difference(self):
         scholar = [

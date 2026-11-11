@@ -1,0 +1,95 @@
+{
+  "checked_on": "2026-11-11",
+  "publication": {
+    "title": "Deep Learning With Longitudinal Electrocardiograms Predicts Atrial Fibrillation Better Than a Single Electrocardiogram",
+    "authors": "Sunwoo Kwak, Fengbei Liu, Nusrat Binta Nizam, Peter Okin, Mert R. Sabuncu",
+    "venue": "JACC: Advances",
+    "status": "published",
+    "source": "author_confirmation",
+    "publication_year": null,
+    "doi": null
+  },
+  "errors": [],
+  "viewports": [
+    {
+      "width": 1440,
+      "no_horizontal_overflow": true
+    },
+    {
+      "width": 768,
+      "no_horizontal_overflow": true
+    },
+    {
+      "width": 390,
+      "no_horizontal_overflow": true
+    }
+  ],
+  "cv": {
+    "href": "fbl_cv.pdf?v=d29a50e2",
+    "sha256": "d29a50e2bba94d73dfa7bf8fa7ccf9ee5c213174fff728cb0da4c5ece6801c98",
+    "served_copy_matches": true
+  },
+  "existing_publications_preserved": 7,
+  "recent_news_items": 3,
+  "internal_links_valid": 7,
+  "validation": {
+    "unit_tests_passed": 22,
+    "cv_pages": 4,
+    "latex_warnings": [],
+    "both_cv_pdfs_identical": true,
+    "preexisting_cv_edits_preserved": true,
+    "scholar_snapshot_preserved": true,
+    "unknown_publication_year_not_inferred": true,
+    "unknown_doi_not_inferred": true,
+    "legacy_news_skips_undated_entries": true,
+    "cv_inventory_entries": 40,
+    "scholar_records": 40,
+    "cv_only_titles": 1,
+    "new_python_style_diagnostics": 0,
+    "existing_python_style_diagnostics": 99,
+    "screenshots_reviewed": true
+  },
+  "announcement_sources": [
+    {
+      "announcement_month": "2026-11",
+      "event": "JACC: Advances publication",
+      "source": "Author confirmation, 2026-11-11"
+    },
+    {
+      "announcement_month": "2026-11",
+      "event": "MIDL 2027 Area Chair",
+      "source": "cv/UPDATE_LOG.md, 2026-11-09"
+    },
+    {
+      "announcement_month": "2026-09",
+      "event": "MAdam accepted at NeurIPS 2026",
+      "source": "cv/UPDATE_LOG.md, 2026-09-24"
+    }
+  ],
+  "files": {
+    "index.html": {
+      "bytes": 10675,
+      "sha256": "3694b29ee2f0bd0d850b416f5124f4fcaecd7312d2ce670f71fcea04dffceffe"
+    },
+    "style.css": {
+      "bytes": 5721,
+      "sha256": "569b13c5a3b97f1bd3db7d57ca462474b2335818ebdf3a26277eb49838c94b93"
+    },
+    "cv/fbl_cv.tex": {
+      "bytes": 22482,
+      "sha256": "33996c6241d7241c8eab210af83b2abcfde00867ad631711e077ca777bc4fcf6"
+    },
+    "cv/fbl_cv.pdf": {
+      "bytes": 154182,
+      "sha256": "d29a50e2bba94d73dfa7bf8fa7ccf9ee5c213174fff728cb0da4c5ece6801c98"
+    },
+    "fbl_cv.pdf": {
+      "bytes": 154182,
+      "sha256": "d29a50e2bba94d73dfa7bf8fa7ccf9ee5c213174fff728cb0da4c5ece6801c98"
+    },
+    "data/scholar.json": {
+      "bytes": 19367,
+      "sha256": "d03ee4ff546f27973d2c2f57b076d87fb58b88e60d72faad43259ca373c5e89f"
+    }
+  }
+}

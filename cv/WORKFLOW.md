@@ -11,13 +11,13 @@ Google Scholar is the upstream publication inventory. The CV remains the curated
 
 ## Publication update procedure
 
-1. Add or correct the publication on the Google Scholar profile.
+1. Add or correct the publication on the Google Scholar profile. For an author-confirmed paper not yet indexed, use the pinned-publication procedure in `../SYNC.md` without inventing missing metadata.
 2. Run `python scripts/sync_scholar.py` from the repository root, or start the **Sync Google Scholar** Action.
 3. Review `data/sync_report.md`.
 4. For valid Scholar-only records, edit `fbl_cv.tex` with full author names and precise venue information.
 5. Compile the CV and copy the PDF to the repository root.
 6. Rerun the sync and tests.
-7. Record the update in `UPDATE_LOG.md`.
+7. Record the update in `UPDATE_LOG.md`. Curated homepage news uses the author-update date, not a guessed publication month.
 8. Merge only after the Scholar/CV differences are understood.
 
 ## Build and verification

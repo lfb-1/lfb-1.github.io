@@ -22,6 +22,14 @@ The sync is intentionally review-gated. Google Scholar author lists may be abbre
 
 The workflow reads the public profile; it cannot edit the Google Scholar profile. Add or correct a publication in Google Scholar first, then let the workflow propagate the change into a review pull request.
 
+## Author-confirmed updates
+
+A publication supplied and confirmed by the author can be added to the curated CV and pinned before `PUBLICATIONS_AUTO:START` while Scholar indexing catches up. Keep the supplied full title and authors. Leave an unconfirmed publication year or DOI blank; do not fabricate a Scholar record or citation ID. Confirmed journal entries without a year remain part of the CV inventory and are reported as CV-only when absent from the saved Scholar snapshot.
+
+The homepage sync excludes pinned titles from its generated block, so a later Scholar update does not duplicate them. The original Scholar snapshot keeps its own provenance. An offline report regenerated from that snapshot is not a live Scholar refresh.
+
+`Recent News` is curated in `index.html` outside the publication-sync block. Its dates are announcement dates, supported by author updates or `cv/UPDATE_LOG.md`; they are not estimated publication or conference-acceptance months. The legacy `cv/generate_news.py` is also used as a CV parser, but its approximate-date news output is not used for this section.
+
 ## Scheduled workflow
 
 `.github/workflows/sync-scholar.yml` runs monthly and can also be started manually from the Actions tab. It:

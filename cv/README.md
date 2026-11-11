@@ -5,7 +5,7 @@ This folder contains the most up-to-date CV for Fengbei Liu.
 ## Files
 
 - `fbl_cv.tex` - LaTeX source file
-- `fbl_cv.pdf` - Compiled PDF (last updated: 2026-01-19, 3:00 PM)
+- `fbl_cv.pdf` - Compiled PDF; kept identical to `../fbl_cv.pdf`
 - `WORKFLOW.md` - Review-gated workflow for updating the CV
 - `UPDATE_LOG.md` - History of CV updates
 - `../SYNC.md` - Homepage, CV, and Google Scholar synchronization contract
@@ -20,23 +20,13 @@ cd Homepage/cv && pdflatex -interaction=nonstopmode fbl_cv.tex && cp fbl_cv.pdf 
 
 After commit + push inside `Homepage/`, GitHub Pages rebuilds automatically.
 
-## Current Status (Last Updated: 2026-01-19)
+## Current Status (Last Updated: 2026-11-11)
 
-**Position:** Postdoctoral Researcher at Cornell Tech, Cornell University (Feb 2024 - Present)
+**Position:** Postdoctoral Researcher at Cornell Tech, Cornell University (Feb 2024 - Present).
 
-**Recent Publications (2024-2025):**
-- 2 papers in IEEE TMI (Transactions on Medical Imaging)
-- 1 paper in IEEE TPAMI (Transactions on Pattern Analysis and Machine Intelligence)
-- 1 paper in IEEE JBHI (IEEE Journal of Biomedical and Health Informatics)
-- 1 paper in TMLR (Transactions on Machine Learning Research)
-- 1 paper in Medical Image Analysis
-- 1 paper at CVPR 2024
+**Latest addition:** *Deep Learning With Longitudinal Electrocardiograms Predicts Atrial Fibrillation Better Than a Single Electrocardiogram*, by Sunwoo Kwak, Fengbei Liu, Nusrat Binta Nizam, Peter Okin, and Mert R. Sabuncu. The author confirmed publication in **JACC: Advances** on 2026-11-11. Publication year and DOI were not supplied or independently verified, so they remain blank.
 
-**Total 2025 Publications: 7 papers (4 in IEEE journals/transactions)**
-
-**Citation Count:** 1,158+ (as of Jan 2026)
-
-**Total Publications:** 48 papers
+The homepage now has a curated **Recent News** section. Dates there reflect announcement dates; publication entries retain their own verified metadata. `../data/sync_report.md` compares the saved Scholar inventory with the curated CV, including the new author-confirmed paper.
 
 ## Synchronization Schedule
 

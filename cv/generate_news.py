@@ -20,6 +20,7 @@ VENUE_NORMALIZE = {
     'Transactions on Machine Learning Research': 'TMLR',
     'European Heart Journal - Digital Health': 'European Heart Journal - Digital Health (EHJ-DH)',
     'European Heart Journal-Digital Health': 'European Heart Journal - Digital Health (EHJ-DH)',
+    'JACC Advances': 'JACC: Advances',
 }
 
 VENUE_ALIASES = {'MICCA': 'MICCAI'}
@@ -28,6 +29,7 @@ JOURNALS = {
     'IEEE TPAMI', 'IEEE TIP', 'IEEE TMI', 'IEEE JBHI',
     'Medical Image Analysis (MedIA)', 'TMLR',
     'European Heart Journal - Digital Health (EHJ-DH)',
+    'JACC: Advances',
 }
 
 # Approximate month (MM) for acceptance/publication announcements
@@ -112,7 +114,7 @@ def parse_publications(tex_content):
     results = []
     idx = 0
     while True:
-        pos = tex_content.find('\\resumePubheading', idx)
+        pos = tex_content.find('\\resumePubheading{', idx)
         if pos == -1:
             break
         title_raw, after1 = extract_brace_arg(tex_content, pos)
@@ -120,22 +122,23 @@ def parse_publications(tex_content):
         venue_str, after3 = extract_brace_arg(tex_content, after2)
         idx = after3
 
-        # Extract year
+        # A confirmed journal publication may not have a confirmed year yet.
         year_match = re.search(r'(20\d{2})', venue_str)
-        if not year_match:
-            continue
-        year = year_match.group(1)
-
-        # Extract venue name
-        venue_raw = venue_str[:year_match.start()].strip().rstrip(',').strip()
+        year = year_match.group(1) if year_match else ''
+        venue_raw = (
+            venue_str[:year_match.start()] if year_match else venue_str
+        ).strip().rstrip(',').strip()
         for long_name, short_name in VENUE_NORMALIZE.items():
             if long_name in venue_raw:
                 venue_raw = short_name
                 break
         venue_raw = VENUE_ALIASES.get(venue_raw, venue_raw)
+        if not year_match and venue_raw not in JOURNALS:
+            # Reference-contact entries and macro definitions are not papers.
+            continue
 
-        # Extract qualifiers (Oral, Early Accept, etc.)
-        after_year = venue_str[year_match.end():]
+        # Extract qualifiers (Oral, Early Accept, etc.).
+        after_year = venue_str[year_match.end():] if year_match else ''
         qualifiers = [q.strip() for q in after_year.split(',') if q.strip()]
 
         title = strip_latex(title_raw)
@@ -206,8 +209,8 @@ def generate_news_html(pubs):
     from datetime import date
     recent_cutoff = str(date.today().year - 1)  # e.g. "2025"
 
-    # Drop papers explicitly excluded from news (still listed in the CV)
-    pubs = [p for p in pubs if not is_news_excluded(p)]
+    # Undated publications remain in the CV inventory, without guessed dates.
+    pubs = [p for p in pubs if p['year'] and not is_news_excluded(p)]
 
     # Split into recent vs old
     recent, old = [], []

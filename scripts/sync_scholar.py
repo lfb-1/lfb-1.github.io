@@ -24,7 +24,7 @@ import sys
 import unicodedata
 from collections.abc import Iterable
 from dataclasses import asdict, dataclass
-from html import escape
+from html import escape, unescape
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.error import HTTPError, URLError
@@ -83,6 +83,10 @@ JOURNAL_VENUE_NAMES = (
     (
         "Medical Image Analysis (MedIA)",
         ("Medical Image Analysis", "MedIA"),
+    ),
+    (
+        "JACC: Advances",
+        ("JACC: Advances", "JACC Advances"),
     ),
     (
         "European Heart Journal - Digital Health (EHJ-DH)",
@@ -368,10 +372,23 @@ def update_homepage(
     content = path.read_text(encoding="utf-8")
     if START_MARKER not in content or END_MARKER not in content:
         raise RuntimeError(f"Publication markers are missing from {path}")
+    outside = (
+        content.split(START_MARKER, 1)[0] + content.split(END_MARKER, 1)[1]
+    )
+    pinned_titles = {
+        normalize_title(unescape(re.sub(r"<[^>]+>", "", title)))
+        for title in re.findall(
+            r'<(?:a|span) class="publication-title"[^>]*>'
+            r'(.*?)</(?:a|span)>',
+            outside,
+            flags=re.DOTALL,
+        )
+    }
     eligible = [
         record
         for record in records
-        if not any(
+        if normalize_title(record.title) not in pinned_titles
+        and not any(
             fragment.casefold() in record.title.casefold()
             for fragment in HOMEPAGE_EXCLUDE_TITLE_FRAGMENTS
         )
@@ -592,7 +609,9 @@ def write_sync_report(
     lines.extend(["", "## CV-only titles", ""])
     if cv_only:
         lines.extend(
-            f"- {record['title']} — {record['venue']} {record['year']}"
+            (
+                f"- {record['title']} — {record['venue']} {record['year']}"
+            ).rstrip()
             for record in cv_only
         )
     else:
