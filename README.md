@@ -31,7 +31,7 @@ cmp cv/fbl_cv.pdf static/fbl_cv.pdf
 
 Add news to `params.news` in `config.yml`, newest first. Use a confirmed announcement month when available, otherwise only the publication year in the CV. Do not infer acceptance or publication months. The homepage shows the first six entries; `/news/` shows all entries.
 
-After changing the CV or saved Scholar inventory, run `python3 scripts/build_publications.py`. It preserves CV titles, author order, contribution marks, venue qualifiers, and preprint status, adding links from matched Scholar records. The build checks that the committed inventory is current. The JACC: Advances paper remains undated until its publication year is confirmed.
+After changing the CV or saved Scholar inventory, run `python3 scripts/build_publications.py`. It preserves CV titles, author order, contribution marks, venue qualifiers, and preprint status, adding links from matched Scholar records. The build checks that the committed inventory is current. The JACC: Advances paper is listed under 2026, as confirmed by the author; its DOI remains unconfirmed.
 
 ## Deployment
 

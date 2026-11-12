@@ -4,6 +4,17 @@ This file tracks all updates made to Fengbei Liu's CV.
 
 ---
 
+## 2026-11-12: Confirm the JACC Publication Year
+
+**Updated By:** Agent
+
+- The author confirmed **2026** as the publication year for *Deep Learning With Longitudinal Electrocardiograms Predicts Atrial Fibrillation Better Than a Single Electrocardiogram* in **JACC: Advances**. Added the year to the CV and regenerated the complete publication inventory and saved Scholar/CV comparison. The DOI remains unconfirmed.
+- The website now places this paper in the 2026 list and removes the “Recently published” heading, as requested.
+- Rebuilt the four-page CV, copied it to `../static/fbl_cv.pdf`, and refreshed the CV icon's cache version. No text overflow was reported; existing template warnings concern bold small caps and the footer skip.
+- Updated the homepage introduction to begin “I am a Postdoctoral Researcher …”.
+
+---
+
 ## 2026-11-12: Add the Complete Website Publication Page
 
 **Updated By:** Agent

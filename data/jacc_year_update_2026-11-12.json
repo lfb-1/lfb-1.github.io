@@ -1,0 +1,51 @@
+{
+  "publications": 40,
+  "published": 38,
+  "preprints": 2,
+  "published2026": 13,
+  "jaccYear": 2026,
+  "recentlyPublishedHeading": false,
+  "bioStartsWithIAm": true,
+  "news": 18,
+  "homepageNews": 6,
+  "research": "My research lies at the intersection of computer vision, medical image analysis and deep learning.",
+  "cvIcon": true,
+  "cvButton": false,
+  "viewportWidths": [
+    1440,
+    768,
+    390
+  ],
+  "internalPublicationLinks": 22,
+  "errors": [],
+  "date": "2026-11-12",
+  "year_source": "Author confirmation",
+  "doi_confirmed": false,
+  "unit_tests": 20,
+  "hugo_build": "passed without warnings",
+  "cv_pages": 4,
+  "cv_has_jacc_2026": true,
+  "cv_overflow": false,
+  "cv_template_warnings": [
+    "bold small-caps font fallback",
+    "fancyhdr footskip"
+  ],
+  "cv_sha256": "72784d2a08827b792670035138b43fdca7c2c8c66cf85445b3cadfc5a8082bf4",
+  "public_files_sha256": {
+    "404.html": "c92b97c0f65424f3cf814b7590fd6d9c03a4109aefedc958d647e25d13bc85b9",
+    "apple-touch-icon.png": "ad2a90a89b9dde60b1c1bcd401cb6b83d794ded0471c86de7003fefc56e1504d",
+    "assets/css/stylesheet.d54df17e2aea8f515b5ab6089fc49d6b97a9618bb689289b9e7c50adcd3fb89e.css": "d54df17e2aea8f515b5ab6089fc49d6b97a9618bb689289b9e7c50adcd3fb89e",
+    "experience/index.html": "b7057f2684422a5e62bbacae17a738f4f3c4a7e92492f8ad7f89aad96bf9e6ce",
+    "favicon-16x16.png": "f41783b5b3f114e64d7697cca730c2370d3dbd05af8a03829a6f761ad4f53066",
+    "favicon-32x32.png": "efd557d39480d69028b298f501ab495e6eb19288c14365ad41fd67d57eb8e6b7",
+    "favicon.ico": "e79e4afafe962fa7a2fb52d26fe15e391e70da7b71595e92635642199bcc88cb",
+    "fbl_cv.pdf": "72784d2a08827b792670035138b43fdca7c2c8c66cf85445b3cadfc5a8082bf4",
+    "index.html": "98b1c90edbd739ef4b9adeefffb7b1b04753f61359929b17eb3cb94923f5a4cf",
+    "news/index.html": "08560ea898829a4b37f34f1dee5a34d66048dd667bfeef040d5de6cecf2ee685",
+    "publications/index.html": "66bb56c92c30563e9ca3027d9e14e420a37cc3617475e0a9d5de3ec2c8bbd59d",
+    "robots.txt": "212195aea55377a737020a16678ddbcf6b94fc56dd96309dabb40ba189e993d4",
+    "service/index.html": "da3b66e5dfe276a97112efe03eace26d1c8441c910b10d0494b2efe3efd3c383",
+    "sitemap.xml": "9c8ae6d8064a2e95b19b53a3e2af717574832148811883f1f65ed496c41f8886",
+    "thesis/ElsnerTalk.pdf": "77684a1f1a8f3ee48ad1e7a992a0635732328c21f4da70e454dc178b4a5ea2f9"
+  }
+}

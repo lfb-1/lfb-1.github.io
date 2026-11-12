@@ -33,7 +33,7 @@ A publication confirmed by the author can be added to `cv/fbl_cv.tex` before Sch
 
 `Recent News` is curated in `config.yml` under `params.news`, newest first. The homepage displays six entries and `/news/` renders the complete list. Dates use an author-confirmed announcement month from updates or `cv/UPDATE_LOG.md` when available, otherwise only the publication year recorded in the CV. Do not estimate months. `cv/generate_news.py` remains the CV parser; its legacy approximate-date HTML output is not used by Hugo.
 
-`/publications/` renders `data/publications.json`, built from every CV publication and preprint. Full author order, equal-contribution marks, qualifiers, and undated publications are retained. Scholar supplies matched links without overriding curated publication status. Display text normalizes LaTeX accents, the verified ACPL spelling, and an existing author-list comma; CV source and PDF contents remain unchanged. Only this JSON file is mounted as Hugo data, excluding maintenance reports.
+`/publications/` renders `data/publications.json`, built from every CV publication and preprint. Full author order, equal-contribution marks, qualifiers, and undated publications are retained. Scholar supplies matched links without overriding curated publication status. Display text normalizes LaTeX accents, the verified ACPL spelling, and an existing author-list comma; the generator does not rewrite the CV source or PDF. Only this JSON file is mounted as Hugo data, excluding maintenance reports.
 
 The saved Scholar snapshot keeps its provenance. Regenerating a report from that snapshot is not a live Scholar refresh.
 

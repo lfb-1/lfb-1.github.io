@@ -67,7 +67,7 @@ params:
     enabled: true
     title: Fengbei Liu
     subtitle: |-
-      Postdoctoral Researcher at [Cornell Tech](https://tech.cornell.edu/), Cornell University,
+      I am a Postdoctoral Researcher at [Cornell Tech](https://tech.cornell.edu/), Cornell University,
       working with [Prof. Mert R. Sabuncu](https://sabuncu.engineering.cornell.edu/).
       I obtained my Ph.D. from the [Australian Institute for Machine Learning](https://www.adelaide.edu.au/aiml/)
       at the University of Adelaide, advised by
@@ -89,7 +89,7 @@ params:
 
   socialIcons:
     - name: CV
-      url: fbl_cv.pdf?v=d29a50e2
+      url: fbl_cv.pdf?v=72784d2a
     - name: Email
       url: mailto:fl453@cornell.edu
     - name: Google Scholar

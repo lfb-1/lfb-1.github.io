@@ -25,7 +25,7 @@ After commit + push inside `Homepage/`, GitHub Pages rebuilds automatically.
 
 **Position:** Postdoctoral Researcher at Cornell Tech, Cornell University (Feb 2024 - Present).
 
-**Latest addition:** *Deep Learning With Longitudinal Electrocardiograms Predicts Atrial Fibrillation Better Than a Single Electrocardiogram*, by Sunwoo Kwak, Fengbei Liu, Nusrat Binta Nizam, Peter Okin, and Mert R. Sabuncu. The author confirmed publication in **JACC: Advances** on 2026-11-11. Publication year and DOI were not supplied or independently verified, so they remain blank.
+**Latest addition:** *Deep Learning With Longitudinal Electrocardiograms Predicts Atrial Fibrillation Better Than a Single Electrocardiogram*, by Sunwoo Kwak, Fengbei Liu, Nusrat Binta Nizam, Peter Okin, and Mert R. Sabuncu. The author confirmed publication in **JACC: Advances** on 2026-11-11 and confirmed the publication year **2026** on 2026-11-12. The DOI remains unconfirmed and is left blank.
 
 The homepage's curated **Recent News** section is configured in `config.yml`; it shows six entries and `/news/` renders all 18 current entries. Dates use confirmed announcement months or CV publication years. `/publications/` includes all 40 CV records: 38 publications and two preprints. It is generated from `../data/publications.json`, with CV author order and status preserved. The CV remains available through the profile icon. `../data/sync_report.md` compares the saved Scholar inventory with the curated CV, including the author-confirmed JACC: Advances paper.
 
