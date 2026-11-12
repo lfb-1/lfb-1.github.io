@@ -4,6 +4,18 @@ This file tracks all updates made to Fengbei Liu's CV.
 
 ---
 
+## 2026-11-12: Add the Complete Website Publication Page
+
+**Updated By:** Agent
+
+- Added `/publications/` with every CV record: 38 published/accepted papers and two preprints. The page retains CV author order, equal-contribution markers, venue qualifiers, and missing-year journal entries. Matched Scholar records supply links.
+- Added `../scripts/build_publications.py` and `../data/publications.json`; the CV build recipe, Scholar review workflow, and Hugo checks keep this inventory current.
+- Extended curated website news to 18 entries, showing six on the homepage. New historical entries use CV years unless an announcement month is confirmed. The earlier CT-LVEF news exclusion remains.
+- Preserved co-first-author stars and LaTeX accents in the CV parser. Website display corrects the verified ACPL spelling and an existing missing comma; CV source and PDF contents are unchanged.
+- The public CV remains available through its icon; the text button was removed at the author's request. The research sentence is now a separate paragraph using the author's exact wording.
+
+---
+
 ## 2026-11-11: Migrate the Public CV to Hugo
 
 **Updated By:** Agent

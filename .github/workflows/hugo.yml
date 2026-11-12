@@ -28,6 +28,7 @@ jobs:
       - name: Test publication maintenance and verify the public CV
         run: |
           python -m unittest discover -s tests -p "test_*.py"
+          python scripts/build_publications.py --check
           cmp cv/fbl_cv.pdf static/fbl_cv.pdf
       - name: Install Hugo Extended
         run: |
@@ -41,6 +42,7 @@ jobs:
         run: |
           test -s public/index.html
           test -s public/news/index.html
+          test -s public/publications/index.html
           test -s public/experience/index.html
           test -s public/service/index.html
           cmp cv/fbl_cv.pdf public/fbl_cv.pdf

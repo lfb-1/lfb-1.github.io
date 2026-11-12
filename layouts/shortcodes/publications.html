@@ -1,0 +1,19 @@
+{{- $publications := hugo.Data.publications.publications -}}
+{{- $published := where $publications "kind" "publication" -}}
+{{- $undated := where $published "year" "" -}}
+{{- with $undated }}
+<h2>Recently published</h2>
+{{ partial "publication_list.html" . }}
+{{- end }}
+{{- $years := slice -}}
+{{- range $published -}}
+    {{- with .year -}}{{- $years = $years | append . -}}{{- end -}}
+{{- end -}}
+{{- range sort (uniq $years) "value" "desc" }}
+<h2 id="year-{{ . }}">{{ . }}</h2>
+{{ partial "publication_list.html" (where $published "year" .) }}
+{{- end }}
+{{- with where $publications "kind" "preprint" }}
+<h2 id="preprints">Preprints</h2>
+{{ partial "publication_list.html" . }}
+{{- end }}

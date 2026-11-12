@@ -1,8 +1,9 @@
 /* Site-specific additions to the hugo-website / PaperMod theme. */
 .main .profile { flex-direction: column; justify-content: center; align-items: center; }
 .profile .profile_inner { width: 100%; max-width: 640px; }
-.profile .profile_inner > span { text-align: left; line-height: 1.6; }
-.profile .profile_inner > span a { box-shadow: 0 1px 0 var(--secondary); }
+.profile-bio { text-align: left; line-height: 1.6; }
+.profile-bio p + p { margin-top: 14px; }
+.profile-bio a { box-shadow: 0 1px 0 var(--secondary); }
 
 .home-news { width: 100%; max-width: 640px; margin: 40px auto 0; text-align: left; font-size: 1rem; }
 .home-news h2 { font-size: 1.25rem; margin-bottom: 12px; }
@@ -15,6 +16,12 @@
 .news-date { color: var(--secondary); font-size: 0.9rem; white-space: nowrap; padding-top: 1px; }
 .news-text p { margin: 0; display: inline; }
 .news-text a { box-shadow: 0 1px 0 var(--secondary); }
+
+.post-content .publication-list { padding-inline-start: 1.35rem; }
+.publication-list li { padding-left: 4px; margin-bottom: 26px; scroll-margin-top: 24px; }
+.publication-list .publication-title { font-weight: 600; margin: 0 0 6px; }
+.publication-list .publication-authors { font-size: 0.9rem; line-height: 1.5; margin: 0 0 4px; color: var(--secondary); }
+.publication-list .publication-venue { font-size: 0.9rem; margin: 0; }
 
 @media (max-width: 480px) {
   .news-list li { grid-template-columns: 1fr; gap: 0; }

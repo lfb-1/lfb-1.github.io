@@ -1,0 +1,15 @@
+<ol class="publication-list">
+    {{- range . }}
+    <li id="{{ .id }}">
+        <p class="publication-title">
+            {{- if .url -}}
+            <a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .title }}</a>
+            {{- else -}}
+            {{ .title }}
+            {{- end -}}
+        </p>
+        <p class="publication-authors">{{ .authors | htmlEscape | replaceRE "Fengbei Liu" "<strong>Fengbei Liu</strong>" | safeHTML }}</p>
+        <p class="publication-venue">{{ .venue }}{{ with .year }} · {{ . }}{{ end }}{{ range .qualifiers }} · {{ . }}{{ end }}</p>
+    </li>
+    {{- end }}
+</ol>

@@ -48,9 +48,13 @@ jobs:
       - name: Synchronize Scholar snapshot and CV report
         run: python scripts/sync_scholar.py
 
+      - name: Refresh publication-page data from the curated CV
+        run: python scripts/build_publications.py
+
       - name: Verify generated files
         run: |
           python -m json.tool data/scholar.json >/dev/null
+          python scripts/build_publications.py --check
           test -s data/sync_report.md
           cmp cv/fbl_cv.pdf static/fbl_cv.pdf
 
@@ -67,7 +71,8 @@ jobs:
 
             This pull request:
             - refreshes `data/scholar.json` from the public author profile;
+            - refreshes `data/publications.json` from the curated CV and the saved Scholar links;
             - updates `data/sync_report.md` with Scholar/CV differences.
 
-            Hugo site configuration, curated news, templates, and the public CV are preserved. Before merging, review every Scholar-only and CV-only title. Scholar abbreviates authors and can merge publication versions, so the workflow does not rewrite the LaTeX CV automatically. If the CV needs changes, preserve full author names and venue qualifiers in `cv/fbl_cv.tex`, rebuild it, run `python scripts/publish_cv.py` to update `static/fbl_cv.pdf` and its link versions, and rerun `python scripts/sync_scholar.py`.
+            Hugo configuration, curated news, Markdown pages, templates, and the public CV are preserved. Before merging, review every Scholar-only and CV-only title. Scholar abbreviates authors and can merge publication versions, so the workflow does not rewrite the LaTeX CV automatically. If the CV needs changes, preserve full author names and venue qualifiers in `cv/fbl_cv.tex`, rebuild it, run `python scripts/publish_cv.py` to update `static/fbl_cv.pdf` and its link version, rerun `python scripts/build_publications.py`, and review the sync report.
 

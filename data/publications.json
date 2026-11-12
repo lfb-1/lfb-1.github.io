@@ -1,0 +1,420 @@
+{
+  "source": "cv/fbl_cv.tex",
+  "publications": [
+    {
+      "id": "bridging-generative-and-discriminative-noisy-label-learning-via-direction-agnostic-em-formulation",
+      "title": "Bridging Generative and Discriminative Noisy-Label Learning via Direction-Agnostic EM Formulation",
+      "authors": "Fengbei Liu, Chong Wang, Yuanhong Chen, Yuyuan Liu, Gustavo Carneiro",
+      "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)",
+      "year": "2026",
+      "kind": "publication",
+      "qualifiers": [],
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:j3f4tGmQtD8C"
+    },
+    {
+      "id": "madam-metric-aware-multi-objective-adam",
+      "title": "MAdam: Metric-Aware Multi-Objective Adam",
+      "authors": "Fengbei Liu, Rachit Saluja, Sunwoo Kwak, Ruibo Wang, Ruining Deng, Heejong Kim, Johannes C. Paetzold, Mert R. Sabuncu",
+      "venue": "NeurIPS",
+      "year": "2026",
+      "kind": "publication",
+      "qualifiers": [],
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:M3NEmzRMIkIC"
+    },
+    {
+      "id": "rned-rotary-number-encoding-and-decoding-for-quantitative-medical-vlm-analysis",
+      "title": "RNED: Rotary Number Encoding and Decoding for Quantitative Medical VLM Analysis",
+      "authors": "Fengbei Liu, Sunwoo Kwak, Nusrat Binta Nizam, Ilan Richter, Ashley Beecy, Jayant K Raikhelkar, Deborah Estrin, Mert R. Sabuncu",
+      "venue": "CVPR",
+      "year": "2026",
+      "kind": "publication",
+      "qualifiers": [],
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:k_IJM867U9cC"
+    },
+    {
+      "id": "hyperct-low-rank-hypernet-for-unified-chest-ct-analysis",
+      "title": "HyperCT: Low-Rank Hypernet for Unified Chest CT Analysis",
+      "authors": "Fengbei Liu, Sunwoo Kwak, Hao Phung, Nusrat Binta Nizam, Ilan Richter, Nir Uriel, Hadar Averbuch-Elor, Deborah Estrin, Mert R. Sabuncu",
+      "venue": "MIDL",
+      "year": "2026",
+      "kind": "publication",
+      "qualifiers": [],
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:_Qo2XoVZTnwC"
+    },
+    {
+      "id": "bomd-bag-of-multi-label-local-descriptors-for-noisy-chest-x-ray-classification",
+      "title": "BoMD: Bag of Multi-label Local Descriptors for Noisy Chest X-ray Classification",
+      "authors": "Yuanhong Chen*, Fengbei Liu*, Hu Wang, Chong Wang, Yuyuan Liu, Yu Tian, Gustavo Carneiro",
+      "venue": "ICCV",
+      "year": "2023",
+      "kind": "publication",
+      "qualifiers": [],
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:Zph67rFs4hoC"
+    },
+    {
+      "id": "self-supervised-multi-class-pre-training-for-unsupervised-anomaly-detection-and-segmentation-in-medical-images",
+      "title": "Self-supervised Multi-class Pre-training for Unsupervised Anomaly Detection and Segmentation in Medical Images",
+      "authors": "Yu Tian*, Fengbei Liu*, Guansong Pang, Yuanhong Chen, Yuyuan Liu, Johan W. Verjans, Rajvinder Singh, Gustavo Carneiro",
+      "venue": "Medical Image Analysis (MedIA)",
+      "year": "2023",
+      "kind": "publication",
+      "qualifiers": [],
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:YOwf2qJgpHMC"
+    },
+    {
+      "id": "nvum-non-volatile-unbiased-memory-for-robust-medical-image-classification",
+      "title": "NVUM: Non-volatile Unbiased Memory for Robust Medical Image Classification",
+      "authors": "Fengbei Liu, Yuanhong Chen, Yu Tian, Yuyuan Liu, Chong Wang, Vasileios Belagiannis, Gustavo Carneiro",
+      "venue": "MICCAI",
+      "year": "2022",
+      "kind": "publication",
+      "qualifiers": [
+        "Early Accept",
+        "featured in ComputerVisionNews"
+      ],
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:Se3iqnhoufwC"
+    },
+    {
+      "id": "acpl-anti-curriculum-pseudo-labelling-for-semi-supervised-medical-image-classification",
+      "title": "ACPL: Anti-curriculum Pseudo-labelling for Semi-supervised Medical Image Classification",
+      "authors": "Fengbei Liu*, Yu Tian*, Yuanhong Chen, Yuyuan Liu, Vasileios Belagiannis, Gustavo Carneiro",
+      "venue": "CVPR",
+      "year": "2022",
+      "kind": "publication",
+      "qualifiers": [],
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:YsMSGLbcyi4C"
+    },
+    {
+      "id": "self-supervised-mean-teacher-for-semi-supervised-chest-x-ray-classification",
+      "title": "Self-supervised Mean-teacher for Semi-supervised Chest X-ray Classification",
+      "authors": "Fengbei Liu, Yu Tian, Filipe R. Cordeiro, Vasileios Belagiannis, Ian Reid, Gustavo Carneiro",
+      "venue": "MICCAI-MLMI",
+      "year": "2021",
+      "kind": "publication",
+      "qualifiers": [],
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:2osOgNQ5qMEC"
+    },
+    {
+      "id": "self-supervised-depth-estimation-to-regularise-semantic-segmentation-in-knee-arthroscopy",
+      "title": "Self-supervised Depth estimation to Regularise Semantic Segmentation in Knee Arthroscopy",
+      "authors": "Fengbei Liu, Yaqub Jonmohamadi, Gabriel Maicas, Ajay K Pandey, Gustavo Carneiro",
+      "venue": "MICCAI",
+      "year": "2020",
+      "kind": "publication",
+      "qualifiers": [],
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:qjMakFHDy7sC"
+    },
+    {
+      "id": "deep-learning-with-longitudinal-electrocardiograms-predicts-atrial-fibrillation-better-than-a-single-electrocardiogram",
+      "title": "Deep Learning With Longitudinal Electrocardiograms Predicts Atrial Fibrillation Better Than a Single Electrocardiogram",
+      "authors": "Sunwoo Kwak, Fengbei Liu, Nusrat Binta Nizam, Peter Okin, Mert R. Sabuncu",
+      "venue": "JACC: Advances",
+      "year": "",
+      "kind": "publication",
+      "qualifiers": [],
+      "url": ""
+    },
+    {
+      "id": "medcure-medical-data-curation-for-efficient-vision-language-pretraining",
+      "title": "MedCure: Medical Data Curation for Efficient Vision-Language Pretraining",
+      "authors": "Chong Wang, Fengbei Liu, Yuyuan Liu, Yuanhong Chen, Yu Tian, Leyuan Fang",
+      "venue": "IEEE Transactions on Image Processing (TIP)",
+      "year": "2026",
+      "kind": "publication",
+      "qualifiers": [],
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:YFjsv_pBGBYC"
+    },
+    {
+      "id": "backsplit-the-importance-of-sub-dividing-the-background-in-biomedical-lesion-segmentation",
+      "title": "BackSplit: The Importance of Sub-dividing the Background in Biomedical Lesion Segmentation",
+      "authors": "Rachit Saluja, Asli Cihangir, Ruining Deng, Johannes C. Paetzold, Fengbei Liu, Mert R. Sabuncu",
+      "venue": "CVPR",
+      "year": "2026",
+      "kind": "publication",
+      "qualifiers": [],
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:TQgYirikUcIC"
+    },
+    {
+      "id": "from-failure-to-feedback-group-revision-unlocks-hard-cases-in-object-level-grounding",
+      "title": "From Failure to Feedback: Group Revision Unlocks Hard Cases in Object-Level Grounding",
+      "authors": "Yuyuan Liu, Yijing Ji, Anjie Le, Jiayuan Zhu, Jiazhen Pan, Can Peng, Jiajun Deng, Fengbei Liu, Junde Wu",
+      "venue": "CVPR",
+      "year": "2026",
+      "kind": "publication",
+      "qualifiers": [],
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:isC4tDSrTZIC"
+    },
+    {
+      "id": "beyond-machine-interpretation-learning-from-expert-over-reads-improves-ecg-diagnosis",
+      "title": "Beyond Machine Interpretation: Learning from Expert Over-Reads Improves ECG Diagnosis",
+      "authors": "Sunwoo Kwak, Fengbei Liu, Nusrat Binta Nizam, Ilan Richter, Nir Uriel, Peter M. Okin, Mert R. Sabuncu",
+      "venue": "MIDL",
+      "year": "2026",
+      "kind": "publication",
+      "qualifiers": [],
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:4JMBOYKVnBMC"
+    },
+    {
+      "id": "x-cardia-phenotype-guided-cross-modal-alignment-for-opportunistic-cardiac-screening-on-routine-chest-ct",
+      "title": "X-Cardia: Phenotype-Guided Cross-Modal Alignment for Opportunistic Cardiac Screening on Routine Chest CT",
+      "authors": "Nusrat Binta Nizam, Fengbei Liu, Sunwoo Kwak, Ilan Richter, Jayant K Raikhelkar, Ashley Beecy, Nir Uriel, Deborah Estrin, Mert R. Sabuncu",
+      "venue": "MIDL",
+      "year": "2026",
+      "kind": "publication",
+      "qualifiers": [
+        "Oral"
+      ],
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:RHpTSmoSYBkC"
+    },
+    {
+      "id": "shapko-shapley-adaptive-modality-knockout-for-robust-multimodal-learning",
+      "title": "ShapKO: Shapley-Adaptive Modality Knockout for Robust Multimodal Learning",
+      "authors": "Nusrat Binta Nizam, Fengbei Liu, Sunwoo Kwak, Minh Nguyen, Ruining Deng, Mert R. Sabuncu",
+      "venue": "MICCAI",
+      "year": "2026",
+      "kind": "publication",
+      "qualifiers": [],
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:hMod-77fHWUC"
+    },
+    {
+      "id": "an-artificial-intelligence-model-to-detect-abnormal-ejection-fraction-from-non-contrast-chest-computed-tomography-the-ct-lvef-study",
+      "title": "An Artificial Intelligence Model to Detect Abnormal Ejection Fraction from Non-Contrast Chest Computed Tomography: The CT-LVEF study",
+      "authors": "Jayant Raikhelkar, Zilong Bai, Ashley N Beecy, Ilan Richter, Fengbei Liu, et al.",
+      "venue": "European Heart Journal - Digital Health (EHJ-DH)",
+      "year": "2026",
+      "kind": "publication",
+      "qualifiers": [],
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:JV2RwH3_ST0C"
+    },
+    {
+      "id": "cardio-amyloid-ai-advanced-multimodal-screening-for-transthyretin-cardiac-amyloidosis-in-severe-aortic-stenosis-patients",
+      "title": "Cardio Amyloid-AI: Advanced Multimodal Screening for Transthyretin Cardiac Amyloidosis in Severe Aortic Stenosis Patients",
+      "authors": "Nusrat Binta Nizam, Ashley N Beecy, Jacob W Groenendyk, Fengbei Liu, et al.",
+      "venue": "European Heart Journal - Digital Health (EHJ-DH)",
+      "year": "2026",
+      "kind": "publication",
+      "qualifiers": [],
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:bEWYMUwI8FkC"
+    },
+    {
+      "id": "progressive-mining-and-dynamic-distillation-of-hierarchical-prototypes-for-disease-classification-and-localisation",
+      "title": "Progressive Mining and Dynamic Distillation of Hierarchical Prototypes for Disease Classification and Localisation",
+      "authors": "Chong Wang, Fengbei Liu, Yuanhong Chen, Gustavo Carneiro",
+      "venue": "IEEE Journal of Biomedical and Health Informatics (JBHI)",
+      "year": "2025",
+      "kind": "publication",
+      "qualifiers": [],
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:-f6ydRqryjwC"
+    },
+    {
+      "id": "cross-and-intra-image-prototypical-learning-for-multi-label-disease-diagnosis-and-interpretation",
+      "title": "Cross- and Intra-image Prototypical Learning for Multi-label Disease Diagnosis and Interpretation",
+      "authors": "Chong Wang, Fengbei Liu, Yuanhong Chen, Helen Frazer, Gustavo Carneiro",
+      "venue": "IEEE Transactions on Medical Imaging (TMI)",
+      "year": "2025",
+      "kind": "publication",
+      "qualifiers": [],
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:qUcmZB5y_30C"
+    },
+    {
+      "id": "mixture-of-gaussian-distributed-prototypes-with-generative-modelling-for-interpretable-and-trustworthy-image-recognition",
+      "title": "Mixture of Gaussian-distributed Prototypes with Generative Modelling for Interpretable and Trustworthy Image Recognition",
+      "authors": "Chong Wang, Yuanhong Chen, Fengbei Liu, Yuyuan Liu, Davis J McCarthy, Helen Frazer, Gustavo Carneiro",
+      "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)",
+      "year": "2025",
+      "kind": "publication",
+      "qualifiers": [],
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:IWHjjKOFINEC"
+    },
+    {
+      "id": "knockout-a-simple-way-to-handle-missing-inputs",
+      "title": "Knockout: A Simple Way to Handle Missing Inputs",
+      "authors": "Minh Nguyen, Batuhan K. Karaman, Heejong Kim, Alan Q. Wang, Fengbei Liu, Mert R. Sabuncu",
+      "venue": "Transactions on Machine Learning Research (TMLR)",
+      "year": "2025",
+      "kind": "publication",
+      "qualifiers": [],
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:QIV2ME_5wuYC"
+    },
+    {
+      "id": "translation-consistent-semi-supervised-segmentation-for-3d-medical-images",
+      "title": "Translation Consistent Semi-supervised Segmentation for 3D Medical Images",
+      "authors": "Yuyuan Liu, Yu Tian, Chong Wang, Yuanhong Chen, Fengbei Liu, Vasileios Belagiannis, Gustavo Carneiro",
+      "venue": "IEEE Transactions on Medical Imaging (TMI)",
+      "year": "2024",
+      "kind": "publication",
+      "qualifiers": [],
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:LkGwnXOMwfcC"
+    },
+    {
+      "id": "braixdet-learning-to-detect-malignant-breast-lesion-with-incomplete-annotations",
+      "title": "BRAIxDet: Learning to Detect Malignant Breast Lesion with Incomplete Annotations",
+      "authors": "Yuanhong Chen, Yuyuan Liu, Chong Wang, Michael Elliott, Chun Fung Kwok, Yu Tian, Fengbei Liu, Helen Frazer, Davis J McCarthy, Gustavo Carneiro",
+      "venue": "Medical Image Analysis (MedIA)",
+      "year": "2024",
+      "kind": "publication",
+      "qualifiers": [],
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:kNdYIx-mwKoC"
+    },
+    {
+      "id": "unraveling-instance-associations-a-closer-look-for-audio-visual-segmentation",
+      "title": "Unraveling Instance Associations: A Closer Look for Audio-Visual Segmentation",
+      "authors": "Yuanhong Chen, Yuyuan Liu, Hu Wang, Fengbei Liu, Chong Wang, Helen Frazer, Gustavo Carneiro",
+      "venue": "CVPR",
+      "year": "2024",
+      "kind": "publication",
+      "qualifiers": [],
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:7PzlFSSx8tAC"
+    },
+    {
+      "id": "effective-segmentation-of-post-treatment-gliomas-using-simple-approaches-artificial-sequence-generation-and-ensemble-models",
+      "title": "Effective Segmentation of Post-Treatment Gliomas Using Simple Approaches: Artificial Sequence Generation and Ensemble Models",
+      "authors": "Heejong Kim, Léo Milecki, Mina C. Moghadam, Fengbei Liu, Minh Nguyen, Eric Qiu, Abhishek Thanki, Mert R. Sabuncu",
+      "venue": "MICCAI BraTS Challenge",
+      "year": "2024",
+      "kind": "publication",
+      "qualifiers": [
+        "Oral Presentation"
+      ],
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:ZeXyd9-uunAC"
+    },
+    {
+      "id": "an-interpretable-and-accurate-deep-learning-diagnosis-framework-modelled-with-fully-and-semi-supervised-reciprocal-learning",
+      "title": "An Interpretable and Accurate Deep-learning Diagnosis Framework Modelled with Fully and Semi-supervised Reciprocal Learning",
+      "authors": "Chong Wang, Yuanhong Chen, Fengbei Liu, Michael Elliott, Chun Fung Kwok, Carlos Peña-Solorzano, Helen Frazer, Davis James McCarthy, Gustavo Carneiro",
+      "venue": "IEEE Transactions on Medical Imaging (TMI)",
+      "year": "2023",
+      "kind": "publication",
+      "qualifiers": [],
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:_kc_bZDykSQC"
+    },
+    {
+      "id": "learning-support-and-trivial-prototypes-for-interpretable-image-classification",
+      "title": "Learning Support and Trivial Prototypes for Interpretable Image Classification",
+      "authors": "Chong Wang, Yuyuan Liu, Yuanhong Chen, Fengbei Liu, Yu Tian, Davis J McCarthy, Helen Frazer, Gustavo Carneiro",
+      "venue": "ICCV",
+      "year": "2023",
+      "kind": "publication",
+      "qualifiers": [],
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:MXK_kJrjxJIC"
+    },
+    {
+      "id": "unsupervised-anomaly-detection-in-medical-images-with-a-memory-augmented-multi-level-cross-attentional-masked-autoencoder",
+      "title": "Unsupervised anomaly detection in medical images with a memory-augmented multi-level cross-attentional masked autoencoder",
+      "authors": "Yu Tian, Guansong Pang, Yuyuan Liu, Chong Wang, Yuanhong Chen, Fengbei Liu, Rajvinder Singh, Johan W Verjans, Gustavo Carneiro",
+      "venue": "MICCAI-MLMI",
+      "year": "2023",
+      "kind": "publication",
+      "qualifiers": [],
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:ufrVoPGSRksC"
+    },
+    {
+      "id": "knowledge-distillation-to-ensemble-global-and-interpretable-prototype-based-mammogram-classification-models",
+      "title": "Knowledge Distillation to Ensemble Global and Interpretable Prototype-Based Mammogram Classification Models",
+      "authors": "Chong Wang, Yuanhong Chen, Yuyuan Liu, Yu Tian, Fengbei Liu, Davis J McCarthy, Michael Elliott, Helen Frazer, Gustavo Carneiro",
+      "venue": "MICCAI",
+      "year": "2022",
+      "kind": "publication",
+      "qualifiers": [
+        "Early Accept"
+      ],
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:hqOjcs7Dif8C"
+    },
+    {
+      "id": "multi-view-local-co-occurrence-and-global-consistency-learning-improve-mammogram-classification-generalisation",
+      "title": "Multi-view Local Co-occurrence and Global Consistency Learning Improve Mammogram Classification Generalisation",
+      "authors": "Yuanhong Chen, Hu Wang, Chong Wang, Yu Tian, Fengbei Liu, Yuyuan Liu, Michael Elliott, Davis J McCarthy, Helen Frazer, Gustavo Carneiro",
+      "venue": "MICCAI",
+      "year": "2022",
+      "kind": "publication",
+      "qualifiers": [
+        "Early Accept"
+      ],
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:0EnyYjriUFMC"
+    },
+    {
+      "id": "contrastive-transformer-based-multiple-instance-learning-for-weakly-supervised-polyp-frame-detection",
+      "title": "Contrastive Transformer-based Multiple Instance Learning for Weakly Supervised Polyp Frame Detection",
+      "authors": "Yu Tian, Guansong Pang, Fengbei Liu, Yuyuan Liu, Chong Wang, Yuanhong Chen, Johan W Verjans, Gustavo Carneiro",
+      "venue": "MICCAI",
+      "year": "2022",
+      "kind": "publication",
+      "qualifiers": [
+        "Early Accept"
+      ],
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:_FxGoFyzp5QC"
+    },
+    {
+      "id": "perturbed-and-strict-mean-teachers-for-semi-supervised-semantic-segmentation",
+      "title": "Perturbed and Strict Mean Teachers for Semi-supervised Semantic Segmentation",
+      "authors": "Yuyuan Liu, Yu Tian, Yuanhong Chen, Fengbei Liu, Belagiannis Vasileios, Gustavo Carneiro",
+      "venue": "CVPR",
+      "year": "2022",
+      "kind": "publication",
+      "qualifiers": [],
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:Y0pCki6q_DkC"
+    },
+    {
+      "id": "pixel-wise-energy-biased-abstention-learning-for-anomaly-segmentation-on-complex-urban-driving-scenes",
+      "title": "Pixel-wise Energy-biased Abstention Learning for Anomaly Segmentation on Complex Urban Driving Scenes",
+      "authors": "Yu Tian*, Yuyuan Liu*, Guansong Pang, Fengbei Liu, Yuanhong Chen, Gustavo Carneiro",
+      "venue": "ECCV",
+      "year": "2022",
+      "kind": "publication",
+      "qualifiers": [
+        "Oral"
+      ],
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:Tyk-4Ss8FVUC"
+    },
+    {
+      "id": "constrained-contrastive-distribution-learning-for-unsupervised-anomaly-detection-and-localisation-in-medical-images",
+      "title": "Constrained Contrastive Distribution Learning for Unsupervised Anomaly Detection and Localisation in Medical Images",
+      "authors": "Yu Tian, Guansong Pang, Fengbei Liu, Yuanhong Chen, Seon Ho Shin, Johan W Verjans, Rajvinder Singh, Gustavo Carneiro",
+      "venue": "MICCAI",
+      "year": "2021",
+      "kind": "publication",
+      "qualifiers": [],
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:d1gkVwhDpl0C"
+    },
+    {
+      "id": "3d-semantic-mapping-from-arthroscopy-using-out-of-distribution-pose-and-depth-and-in-distribution-segmentation-training",
+      "title": "3D Semantic Mapping from Arthroscopy using Out-of-distribution Pose and Depth and In-distribution Segmentation Training",
+      "authors": "Yaqub Jonmohamadi, Shahnewaz Ali, Fengbei Liu, Jonathan Roberts, Ross Crawford, Gustavo Carneiro, Ajay K Pandey",
+      "venue": "MICCAI",
+      "year": "2021",
+      "kind": "publication",
+      "qualifiers": [],
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:IjCSPb-OGe4C"
+    },
+    {
+      "id": "automatic-segmentation-of-multiple-structures-in-knee-arthroscopy-using-deep-learning",
+      "title": "Automatic Segmentation of Multiple Structures in Knee Arthroscopy Using Deep Learning",
+      "authors": "Yaqub Jonmohamadi, Yu Takeda, Fengbei Liu, Fumio Sasazawa, Gabriel Maicas, Ross Crawford, Jonathan Roberts, Ajay K. Pandey, Gustavo Carneiro",
+      "venue": "IEEE Access",
+      "year": "2020",
+      "kind": "publication",
+      "qualifiers": [],
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:UeHWp8X0CEIC"
+    },
+    {
+      "id": "agentic-large-language-model-systems-in-medicine-a-systematic-review-and-taxonomy",
+      "title": "Agentic Large-Language-Model Systems in Medicine: A Systematic Review and Taxonomy",
+      "authors": "Abdul Mohaimen Al Radi, Xu Cao, Fanyang Yu, Yuyuan Liu, Fengbei Liu, Chong Wang, Yuanhong Chen, Jintai Chen, Hu Wang, Yanda Meng, Zhenyi Wang, Chen Chen, Mubarak Shah, Tianyu Han, Christos Davatzikos, MacLean P. Nasrallah, Yu Tian",
+      "venue": "TechRxiv",
+      "year": "2025",
+      "kind": "preprint",
+      "qualifiers": [],
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:hFOr9nPyWt4C"
+    },
+    {
+      "id": "asymmetric-co-teaching-with-multi-view-consensus-for-noisy-label-learning",
+      "title": "Asymmetric Co-teaching with Multi-view Consensus for Noisy Label Learning",
+      "authors": "Fengbei Liu, Yuanhong Chen, Chong Wang, Yu Tian, Gustavo Carneiro",
+      "venue": "arXiv:2301.01143",
+      "year": "2023",
+      "kind": "preprint",
+      "qualifiers": [],
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=oY_qRxMAAAAJ&pagesize=100&citation_for_view=oY_qRxMAAAAJ:8k81kl-MbHgC"
+    }
+  ]
+}

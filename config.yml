@@ -19,23 +19,26 @@ module:
       target: assets
     - source: static
       target: static
+    - source: data
+      target: data
+      files: ["publications.json"]
     - source: thesis
       target: static/thesis
       files: ["**.pdf"]
 
 menu:
   main:
+    - name: Publications
+      url: publications/
+      weight: 1
     - name: News
       url: news/
-      weight: 1
+      weight: 2
     - name: Experience
       url: experience/
-      weight: 2
+      weight: 3
     - name: Service
       url: service/
-      weight: 3
-    - name: CV
-      url: fbl_cv.pdf?v=d29a50e2
       weight: 4
 
 params:
@@ -63,27 +66,26 @@ params:
   profileMode:
     enabled: true
     title: Fengbei Liu
-    subtitle: >-
+    subtitle: |-
       Postdoctoral Researcher at [Cornell Tech](https://tech.cornell.edu/), Cornell University,
       working with [Prof. Mert R. Sabuncu](https://sabuncu.engineering.cornell.edu/).
       I obtained my Ph.D. from the [Australian Institute for Machine Learning](https://www.adelaide.edu.au/aiml/)
       at the University of Adelaide, advised by
       [Prof. Gustavo Carneiro](https://www.surrey.ac.uk/people/gustavo-carneiro) and
       [Prof. Mark Jenkinson](https://www.ndcn.ox.ac.uk/team/mark-jenkinson).
-      My research lies at the intersection of **computer vision** and **medical image analysis**:
-      I develop weakly supervised and label-efficient deep learning methods, with a current focus
-      on medical radiology and cardiovascular imaging.
+
+      My research lies at the intersection of computer vision, medical image analysis and deep learning.
     buttons:
+      - name: Publications
+        url: publications/
       - name: News
         url: news/
       - name: Experience
         url: experience/
       - name: Service
         url: service/
-      - name: CV
-        url: fbl_cv.pdf?v=d29a50e2
     # Shown below the profile; /news/ renders the complete configured list.
-    recentNewsCount: 3
+    recentNewsCount: 6
 
   socialIcons:
     - name: CV
@@ -97,14 +99,44 @@ params:
     - name: LinkedIn
       url: https://www.linkedin.com/in/fengbei-liu-2bb11b177/
 
-  # Curated announcements, newest first. Dates are announcement dates.
+  # Dates use confirmed announcement months, or the CV publication year only.
   news:
     - date: "Nov 2026"
-      text: "Our paper on predicting atrial fibrillation from longitudinal ECGs is published in *JACC: Advances*."
+      text: "Our paper on [predicting atrial fibrillation from longitudinal ECGs](/publications/#deep-learning-with-longitudinal-electrocardiograms-predicts-atrial-fibrillation-better-than-a-single-electrocardiogram) is published in *JACC: Advances*."
     - date: "Nov 2026"
       text: "I will serve as an Area Chair for [MIDL 2027](https://2027.midl.io/)."
     - date: "Sep 2026"
-      text: "[MAdam: Metric-Aware Multi-Objective Adam](https://arxiv.org/abs/2606.03904) was accepted to NeurIPS 2026."
+      text: "[MAdam: Metric-Aware Multi-Objective Adam](/publications/#madam-metric-aware-multi-objective-adam) was accepted to NeurIPS 2026."
+    - date: "Sep 2026"
+      text: "[MedCure: Medical Data Curation for Efficient Vision-Language Pretraining](/publications/#medcure-medical-data-curation-for-efficient-vision-language-pretraining) is published in *IEEE Transactions on Image Processing*."
+    - date: "2026"
+      text: "Our work on [generative and discriminative noisy-label learning (GNL)](/publications/#bridging-generative-and-discriminative-noisy-label-learning-via-direction-agnostic-em-formulation) is published in *IEEE Transactions on Pattern Analysis and Machine Intelligence*."
+    - date: "2026"
+      text: "Three papers at CVPR 2026: [RNED](/publications/#rned-rotary-number-encoding-and-decoding-for-quantitative-medical-vlm-analysis), [BackSplit](/publications/#backsplit-the-importance-of-sub-dividing-the-background-in-biomedical-lesion-segmentation), and [From Failure to Feedback](/publications/#from-failure-to-feedback-group-revision-unlocks-hard-cases-in-object-level-grounding)."
+    - date: "2026"
+      text: "Three papers at MIDL 2026: [HyperCT](/publications/#hyperct-low-rank-hypernet-for-unified-chest-ct-analysis), [Beyond Machine Interpretation](/publications/#beyond-machine-interpretation-learning-from-expert-over-reads-improves-ecg-diagnosis), and [X-Cardia](/publications/#x-cardia-phenotype-guided-cross-modal-alignment-for-opportunistic-cardiac-screening-on-routine-chest-ct). X-Cardia received an oral presentation."
+    - date: "2026"
+      text: "[ShapKO: Shapley-Adaptive Modality Knockout for Robust Multimodal Learning](/publications/#shapko-shapley-adaptive-modality-knockout-for-robust-multimodal-learning) was accepted to MICCAI 2026."
+    - date: "2026"
+      text: "[Cardio Amyloid-AI](/publications/#cardio-amyloid-ai-advanced-multimodal-screening-for-transthyretin-cardiac-amyloidosis-in-severe-aortic-stenosis-patients) is published in *European Heart Journal – Digital Health*."
+    - date: "2025"
+      text: "[Knockout: A Simple Way to Handle Missing Inputs](/publications/#knockout-a-simple-way-to-handle-missing-inputs) is published in *Transactions on Machine Learning Research*."
+    - date: "2025"
+      text: "Three papers on interpretable prototype learning published in *IEEE TPAMI*, *IEEE TMI*, and *IEEE JBHI*."
+    - date: "2025"
+      text: "Our preprint [Agentic Large-Language-Model Systems in Medicine: A Systematic Review and Taxonomy](/publications/#agentic-large-language-model-systems-in-medicine-a-systematic-review-and-taxonomy) is available on TechRxiv."
+    - date: "2024"
+      text: "Four papers at CVPR, the MICCAI BraTS Challenge, *IEEE TMI*, and *Medical Image Analysis*. Our [BraTS work](/publications/#effective-segmentation-of-post-treatment-gliomas-using-simple-approaches-artificial-sequence-generation-and-ensemble-models) received an oral presentation."
+    - date: "2023"
+      text: "Five papers at ICCV, MICCAI-MLMI, *Medical Image Analysis*, and *IEEE TMI*, including [BoMD](/publications/#bomd-bag-of-multi-label-local-descriptors-for-noisy-chest-x-ray-classification) for noisy chest X-ray classification."
+    - date: "2022"
+      text: "[ACPL](/publications/#acpl-anti-curriculum-pseudo-labelling-for-semi-supervised-medical-image-classification) was accepted to CVPR 2022, and [NVUM](/publications/#nvum-non-volatile-unbiased-memory-for-robust-medical-image-classification) received early acceptance at MICCAI 2022."
+    - date: "2022"
+      text: "Our work on [energy-biased abstention for anomaly segmentation](/publications/#pixel-wise-energy-biased-abstention-learning-for-anomaly-segmentation-on-complex-urban-driving-scenes) received an oral presentation at ECCV 2022."
+    - date: "2021"
+      text: "Three papers at MICCAI and MICCAI-MLMI, including [self-supervised mean-teacher learning for chest X-ray classification](/publications/#self-supervised-mean-teacher-for-semi-supervised-chest-x-ray-classification)."
+    - date: "2020"
+      text: "Our knee arthroscopy research appeared at [MICCAI 2020](/publications/#self-supervised-depth-estimation-to-regularise-semantic-segmentation-in-knee-arthroscopy) and in [IEEE Access](/publications/#automatic-segmentation-of-multiple-structures-in-knee-arthroscopy-using-deep-learning)."
 
   assets:
     disableScrollBarStyle: true

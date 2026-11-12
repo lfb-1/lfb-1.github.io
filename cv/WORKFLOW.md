@@ -15,9 +15,9 @@ Google Scholar is the upstream publication inventory. The CV remains the curated
 2. Run `python scripts/sync_scholar.py` from the repository root, or start the **Sync Google Scholar** Action.
 3. Review `data/sync_report.md`.
 4. For valid Scholar-only records, edit `fbl_cv.tex` with full author names and precise venue information.
-5. Compile the CV and run `python3 scripts/publish_cv.py` from the repository root to copy the PDF into `static/` and refresh its links in `config.yml`.
+5. Compile the CV and run `python3 scripts/publish_cv.py` from the repository root to copy the PDF into `static/` and refresh its icon link in `config.yml`. Run `python3 scripts/build_publications.py` to refresh the complete Publications page.
 6. Rerun the sync and tests.
-7. Record the update in `UPDATE_LOG.md`. Curated homepage news is maintained in `config.yml` with the author-update date, not a guessed publication month.
+7. Record the update in `UPDATE_LOG.md`. Curated news in `config.yml` uses confirmed announcement months where available, otherwise only the CV publication year.
 8. Merge only after the Scholar/CV differences are understood.
 
 ## Build and verification
@@ -29,7 +29,9 @@ just build-cv
 # Or manually from Homepage/
 (cd cv && pdflatex -interaction=nonstopmode -halt-on-error fbl_cv.tex)
 python3 scripts/publish_cv.py
+python3 scripts/build_publications.py
 python3 -m unittest discover -s tests -p "test_*.py"
+python3 scripts/build_publications.py --check
 cmp cv/fbl_cv.pdf static/fbl_cv.pdf
 hugo --minify --panicOnWarning
 ```

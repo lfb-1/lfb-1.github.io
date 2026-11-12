@@ -7,6 +7,7 @@ Hybrid mode:
 """
 import re
 import sys
+import unicodedata
 from collections import defaultdict
 from html import escape
 
@@ -74,11 +75,17 @@ def extract_brace_arg(content, start):
 
 
 def strip_latex(s):
-    """Remove common LaTeX commands from a string for plain-text display."""
+    """Convert CV text, preserving accents and contribution marks."""
+    s = re.sub(
+        r"\\'\{?([A-Za-z])\}?",
+        lambda match: unicodedata.normalize('NFC', match.group(1) + '\u0301'),
+        s,
+    )
+    s = s.replace('$^*$', '*').replace('\\&', '&')
     s = re.sub(r'\\textbf\{([^}]*)\}', r'\1', s)
     s = re.sub(r'\\textit\{([^}]*)\}', r'\1', s)
     s = re.sub(r'\\emph\{([^}]*)\}', r'\1', s)
-    s = re.sub(r'\$[^$]*\$', '', s)  # remove inline math like $^*$
+    s = re.sub(r'\$[^$]*\$', '', s)  # remove remaining inline math
     s = re.sub(r'\\[a-zA-Z]+', '', s)  # remove remaining commands
     s = re.sub(r'[{}]', '', s)  # remove stray braces
     return s.strip()

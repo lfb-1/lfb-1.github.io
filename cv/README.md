@@ -16,22 +16,22 @@ This folder contains the most up-to-date CV for Fengbei Liu.
 just build-cv          # from the vault root
 # or, manually:
 (cd Homepage/cv && pdflatex -interaction=nonstopmode -halt-on-error fbl_cv.tex)
-(cd Homepage && python3 scripts/publish_cv.py)
+(cd Homepage && python3 scripts/publish_cv.py && python3 scripts/build_publications.py)
 ```
 
 After commit + push inside `Homepage/`, GitHub Pages rebuilds automatically.
 
-## Current Status (Last Updated: 2026-11-11)
+## Current Status (Last Updated: 2026-11-12)
 
 **Position:** Postdoctoral Researcher at Cornell Tech, Cornell University (Feb 2024 - Present).
 
 **Latest addition:** *Deep Learning With Longitudinal Electrocardiograms Predicts Atrial Fibrillation Better Than a Single Electrocardiogram*, by Sunwoo Kwak, Fengbei Liu, Nusrat Binta Nizam, Peter Okin, and Mert R. Sabuncu. The author confirmed publication in **JACC: Advances** on 2026-11-11. Publication year and DOI were not supplied or independently verified, so they remain blank.
 
-The homepage's curated **Recent News** section is configured in `config.yml`; `/news/` renders the complete list. Dates reflect announcement dates. The homepage has no Publications section; the CV and Google Scholar provide the full inventory. `../data/sync_report.md` compares the saved Scholar inventory with the curated CV, including the new author-confirmed paper.
+The homepage's curated **Recent News** section is configured in `config.yml`; it shows six entries and `/news/` renders all 18 current entries. Dates use confirmed announcement months or CV publication years. `/publications/` includes all 40 CV records: 38 publications and two preprints. It is generated from `../data/publications.json`, with CV author order and status preserved. The CV remains available through the profile icon. `../data/sync_report.md` compares the saved Scholar inventory with the curated CV, including the author-confirmed JACC: Advances paper.
 
 ## Synchronization Schedule
 
-The **Sync Google Scholar** GitHub Action runs monthly and opens a review pull request when the public Scholar profile changes. It refreshes the saved inventory and writes `../data/sync_report.md`, preserving Hugo content and the CV. Review the differences and rebuild both PDF copies before merging. See `../SYNC.md` for details.
+The **Sync Google Scholar** GitHub Action runs monthly and opens a review pull request when the public Scholar profile changes. It refreshes the saved inventory and `../data/sync_report.md`, then regenerates the CV-based publication-page data. Configuration, news, Markdown pages, templates, and CV files are preserved. Review the differences and rebuild the PDF and publication data after editing the CV. See `../SYNC.md` for details.
 
 Additional checks remain useful before major conference deadlines and when a preprint changes publication status.
 
