@@ -131,6 +131,23 @@ This file tracks all updates made to Fengbei Liu's CV.
 
 ---
 
+## 2026-11-18: Use Upright Education Locations
+
+**Updated By:** Agent
+
+### Changes Made
+- ✅ Changed the location column of `\resumePhdheading` from small italic to upright normal text, matching `\resumeSubheading`; all four Education locations now share one style
+  - Source: Author (Fengbei Liu)
+- ✅ CV remains four pages with no overfull boxes; public link version updated to `fbl_cv.pdf?v=7cec8c27`
+
+### Files Updated
+- ✅ fbl_cv.tex
+- ✅ fbl_cv.pdf
+- ✅ ../static/fbl_cv.pdf
+- ✅ ../config.yml (versioned CV links)
+
+---
+
 ## 2026-09-24: Standardize Venue Names
 
 **Updated By:** Agent
